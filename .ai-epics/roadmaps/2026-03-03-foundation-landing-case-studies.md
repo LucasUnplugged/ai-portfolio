@@ -25,7 +25,7 @@
 - [ ] Per-demo CSS files with scoped theme variables (Ledger amber, Ritual purple/dark, Circles teal)
 - [ ] Route directories created for all pages
 - [ ] npm run build succeeds
-**Status:** executing
+**Status:** complete
 **Iterations:** 0
 
 ## Stage 2: Shared Components & Demo Layouts

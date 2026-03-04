@@ -29,7 +29,7 @@ export default function ProfilePage() {
     <RitualShell current="profile">
       <div className="p-4 space-y-5">
         {/* Heading */}
-        <h1 className="font-heading text-xl">Profile</h1>
+        <h1 className="font-heading text-2xl font-bold">Profile</h1>
 
         {/* Profile card */}
         <OwnProfileCard user={currentUser} />

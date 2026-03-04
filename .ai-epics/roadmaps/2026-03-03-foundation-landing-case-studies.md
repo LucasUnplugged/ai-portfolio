@@ -3,7 +3,7 @@
 - **Branch:** epic/foundation-landing-case-studies
 - **Feature flag:** foundation_landing_case_studies
 - **GitHub Issue:** #2
-- **Epic PR:** (pending)
+- **Epic PR:** #7
 - **Created:** 2026-03-03
 - **Status:** in-progress
 - **Project Node ID:** PVT_kwHOACW_X84BQuKN

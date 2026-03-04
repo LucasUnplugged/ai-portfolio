@@ -4,7 +4,7 @@
 - **Feature flag:** ledger_demo
 - **GitHub Issue:** #12
 - **Project Item ID:** PVTI_lAHOACW_X84BQuKNzgmnglQ
-- **Epic PR:** (filled below)
+- **Epic PR:** #16
 - **Created:** 2026-03-03
 - **Status:** in-progress
 - **Project Node ID:** PVT_kwHOACW_X84BQuKN

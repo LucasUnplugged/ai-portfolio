@@ -11,6 +11,12 @@ interface FlagDefinition {
 }
 
 const flagRegistry = {
+  circles_demo: {
+    description: 'Circles demo app — 6 mobile screens with light teal theme',
+    added: '2026-03-04',
+    default: false,
+    overrides: { dev: true, staging: true },
+  },
   // ← new flags are inserted here (newest first)
 } as const satisfies Record<string, FlagDefinition>;
 

@@ -11,12 +11,6 @@ interface FlagDefinition {
 }
 
 const flagRegistry = {
-  foundation_landing_case_studies: {
-    description: 'Portfolio site foundation: shadcn/ui, landing page, case studies, demo layouts',
-    added: '2026-03-03',
-    default: false,
-    overrides: { dev: true, staging: true },
-  },
   // ← new flags are inserted here (newest first)
 } as const satisfies Record<string, FlagDefinition>;
 

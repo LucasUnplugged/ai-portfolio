@@ -11,12 +11,6 @@ interface FlagDefinition {
 }
 
 const flagRegistry = {
-  ritual_demo: {
-    description: 'Ritual demo app — 6 mobile screens with dark purple theme',
-    added: '2026-03-03',
-    default: false,
-    overrides: { dev: true, staging: true },
-  },
   // ← new flags are inserted here (newest first)
 } as const satisfies Record<string, FlagDefinition>;
 

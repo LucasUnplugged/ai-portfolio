@@ -17,7 +17,7 @@
 **GitHub Sub-Issue:** #3
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXeg
 **Stage Branch:** feat/foundation-landing-case-studies/shadcn-theming-setup
-**Stage PR:** (pending)
+**Stage PR:** #8
 **Acceptance criteria:**
 - [ ] shadcn/ui initialized with components.json
 - [ ] Base components installed (button, card, badge, separator, avatar, dropdown-menu, tabs)
@@ -72,7 +72,7 @@
 **GitHub Sub-Issue:** #6
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXf4
 **Stage Branch:** feat/foundation-landing-case-studies/case-study-pages
-**Stage PR:** (pending)
+**Stage PR:** #11
 **Acceptance criteria:**
 - [x] Ledger case study page with concept, goals, design approach, demo button
 - [x] Ritual case study page with concept, goals, design approach, demo button

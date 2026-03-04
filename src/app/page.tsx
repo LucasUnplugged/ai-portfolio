@@ -58,93 +58,100 @@ const caseStudies = [
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-24">
-      {/* Hero */}
-      <section className="mb-16 md:mb-24">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          Lucas Castro
-        </h1>
-        <p className="mt-2 text-xl text-muted-foreground sm:text-2xl">
-          Product Engineer
-        </p>
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-          I design and build interfaces that feel considered. Focused on
-          frontend craft, interaction design, and the details that make software
-          feel alive. Currently exploring the space between design tools and
-          production code.
-        </p>
-      </section>
+    <div className="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-24 lg:max-w-6xl">
+      <div className="flex flex-col lg:flex-row lg:gap-16">
+        {/* Left column: Hero + Expertise */}
+        <div className="lg:flex-[3]">
+          {/* Hero */}
+          <section className="mb-16 md:mb-24">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              Lucas Castro
+            </h1>
+            <p className="mt-2 text-xl text-muted-foreground sm:text-2xl">
+              Product Engineer
+            </p>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              I design and build interfaces that feel considered. Focused on
+              frontend craft, interaction design, and the details that make software
+              feel alive. Currently exploring the space between design tools and
+              production code.
+            </p>
+          </section>
 
-      {/* Skills */}
-      <section className="mb-16 md:mb-24">
-        <h2 className="mb-6 text-sm font-medium uppercase tracking-widest text-muted-foreground">
-          Expertise
-        </h2>
-        <div className="space-y-4">
-          {skillCategories.map((category) => (
-            <div key={category.title} className="flex flex-wrap items-baseline gap-2">
-              <span className="w-20 shrink-0 text-sm font-medium text-foreground">
-                {category.title}
-              </span>
-              <div className="flex flex-wrap gap-1.5">
-                {category.skills.map((skill) => (
-                  <Badge key={skill} variant="secondary" className="font-normal">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <Separator className="mb-16 md:mb-24" />
-
-      {/* Case Studies */}
-      <section>
-        <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-muted-foreground">
-          Case Studies
-        </h2>
-        <div className="grid gap-4 sm:gap-6">
-          {caseStudies.map((study) => (
-            <Link key={study.slug} href={`/case-studies/${study.slug}`}>
-              <Card className={`group border ${study.accentBorder} transition-shadow hover:shadow-md`}>
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-3">
-                    <div className={`h-2.5 w-2.5 rounded-full ${study.accentDot}`} />
-                    <CardTitle className="text-lg">{study.name}</CardTitle>
-                  </div>
-                  <CardDescription className="mt-1 pl-[22px]">
-                    {study.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex items-center justify-between">
+          {/* Skills */}
+          <section className="mb-16 md:mb-24 lg:mb-0">
+            <h2 className="mb-6 text-sm font-medium uppercase tracking-widest text-muted-foreground">
+              Expertise
+            </h2>
+            <div className="space-y-4">
+              {skillCategories.map((category) => (
+                <div key={category.title} className="flex flex-wrap items-baseline gap-2">
+                  <span className="w-20 shrink-0 text-sm font-medium text-foreground">
+                    {category.title}
+                  </span>
                   <div className="flex flex-wrap gap-1.5">
-                    {study.tags.map((tag) => (
-                      <Badge
-                        key={tag}
-                        variant="outline"
-                        className={`${study.accent} border-0 font-normal`}
-                      >
-                        {tag}
+                    {category.skills.map((skill) => (
+                      <Badge key={skill} variant="secondary" className="font-normal">
+                        {skill}
                       </Badge>
                     ))}
                   </div>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="text-muted-foreground group-hover:text-foreground"
-                    tabIndex={-1}
-                  >
-                    View
-                    <ArrowRight className="ml-1 h-3.5 w-3.5" />
-                  </Button>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
-      </section>
+
+        <Separator className="mb-16 md:mb-24 lg:hidden" />
+
+        {/* Right column: Case Studies */}
+        <div className="lg:flex-[2] lg:sticky lg:top-20 lg:self-start">
+          <section>
+            <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-muted-foreground">
+              Case Studies
+            </h2>
+            <div className="grid gap-4 sm:gap-6">
+              {caseStudies.map((study) => (
+                <Link key={study.slug} href={`/case-studies/${study.slug}`}>
+                  <Card className={`group border ${study.accentBorder} transition-shadow hover:shadow-md`}>
+                    <CardHeader className="pb-3">
+                      <div className="flex items-center gap-3">
+                        <div className={`h-2.5 w-2.5 rounded-full ${study.accentDot}`} />
+                        <CardTitle className="text-lg">{study.name}</CardTitle>
+                      </div>
+                      <CardDescription className="mt-1 pl-[22px]">
+                        {study.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex items-center justify-between">
+                      <div className="flex flex-wrap gap-1.5">
+                        {study.tags.map((tag) => (
+                          <Badge
+                            key={tag}
+                            variant="outline"
+                            className={`${study.accent} border-0 font-normal`}
+                          >
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-muted-foreground group-hover:text-foreground"
+                        tabIndex={-1}
+                      >
+                        View
+                        <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
   );
 }

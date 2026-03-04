@@ -44,10 +44,12 @@ export default function RitualCaseStudy() {
           The Concept
         </h2>
         <p className="leading-relaxed text-foreground">
-          A mobile app for maintaining meaningful relationships through scheduled
-          rituals — regular check-ins, shared activities, and intentional
-          togetherness. Ritual transforms the anxiety of &ldquo;I should reach
-          out more&rdquo; into structured, joyful habits.
+          Modern dating apps trap users in dopamine loops — endless swiping,
+          algorithmic manipulation, and the exhaustion that follows. Ritual
+          replaces that cycle with a calm, weekly space for genuine connection.
+          Small circles of 6&ndash;8 people share daily prompts and real
+          conversations over two intentional weeks. No swiping, no feeds —
+          just people being people.
         </p>
       </section>
 
@@ -70,11 +72,12 @@ export default function RitualCaseStudy() {
           Design Approach
         </h2>
         <p className="leading-relaxed text-foreground">
-          Deep purple and fuchsia tones on a dark background create a sense of
-          intimacy. Adamina (serif) gives headings emotional weight, Afacad
-          provides clean UI readability, and Fira Code marks timestamps with
-          precision. The dark theme isn&apos;t just aesthetic — it creates the
-          feeling of a private, personal space.
+          The dark theme evokes intimacy and nighttime social energy — the
+          feeling of a private space where real conversations happen. Purple
+          and fuchsia tones bring warmth without the cold blue typical of
+          social apps. Serif headings carry emotional weight, while clean sans-serif
+          body text keeps the interface calm and readable. Every typographic
+          choice reinforces the philosophy: slow down, pay attention, connect.
         </p>
       </section>
 

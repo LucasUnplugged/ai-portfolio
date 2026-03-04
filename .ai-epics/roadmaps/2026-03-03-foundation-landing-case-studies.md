@@ -54,7 +54,7 @@
 **GitHub Sub-Issue:** #5
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXfc
 **Stage Branch:** feat/foundation-landing-case-studies/landing-page
-**Stage PR:** (pending)
+**Stage PR:** #10
 **Acceptance criteria:**
 - [x] Hero section with name, title, professional summary
 - [x] Skills/expertise section
@@ -71,15 +71,15 @@
 **Estimated scope:** ~8 files, ~500 lines
 **GitHub Sub-Issue:** #6
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXf4
-**Stage Branch:** (pending)
+**Stage Branch:** feat/foundation-landing-case-studies/case-study-pages
 **Stage PR:** (pending)
 **Acceptance criteria:**
-- [ ] Ledger case study page with concept, goals, design approach, demo button
-- [ ] Ritual case study page with concept, goals, design approach, demo button
-- [ ] Circles case study page with concept, goals, design approach, demo button
-- [ ] All pages use SiteHeader and SiteFooter
-- [ ] Consistent layout template across all 3
-- [ ] Responsive design
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] Ledger case study page with concept, goals, design approach, demo button
+- [x] Ritual case study page with concept, goals, design approach, demo button
+- [x] Circles case study page with concept, goals, design approach, demo button
+- [x] All pages use SiteHeader and SiteFooter
+- [x] Consistent layout template across all 3
+- [x] Responsive design
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0

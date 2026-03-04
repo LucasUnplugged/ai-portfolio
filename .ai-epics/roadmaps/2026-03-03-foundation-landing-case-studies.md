@@ -34,7 +34,7 @@
 **GitHub Sub-Issue:** #4
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXfE
 **Stage Branch:** feat/foundation-landing-case-studies/shared-components-demo-layouts
-**Stage PR:** (pending)
+**Stage PR:** #9
 **Acceptance criteria:**
 - [x] SiteHeader with nav links to case studies
 - [x] SiteFooter with minimal content

@@ -57,6 +57,26 @@ export function PersonForm() {
       </div>
 
       <div className="space-y-1.5">
+        <p className="text-xs font-medium text-foreground">Circle</p>
+        <div className="flex flex-wrap gap-2">
+          {circles.map((circle) => (
+            <button
+              key={circle.id}
+              type="button"
+              onClick={() => setSelectedCircle(circle.id)}
+              className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
+                selectedCircle === circle.id
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-secondary text-secondary-foreground hover:bg-accent"
+              }`}
+            >
+              {circle.emoji} {circle.name}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-1.5">
         <p className="text-xs font-medium text-foreground">Labels</p>
         <div className="flex flex-wrap gap-1.5 mb-1.5">
           {labels.map((label) => (
@@ -103,26 +123,6 @@ export function PersonForm() {
               ))}
             </div>
           )}
-        </div>
-      </div>
-
-      <div className="space-y-1.5">
-        <p className="text-xs font-medium text-foreground">Circle</p>
-        <div className="flex flex-wrap gap-2">
-          {circles.map((circle) => (
-            <button
-              key={circle.id}
-              type="button"
-              onClick={() => setSelectedCircle(circle.id)}
-              className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-                selectedCircle === circle.id
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-secondary-foreground hover:bg-accent"
-              }`}
-            >
-              {circle.emoji} {circle.name}
-            </button>
-          ))}
         </div>
       </div>
 

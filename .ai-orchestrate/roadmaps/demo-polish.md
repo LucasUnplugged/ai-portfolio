@@ -20,7 +20,7 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Epic slug:** demo-foundation
 **Epic branch:** epic/demo-foundation
 **PR:** #37
-**Status:** in-progress
+**Status:** complete
 
 ### Stage 1.1: Fix CSS Theme Scoping
 **Issue:** #38
@@ -32,28 +32,30 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 - [ ] Root globals.css `@theme inline` must include all CSS variable mappings (shadows, tracking, fonts, sidebar-* etc.) needed by demos
 - [ ] Switching between demos applies correct theme — no color bleed
 - [ ] Build passes
-**Status:** pending
+**Status:** done
+**Stage PR:** #41
 
 ### Stage 1.2: Consolidate Headers
 **Issue:** #39
 **Branch prefix:** feat
 **Acceptance criteria:**
-- [ ] Remove DemoHeader component
-- [ ] Update SiteHeader to show two nav sections when on demo pages: left = `Portfolio | Case Studies` links, right = `Apps: Ledger | Ritual | Circles` links
-- [ ] SiteHeader detects current route for active state on demo app links
-- [ ] On non-demo pages, SiteHeader shows current nav (portfolio + case study links only)
-- [ ] No double header on any page
-**Status:** pending
+- [x] Remove DemoHeader component
+- [x] Update SiteHeader to show two nav sections when on demo pages: left = `Portfolio | Case Studies` links, right = `Apps: Ledger | Ritual | Circles` links
+- [x] SiteHeader detects current route for active state on demo app links
+- [x] On non-demo pages, SiteHeader shows current nav (portfolio + case study links only)
+- [x] No double header on any page
+**Status:** done
+**Stage PR:** #42
 
 ### Stage 1.3: Circles Dark Mode + Ledger Cursor Fix
 **Issue:** #40
 **Branch prefix:** fix
 **Acceptance criteria:**
-- [ ] Circles demo renders in dark mode by default (add `.dark` class to its theme wrapper)
-- [ ] Circles dark theme variables are properly applied
-- [ ] Ledger document page: Marcus cursor label shows on hover near the blue cursor line only — hidden by default, revealed on hover over the cursor area
-- [ ] Build passes
-**Status:** pending
+- [x] Circles demo renders in dark mode by default (add `.dark` class to its theme wrapper)
+- [x] Circles dark theme variables are properly applied
+- [x] Ledger document page: Marcus cursor label shows on hover near the blue cursor line only — hidden by default, revealed on hover over the cursor area
+- [x] Build passes
+**Status:** done
 
 ## Epic 2: Ritual Overhaul
 **Objective:** Redesign Ritual into a dating-style social circle app with merged circle+chat, dating profiles, GIFs, messaging, and matching

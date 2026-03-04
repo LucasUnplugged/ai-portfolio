@@ -54,5 +54,5 @@ created: 2026-03-03
 **Estimated stages:** ~3
 **Epic slug:** circles-demo
 **Epic Roadmap:** (filled during EXECUTE)
-**Tech Spec:** (filled during EXECUTE)
-**Status:** pending
+**Tech Spec:** .ai-epics/docs/circles-demo/tech-spec.md
+**Status:** in-progress

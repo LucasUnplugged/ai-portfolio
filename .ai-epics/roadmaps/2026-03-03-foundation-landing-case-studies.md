@@ -17,14 +17,14 @@
 **GitHub Sub-Issue:** #3
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXeg
 **Stage Branch:** feat/foundation-landing-case-studies/shadcn-theming-setup
-**Stage PR:** (pending)
+**Stage PR:** #8
 **Acceptance criteria:**
-- [ ] shadcn/ui initialized with components.json
-- [ ] Base components installed (button, card, badge, separator, avatar, dropdown-menu, tabs)
-- [ ] All Google Fonts loaded via next/font (Geist, Manrope, Bricolage Grotesque, ADLaM Display, Afacad, Adamina, Fira Code, Inter, JetBrains Mono)
-- [ ] Per-demo CSS files with scoped theme variables (Ledger amber, Ritual purple/dark, Circles teal)
-- [ ] Route directories created for all pages
-- [ ] npm run build succeeds
+- [x] shadcn/ui initialized with components.json
+- [x] Base components installed (button, card, badge, separator, avatar, dropdown-menu, tabs)
+- [x] All Google Fonts loaded via next/font (Geist, Manrope, Bricolage Grotesque, ADLaM Display, Afacad, Adamina, Fira Code, Inter, JetBrains Mono)
+- [x] Per-demo CSS files with scoped theme variables (Ledger amber, Ritual purple/dark, Circles teal)
+- [x] Route directories created for all pages
+- [x] npm run build succeeds
 **Status:** complete
 **Iterations:** 0
 
@@ -33,7 +33,7 @@
 **Estimated scope:** ~12 files, ~600 lines
 **GitHub Sub-Issue:** #4
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXfE
-**Stage Branch:** (pending)
+**Stage Branch:** feat/foundation-landing-case-studies/shared-components-layouts
 **Stage PR:** (pending)
 **Acceptance criteria:**
 - [ ] SiteHeader with nav links to case studies
@@ -45,7 +45,7 @@
 - [ ] Circles demo layout applies Circles theme (light) inside phone simulator
 - [ ] All demo placeholder pages render with correct themes
 - [ ] npm run build succeeds
-**Status:** pending
+**Status:** executing
 **Iterations:** 0
 
 ## Stage 3: Landing Page

@@ -4,7 +4,7 @@
 - **Feature flag:** circles_demo
 - **GitHub Issue:** #28
 - **Project Item ID:** PVTI_lAHOACW_X84BQuKNzgmntUI
-- **Epic PR:** (filled after PR creation)
+- **Epic PR:** #32
 - **Created:** 2026-03-04
 - **Status:** in-progress
 - **Project Node ID:** PVT_kwHOACW_X84BQuKN

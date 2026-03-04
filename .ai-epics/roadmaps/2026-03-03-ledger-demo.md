@@ -15,17 +15,17 @@
 **Objective:** Build the persistent sidebar layout, all mock data modules, and reusable Ledger components (stat-card, activity-feed, task-card, etc.). Install additional shadcn/ui components needed.
 **Estimated scope:** ~15 files, ~800 lines
 **GitHub Sub-Issue:** #13
-**Stage Branch:** (filled in BREAKDOWN)
+**Stage Branch:** feat/ledger-demo/sidebar-data-components
 **Stage PR:** (filled in ADVANCE)
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmngl8
 **Acceptance criteria:**
-- [ ] Sidebar with navigation links to all 7 screens
-- [ ] All mock data modules created with realistic seeded data
-- [ ] Shared Ledger components built (stat-card, activity-feed, task-card, etc.)
-- [ ] Additional shadcn/ui components installed (input, table, scroll-area, tooltip, progress, select)
-- [ ] Ledger layout updated to include sidebar
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] Sidebar with navigation links to all 7 screens
+- [x] All mock data modules created with realistic seeded data
+- [x] Shared Ledger components built (stat-card, activity-feed, task-card, etc.)
+- [x] Additional shadcn/ui components installed (input, table, scroll-area, tooltip, progress, select)
+- [x] Ledger layout updated to include sidebar
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0
 
 ## Stage 2: Dashboard, Project Overview & Document Editor

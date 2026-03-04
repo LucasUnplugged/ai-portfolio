@@ -4,7 +4,7 @@
 - **Feature flag:** ritual_demo
 - **GitHub Issue:** #20
 - **Project Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnv0
-- **Epic PR:** (filled after PR creation)
+- **Epic PR:** #24
 - **Created:** 2026-03-03
 - **Status:** in-progress
 - **Project Node ID:** PVT_kwHOACW_X84BQuKN

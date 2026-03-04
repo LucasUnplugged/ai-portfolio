@@ -62,3 +62,11 @@ export interface Reflection {
   response?: string;
   gratitudes: string[];
 }
+
+export interface Message {
+  id: string;
+  personId: string;
+  content: string;
+  timestamp: string;
+  fromMe: boolean;
+}

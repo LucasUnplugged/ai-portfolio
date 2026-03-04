@@ -19,11 +19,11 @@ export default function MatchesPage() {
   return (
     <RitualShell current="matches">
       <div className="p-4 space-y-4">
-        <h1 className="font-heading text-xl">Connections</h1>
+        <h1 className="font-heading text-2xl font-bold">Connections</h1>
 
         <Tabs defaultValue="matches">
-          <TabsList variant="line">
-            <TabsTrigger value="matches">
+          <TabsList className="w-full">
+            <TabsTrigger value="matches" className="flex-1">
               Matches{" "}
               {matchedConnections.length > 0 && (
                 <span className="ml-1 text-xs text-muted-foreground">
@@ -31,7 +31,7 @@ export default function MatchesPage() {
                 </span>
               )}
             </TabsTrigger>
-            <TabsTrigger value="requests">
+            <TabsTrigger value="requests" className="flex-1">
               Requests{" "}
               {requests.length > 0 && (
                 <span className="ml-1 text-xs text-muted-foreground">

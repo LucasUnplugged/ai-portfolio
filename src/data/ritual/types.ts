@@ -51,6 +51,7 @@ export interface ChatMessage {
   timestamp: string;
   type: "text" | "prompt-response";
   promptId?: string;
+  gifUrl?: string;
 }
 
 export interface DMThread {

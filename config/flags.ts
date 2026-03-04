@@ -31,7 +31,7 @@ const ENV: Environment =
   (process.env.NODE_ENV === 'production' ? 'prod' : 'dev');
 
 export function getFlag(name: FlagName, env: Environment = ENV): boolean {
-  const flag = flagRegistry[name];
+  const flag: FlagDefinition = flagRegistry[name];
   return flag.overrides?.[env] ?? flag.default;
 }
 

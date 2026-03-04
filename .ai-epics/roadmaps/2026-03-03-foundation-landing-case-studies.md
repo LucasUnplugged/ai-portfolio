@@ -16,7 +16,7 @@
 **Estimated scope:** ~10 files, ~500 lines
 **GitHub Sub-Issue:** #3
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXeg
-**Stage Branch:** (pending)
+**Stage Branch:** feat/foundation-landing-case-studies/shadcn-theming-setup
 **Stage PR:** (pending)
 **Acceptance criteria:**
 - [ ] shadcn/ui initialized with components.json
@@ -25,7 +25,7 @@
 - [ ] Per-demo CSS files with scoped theme variables (Ledger amber, Ritual purple/dark, Circles teal)
 - [ ] Route directories created for all pages
 - [ ] npm run build succeeds
-**Status:** pending
+**Status:** complete
 **Iterations:** 0
 
 ## Stage 2: Shared Components & Demo Layouts

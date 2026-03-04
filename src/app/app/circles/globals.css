@@ -1,0 +1,37 @@
+.circles-theme {
+  --background: 0.98 0.01 165;
+  --foreground: 0.14 0.02 165;
+  --card: 0.97 0.01 165;
+  --card-foreground: 0.14 0.02 165;
+  --popover: 0.98 0.01 165;
+  --popover-foreground: 0.14 0.02 165;
+  --primary: 0.6 0.17 165;
+  --primary-foreground: 0.98 0.01 165;
+  --secondary: 0.92 0.03 165;
+  --secondary-foreground: 0.25 0.03 165;
+  --muted: 0.93 0.02 165;
+  --muted-foreground: 0.55 0.03 165;
+  --accent: 0.88 0.06 165;
+  --accent-foreground: 0.25 0.03 165;
+  --destructive: 0.55 0.2 25;
+  --destructive-foreground: 0.98 0.01 165;
+  --border: 0.88 0.03 165;
+  --input: 0.88 0.03 165;
+  --ring: 0.6 0.17 165;
+  --chart-1: 0.6 0.17 165;
+  --chart-2: 0.7 0.12 200;
+  --chart-3: 0.55 0.15 260;
+  --chart-4: 0.7 0.15 30;
+  --chart-5: 0.6 0.2 330;
+  --radius: 0.6rem;
+  --sidebar-background: 0.96 0.02 165;
+  --sidebar-foreground: 0.3 0.03 165;
+  --sidebar-primary: 0.6 0.17 165;
+  --sidebar-primary-foreground: 0.98 0.01 165;
+  --sidebar-accent: 0.88 0.06 165;
+  --sidebar-accent-foreground: 0.25 0.03 165;
+  --sidebar-border: 0.88 0.03 165;
+  --sidebar-ring: 0.6 0.17 165;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}

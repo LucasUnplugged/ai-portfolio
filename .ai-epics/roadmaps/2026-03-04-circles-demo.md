@@ -31,17 +31,17 @@
 **Objective:** Build the first 3 screens — Onboarding (welcome + CTA), Today View (reminders, greeting), and Circles Overview (circle cards with members).
 **Estimated scope:** ~6 files, ~500 lines
 **GitHub Sub-Issue:** #30
-**Stage Branch:** (filled in BREAKDOWN)
+**Stage Branch:** feat/circles-demo/onboarding-today-overview
 **Stage PR:** (filled in ADVANCE)
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmntVM
 **Acceptance criteria:**
-- [ ] Onboarding screen with heading, tagline, and CTA
-- [ ] Today View with greeting, date, and reminder cards
-- [ ] Circles Overview with circle cards and member avatars
-- [ ] All screens use Circles light teal theme consistently
-- [ ] Realistic mock data rendered throughout
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] Onboarding screen with heading, tagline, and CTA
+- [x] Today View with greeting, date, and reminder cards
+- [x] Circles Overview with circle cards and member avatars
+- [x] All screens use Circles light teal theme consistently
+- [x] Realistic mock data rendered throughout
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0
 
 ## Stage 3: Person Profile, Add Person & Reflection

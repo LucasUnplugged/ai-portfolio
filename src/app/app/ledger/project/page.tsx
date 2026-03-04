@@ -12,7 +12,6 @@ import {
 } from "@/data/ledger";
 import type { Task } from "@/data/ledger/types";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Avatar,
   AvatarFallback,

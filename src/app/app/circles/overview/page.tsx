@@ -25,7 +25,7 @@ export default function CirclesOverviewPage() {
         )
       );
     },
-    []
+    [setPeopleList]
   );
 
   const editCircle = useCallback(
@@ -34,7 +34,7 @@ export default function CirclesOverviewPage() {
         prev.map((c) => (c.id === circleId ? { ...c, ...updates } : c))
       );
     },
-    []
+    [setCirclesList]
   );
 
   const addCircle = useCallback(() => {
@@ -51,7 +51,7 @@ export default function CirclesOverviewPage() {
         contactFrequencyDays: 14,
       },
     ]);
-  }, []);
+  }, [setCirclesList]);
 
   return (
     <CirclesShell current="overview">

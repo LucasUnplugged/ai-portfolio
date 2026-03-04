@@ -48,15 +48,15 @@
 **Objective:** Build the remaining 3 screens — Person Profile (avatar, bio, interaction history), Add Person (form), and Reflection (weekly prompt + gratitudes).
 **Estimated scope:** ~6 files, ~500 lines
 **GitHub Sub-Issue:** #31
-**Stage Branch:** (filled in BREAKDOWN)
+**Stage Branch:** feat/circles-demo/profile-add-reflection
 **Stage PR:** (filled in ADVANCE)
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmntVg
 **Acceptance criteria:**
-- [ ] Person Profile with avatar, bio, interaction timeline
-- [ ] Add Person form with circle selection
-- [ ] Reflection with weekly prompt and gratitude list
-- [ ] All screens use Circles light teal theme consistently
-- [ ] Realistic mock data rendered throughout
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] Person Profile with avatar, bio, interaction timeline
+- [x] Add Person form with circle selection
+- [x] Reflection with weekly prompt and gratitude list
+- [x] All screens use Circles light teal theme consistently
+- [x] Realistic mock data rendered throughout
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0

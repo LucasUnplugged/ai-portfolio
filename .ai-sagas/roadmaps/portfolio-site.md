@@ -1,6 +1,6 @@
 ---
 saga: portfolio-site
-status: planning
+status: in-progress
 created: 2026-03-03
 ---
 
@@ -10,7 +10,7 @@ created: 2026-03-03
 - **GitHub Issue:** #1
 - **Project Item ID:** PVTI_lAHOACW_X84BQuKNzgmnWN8
 - **Created:** 2026-03-03
-- **Status:** planning
+- **Status:** in-progress
 - **Auto-merge:** true
 - **Notification channel:** ntfy
 - **Notification topic:** lucas-ai-portfolio-dev
@@ -22,8 +22,8 @@ created: 2026-03-03
 **Estimated stages:** ~4
 **Epic slug:** foundation-landing-case-studies
 **Epic Roadmap:** (filled during EXECUTE)
-**Tech Spec:** (filled during EXECUTE)
-**Status:** pending
+**Tech Spec:** .ai-epics/docs/foundation-landing-case-studies/tech-spec.md
+**Status:** in-progress
 
 ## Epic 2: Ledger Demo
 **Objective:** Build all 7 Ledger demo screens (Dashboard, Project Overview, Document Editor, Change Review, Task Board, Conflict Resolution, Audit Log) with full mock data, Ledger theme, and desktop-first layout.

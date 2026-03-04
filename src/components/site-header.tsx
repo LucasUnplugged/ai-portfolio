@@ -27,14 +27,15 @@ export function SiteHeader() {
             Lucas Castro
           </Link>
           <nav className="flex items-center gap-1">
+            <span className="mr-1 text-xs text-muted-foreground/70">Case Studies:</span>
             {caseStudies.map((study) => (
               <Link
                 key={study.href}
                 href={study.href}
-                className={`px-3 py-2 text-sm transition-colors ${
+                className={`px-3 py-1.5 text-sm transition-colors ${
                   pathname.startsWith(study.href)
-                    ? "font-medium text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "bg-muted rounded-md font-medium text-foreground"
+                    : "text-muted-foreground/80 hover:text-foreground"
                 }`}
               >
                 {study.name}
@@ -43,22 +44,24 @@ export function SiteHeader() {
           </nav>
         </div>
         {isDemo && (
-          <nav className="flex items-center gap-1">
-            <span className="mr-1 text-xs text-muted-foreground">Apps:</span>
-            {demos.map((demo) => (
-              <Link
-                key={demo.href}
-                href={demo.href}
-                className={`px-2 py-1 text-sm transition-colors ${
-                  pathname.startsWith(demo.href)
-                    ? "font-medium text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {demo.name}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-medium text-muted-foreground/70">Demos</span>
+            <nav className="flex items-center gap-0.5 rounded-lg bg-muted/50 p-1">
+              {demos.map((demo) => (
+                <Link
+                  key={demo.href}
+                  href={demo.href}
+                  className={`rounded-md px-3 py-1 text-sm transition-colors ${
+                    pathname.startsWith(demo.href)
+                      ? "bg-background shadow-sm font-medium text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {demo.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
         )}
       </div>
     </header>

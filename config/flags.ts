@@ -11,6 +11,12 @@ interface FlagDefinition {
 }
 
 const flagRegistry = {
+  ledger_demo: {
+    description: 'Ledger demo app — 7 desktop screens with mock data',
+    added: '2026-03-03',
+    default: false,
+    overrides: { dev: true, staging: true },
+  },
   // ← new flags are inserted here (newest first)
 } as const satisfies Record<string, FlagDefinition>;
 

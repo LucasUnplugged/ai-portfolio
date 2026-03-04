@@ -32,8 +32,8 @@ created: 2026-03-03
 **Estimated stages:** ~3
 **Epic slug:** ledger-demo
 **Epic Roadmap:** (filled during EXECUTE)
-**Tech Spec:** (filled during EXECUTE)
-**Status:** pending
+**Tech Spec:** .ai-epics/docs/ledger-demo/tech-spec.md
+**Status:** in-progress
 
 ## Epic 3: Ritual Demo
 **Objective:** Build all 6 Ritual demo screens (Onboarding, Current Circle, Group Chat, Member Profile, Matches, 1:1 Chat) with mock data, Ritual dark theme, phone simulator, and icon-based bottom nav.

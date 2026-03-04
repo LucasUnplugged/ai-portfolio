@@ -1,0 +1,18 @@
+integrations: [github]
+github:
+  owner: LucasUnplugged
+  repo: ai-portfolio
+  mode: owner
+  project_number: 2
+  project_node_id: PVT_kwHOACW_X84BQuKN
+  status_field_id: PVTSSF_lAHOACW_X84BQuKNzg-wl-o
+  status_options:
+    planning: 488593a0
+    todo: 32e8980f
+    in_progress: 08819a36
+    in_review: a6523f37
+    done: 9872853f
+notifications:
+  channel: ntfy
+  topic: lucas-ai-portfolio-dev
+feature_flags: config/flags.ts

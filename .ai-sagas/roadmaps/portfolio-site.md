@@ -21,7 +21,7 @@ created: 2026-03-03
 **Dependencies:** none
 **Estimated stages:** ~4
 **Epic slug:** foundation-landing-case-studies
-**Epic Roadmap:** (filled during EXECUTE)
+**Epic Roadmap:** .ai-epics/roadmaps/2026-03-03-foundation-landing-case-studies.md
 **Tech Spec:** .ai-epics/docs/foundation-landing-case-studies/tech-spec.md
 **Status:** in-progress
 

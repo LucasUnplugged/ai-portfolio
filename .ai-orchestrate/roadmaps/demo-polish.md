@@ -88,42 +88,43 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Epic branch:** epic/circles-overhaul
 **Tracking issue:** #49
 **PR:** #53
-**Status:** in-progress
+**Status:** complete
 
 ### Stage 3.1: Circle Editing & Frequency Model
 **Issue:** #50
 **Branch prefix:** feat
 **Acceptance criteria:**
-- [ ] Remove `contactFrequencyDays` from Person type
-- [ ] Add `contactFrequencyDays: number` to Circle type
-- [ ] Circles are editable: name, emoji, description, frequency
-- [ ] Can create new circles
-- [ ] Overview page shows each circle with its members visually displayed inside (avatars/cards within each circle)
-- [ ] Drag or UI control to move a person between circles
-- [ ] Build passes
-**Status:** pending
+- [x] Remove `contactFrequencyDays` from Person type
+- [x] Add `contactFrequencyDays: number` to Circle type
+- [x] Circles are editable: name, emoji, description, frequency
+- [x] Can create new circles
+- [x] Overview page shows each circle with its members visually displayed inside (avatars/cards within each circle)
+- [x] Drag or UI control to move a person between circles
+- [x] Build passes
+**Status:** done
 
 ### Stage 3.2: Labels System
 **Issue:** #51
 **Branch prefix:** feat
 **Acceptance criteria:**
-- [ ] Remove `relationship` field from Person type
-- [ ] Add `labels: string[]` to Person type
-- [ ] Labels have unique colors (auto-assigned from a palette)
-- [ ] Person form: type to create new label OR select from dropdown of existing labels
-- [ ] Labels displayed as colored chips on person cards
-- [ ] Build passes
-**Status:** pending
+- [x] Remove `relationship` field from Person type
+- [x] Add `labels: string[]` to Person type
+- [x] Labels have unique colors (auto-assigned from a palette)
+- [x] Person form: type to create new label OR select from dropdown of existing labels
+- [x] Labels displayed as colored chips on person cards
+- [x] Build passes
+**Status:** done
 
 ### Stage 3.3: Messaging
 **Issue:** #52
 **Branch prefix:** feat
 **Acceptance criteria:**
-- [ ] Add messaging UI to person detail page
-- [ ] Can compose and "send" messages (added to local state)
-- [ ] Messages displayed in chronological thread with timestamps
-- [ ] Build passes
-**Status:** pending
+- [x] Add messaging UI to person detail page
+- [x] Can compose and "send" messages (added to local state)
+- [x] Messages displayed in chronological thread with timestamps
+- [x] Build passes
+**Stage PR:** #54
+**Status:** done
 
 ## Epic 4: Local Storage Persistence
 **Objective:** Add localStorage support for all app state across all 3 demos

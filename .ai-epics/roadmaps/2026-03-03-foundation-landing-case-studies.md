@@ -34,7 +34,7 @@
 **GitHub Sub-Issue:** #4
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXfE
 **Stage Branch:** feat/foundation-landing-case-studies/shared-components-demo-layouts
-**Stage PR:** (pending)
+**Stage PR:** #9
 **Acceptance criteria:**
 - [x] SiteHeader with nav links to case studies
 - [x] SiteFooter with minimal content
@@ -53,17 +53,17 @@
 **Estimated scope:** ~5 files, ~400 lines
 **GitHub Sub-Issue:** #5
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXfc
-**Stage Branch:** (pending)
+**Stage Branch:** feat/foundation-landing-case-studies/landing-page
 **Stage PR:** (pending)
 **Acceptance criteria:**
-- [ ] Hero section with name, title, professional summary
-- [ ] Skills/expertise section
-- [ ] Three case study cards with visual previews and descriptions
-- [ ] Each card links to its case study page
-- [ ] Responsive design (mobile and desktop)
-- [ ] Uses shadcn/ui components
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] Hero section with name, title, professional summary
+- [x] Skills/expertise section
+- [x] Three case study cards with visual previews and descriptions
+- [x] Each card links to its case study page
+- [x] Responsive design (mobile and desktop)
+- [x] Uses shadcn/ui components
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0
 
 ## Stage 4: Case Study Pages

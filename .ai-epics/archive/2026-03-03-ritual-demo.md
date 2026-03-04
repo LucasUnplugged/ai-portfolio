@@ -6,7 +6,7 @@
 - **Project Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnv0
 - **Epic PR:** #24
 - **Created:** 2026-03-03
-- **Status:** in-progress
+- **Status:** done
 - **Project Node ID:** PVT_kwHOACW_X84BQuKN
 - **Status Field ID:** PVTSSF_lAHOACW_X84BQuKNzg-wl-o
 - **Status Options:** Planning=488593a0, Todo=32e8980f, In Progress=08819a36, In Review=a6523f37, Done=9872853f
@@ -16,7 +16,7 @@
 **Estimated scope:** ~12 files, ~600 lines
 **GitHub Sub-Issue:** #21
 **Stage Branch:** feat/ritual-demo/data-nav-components
-**Stage PR:** (filled in ADVANCE)
+**Stage PR:** #25
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnwk
 **Acceptance criteria:**
 - [x] All mock data modules created with realistic data
@@ -32,7 +32,7 @@
 **Estimated scope:** ~6 files, ~500 lines
 **GitHub Sub-Issue:** #22
 **Stage Branch:** feat/ritual-demo/onboarding-circle-chat
-**Stage PR:** (filled in ADVANCE)
+**Stage PR:** #26
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnxM
 **Acceptance criteria:**
 - [x] Onboarding screen with serif heading, tagline, and CTA
@@ -49,7 +49,7 @@
 **Estimated scope:** ~6 files, ~500 lines
 **GitHub Sub-Issue:** #23
 **Stage Branch:** feat/ritual-demo/profile-matches-dm
-**Stage PR:** (filled in ADVANCE)
+**Stage PR:** #27
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnxo
 **Acceptance criteria:**
 - [x] Member Profile with avatar, bio, interests tags

@@ -146,7 +146,19 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Tracking issue:** #48
 **Status:** pending
 
-### Stage 5.1: Home Page & Navigation Polish
+### Stage 5.1: Case Study Content Rewrite
+**Branch prefix:** feat
+**Acceptance criteria:**
+- [ ] Ritual: replace "reach out more" anxiety framing with messaging about swiping anxiety/addiction → calm weekly space for connection
+- [ ] Ritual design approach: replace typeface details with design intent (what is emphasized and why)
+- [ ] Ledger: emphasize version tracking on everything for compliance/auditing, moving fast without fear of losing history
+- [ ] Ledger design approach: replace typeface details with design intent (what is emphasized and why)
+- [ ] Circles: emphasize circle categorization for managing evolving relationships over time
+- [ ] Circles design approach: replace typeface details with design intent (what is emphasized and why)
+- [ ] Build passes
+**Status:** pending
+
+### Stage 5.2: Home Page & Navigation Polish
 **Branch prefix:** feat
 **Acceptance criteria:**
 - [ ] Home page: case studies section displays to the right of main blurb on larger screens (no scroll required)
@@ -156,7 +168,7 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 - [ ] Build passes
 **Status:** pending
 
-### Stage 5.2: Sticky Footer
+### Stage 5.3: Sticky Footer
 **Branch prefix:** feat
 **Acceptance criteria:**
 - [ ] Site footer is shorter and sticky (fixed to bottom)

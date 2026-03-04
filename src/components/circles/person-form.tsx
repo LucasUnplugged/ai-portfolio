@@ -4,13 +4,6 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { circles } from "@/data/circles";
 
 export function PersonForm() {
@@ -53,25 +46,6 @@ export function PersonForm() {
             </button>
           ))}
         </div>
-      </div>
-
-      <div className="space-y-1.5">
-        <label
-          htmlFor="frequency"
-          className="text-xs font-medium text-foreground"
-        >
-          Contact frequency
-        </label>
-        <Select>
-          <SelectTrigger id="frequency">
-            <SelectValue placeholder="How often?" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="7">Weekly</SelectItem>
-            <SelectItem value="14">Bi-weekly</SelectItem>
-            <SelectItem value="30">Monthly</SelectItem>
-          </SelectContent>
-        </Select>
       </div>
 
       <div className="space-y-1.5">

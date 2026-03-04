@@ -53,6 +53,7 @@ created: 2026-03-03
 **Dependencies:** Epic 1
 **Estimated stages:** ~3
 **Epic slug:** circles-demo
-**Epic Roadmap:** (filled during EXECUTE)
+**Epic Roadmap:** .ai-epics/archive/2026-03-04-circles-demo.md
 **Tech Spec:** .ai-epics/docs/circles-demo/tech-spec.md
-**Status:** in-progress
+**Status:** done
+**Review notes:** All 6 screens delivered, light teal theme consistent, phone simulator and icon-based bottom nav working. No PRD drift.

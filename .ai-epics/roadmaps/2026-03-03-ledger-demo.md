@@ -16,7 +16,7 @@
 **Estimated scope:** ~15 files, ~800 lines
 **GitHub Sub-Issue:** #13
 **Stage Branch:** feat/ledger-demo/sidebar-data-components
-**Stage PR:** (filled in ADVANCE)
+**Stage PR:** #17
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmngl8
 **Acceptance criteria:**
 - [x] Sidebar with navigation links to all 7 screens
@@ -32,17 +32,17 @@
 **Objective:** Build the first 3 screens — Dashboard (stat cards, activity feed, project grid), Project Overview (tabbed content), and Document Editor (mock toolbar, rich content, collaboration indicators).
 **Estimated scope:** ~10 files, ~700 lines
 **GitHub Sub-Issue:** #14
-**Stage Branch:** (filled in BREAKDOWN)
+**Stage Branch:** feat/ledger-demo/dashboard-project-document
 **Stage PR:** (filled in ADVANCE)
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmngmQ
 **Acceptance criteria:**
-- [ ] Dashboard with 4 stat cards, activity feed, and project cards
-- [ ] Project Overview with Documents/Tasks/Activity tabs
-- [ ] Document Editor with toolbar, rich content blocks, and collaborator sidebar
-- [ ] All screens use Ledger amber theme consistently
-- [ ] Realistic mock data rendered throughout
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] Dashboard with 4 stat cards, activity feed, and project cards
+- [x] Project Overview with Documents/Tasks/Activity tabs
+- [x] Document Editor with toolbar, rich content blocks, and collaborator sidebar
+- [x] All screens use Ledger amber theme consistently
+- [x] Realistic mock data rendered throughout
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0
 
 ## Stage 3: Change Review, Task Board, Conflict Resolution & Audit Log

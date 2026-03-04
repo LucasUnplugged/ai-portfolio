@@ -4,7 +4,7 @@ import "./globals.css";
 
 export default function RitualLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="ritual-theme min-h-screen bg-background text-foreground">
+    <div className="ritual-theme dark min-h-screen bg-background text-foreground">
       <PhoneSimulator>{children}</PhoneSimulator>
     </div>
   );

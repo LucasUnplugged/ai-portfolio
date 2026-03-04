@@ -42,9 +42,10 @@ created: 2026-03-03
 **Dependencies:** Epic 1
 **Estimated stages:** ~3
 **Epic slug:** ritual-demo
-**Epic Roadmap:** (filled during EXECUTE)
+**Epic Roadmap:** .ai-epics/archive/2026-03-03-ritual-demo.md
 **Tech Spec:** .ai-epics/docs/ritual-demo/tech-spec.md
-**Status:** in-progress
+**Status:** done
+**Review notes:** All 6 screens delivered, dark purple theme consistent, phone simulator and icon-based bottom nav working. No PRD drift.
 
 ## Epic 4: Circles Demo
 **Objective:** Build all 6 Circles demo screens (Onboarding, Today View, Circles Overview, Person Profile, Add Person, Reflection) with mock data, Circles teal theme, phone simulator, and icon-based bottom nav.

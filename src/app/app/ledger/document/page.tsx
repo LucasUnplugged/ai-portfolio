@@ -111,11 +111,11 @@ export default function DocumentEditorPage() {
                 {/* Mock cursor between blocks 2 and 3 */}
                 {i === 2 && (
                   <div
-                    className="absolute -left-8 top-0 flex items-center gap-2"
+                    className="group absolute -left-8 top-0 flex items-center gap-2"
                     aria-hidden="true"
                   >
                     <div className="h-6 w-0.5 animate-pulse rounded-full bg-blue-500" />
-                    <span className="whitespace-nowrap rounded bg-blue-500 px-1.5 py-0.5 text-[10px] text-white">
+                    <span className="whitespace-nowrap rounded bg-blue-500 px-1.5 py-0.5 text-[10px] text-white opacity-0 group-hover:opacity-100 transition-opacity">
                       Marcus
                     </span>
                   </div>

@@ -1,17 +1,24 @@
 "use client";
 
-import { activeCircle, getUserById } from "@/data/ritual";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Users, X } from "lucide-react";
 import { RitualShell } from "@/components/ritual/ritual-shell";
-import { CircleMember } from "@/components/ritual/circle-member";
 import { PromptCard } from "@/components/ritual/prompt-card";
+import { ChatBubble } from "@/components/ritual/chat-bubble";
+import { ChatInput } from "@/components/ritual/chat-input";
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import {
+  activeCircle,
+  groupMessages,
+  getUserById,
+  currentUser,
+} from "@/data/ritual";
+import type { ChatMessage } from "@/data/ritual/types";
 
-const members = activeCircle.memberIds
-  .map((id) => getUserById(id))
-  .filter(Boolean) as NonNullable<ReturnType<typeof getUserById>>[];
-
-const now = new Date();
+// Calculate day info
+const now = new Date("2026-03-04");
 const end = new Date(activeCircle.endDate);
 const start = new Date(activeCircle.startDate);
 const totalDays = Math.ceil(
@@ -22,61 +29,171 @@ const elapsed = Math.ceil(
 );
 const dayNumber = Math.max(1, Math.min(elapsed, totalDays));
 const daysRemaining = Math.max(0, totalDays - elapsed);
-const progress = Math.min(100, Math.round((dayNumber / totalDays) * 100));
+
+// Inline GIF messages
+const gifMessages: ChatMessage[] = [
+  {
+    id: "gm-gif-1",
+    senderId: "ru-07",
+    text: "",
+    timestamp: "2026-03-01T11:20:00Z",
+    type: "text",
+    gifUrl: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+  },
+  {
+    id: "gm-gif-2",
+    senderId: "ru-06",
+    text: "",
+    timestamp: "2026-03-03T09:50:00Z",
+    type: "text",
+    gifUrl: "https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif",
+  },
+];
+
+// Merge and sort all messages
+const allMessages = [...groupMessages, ...gifMessages].sort(
+  (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
+);
+
+// Static emoji reactions
+const messageReactions: Record<string, string[]> = {
+  "gm-04": ["💜", "👍"],
+  "gm-06": ["😍"],
+  "gm-11": ["🤩"],
+  "gm-17": ["😍", "🐕"],
+};
+
+// Group messages by date for day dividers
+function getDateLabel(timestamp: string): string {
+  const date = new Date(timestamp);
+  return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+}
+
+// Members list
+const members = activeCircle.memberIds
+  .map((id) => getUserById(id))
+  .filter(Boolean) as NonNullable<ReturnType<typeof getUserById>>[];
 
 export default function CirclePage() {
+  const [showMembers, setShowMembers] = useState(false);
+
+  let lastDateLabel = "";
+
   return (
     <RitualShell current="circle">
-      <div className="p-4 space-y-6">
-        {/* Circle header */}
-        <div>
-          <h1 className="text-xl font-heading font-bold tracking-tight">
-            {activeCircle.name}
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            {activeCircle.description}
-          </p>
-          <div className="mt-3 space-y-1.5">
-            <div className="flex items-center justify-between text-xs">
-              <span className="text-muted-foreground">
-                Day {dayNumber} of {totalDays}
-              </span>
-              <span className="text-primary font-medium">
-                {daysRemaining} day{daysRemaining !== 1 ? "s" : ""} remaining
-              </span>
-            </div>
-            <div className="h-1.5 rounded-full bg-secondary overflow-hidden">
-              <div
-                className="h-full rounded-full bg-primary transition-all"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
+      <div className="flex flex-col h-full">
+        {/* Header */}
+        <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-card shrink-0">
+          <div className="flex items-center gap-2">
+            <h1 className="font-heading font-bold text-base">Circle</h1>
+            <span className="text-[11px] text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+              {daysRemaining} day{daysRemaining !== 1 ? "s" : ""} left
+            </span>
+          </div>
+          <button
+            onClick={() => setShowMembers(true)}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="View members"
+          >
+            <Users className="h-5 w-5" />
+          </button>
+        </div>
+
+        {/* Scrollable content */}
+        <div className="flex-1 overflow-y-auto">
+          {/* Prompt card */}
+          <div className="p-4 pb-2">
+            <PromptCard
+              prompt={activeCircle.currentPrompt}
+              dayNumber={dayNumber}
+            />
+          </div>
+
+          {/* Chat feed */}
+          <div className="px-4 pb-4 space-y-3">
+            {allMessages.map((message) => {
+              const sender = getUserById(message.senderId);
+              if (!sender) return null;
+
+              const dateLabel = getDateLabel(message.timestamp);
+              const showDivider = dateLabel !== lastDateLabel;
+              lastDateLabel = dateLabel;
+
+              return (
+                <div key={message.id}>
+                  {showDivider && (
+                    <div className="flex items-center gap-3 py-3">
+                      <div className="flex-1 h-px bg-border" />
+                      <span className="text-[10px] text-muted-foreground uppercase tracking-wider">
+                        {dateLabel}
+                      </span>
+                      <div className="flex-1 h-px bg-border" />
+                    </div>
+                  )}
+                  <ChatBubble
+                    message={message}
+                    sender={sender}
+                    isCurrentUser={message.senderId === currentUser.id}
+                    isGroupChat
+                    reactions={messageReactions[message.id]}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* Daily Prompt */}
-        <div className="space-y-3">
-          <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-            Today&apos;s Prompt
-          </h2>
-          <PromptCard prompt={activeCircle.currentPrompt} />
-          <Button variant="outline" className="w-full gap-2">
-            <MessageCircle className="h-4 w-4" />
-            Share your response
-          </Button>
-        </div>
+        {/* Chat input */}
+        <ChatInput />
 
-        {/* Members grid */}
-        <div className="space-y-3">
-          <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-            Your Circle
-          </h2>
-          <div className="grid grid-cols-4 gap-4">
-            {members.map((user) => (
-              <CircleMember key={user.id} user={user} />
-            ))}
+        {/* Members modal */}
+        {showMembers && (
+          <div className="absolute inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-end">
+            <div className="w-full bg-card border-t border-border rounded-t-2xl max-h-[70%] flex flex-col">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-border shrink-0">
+                <h2 className="font-heading font-semibold text-sm">
+                  Circle Members ({members.length})
+                </h2>
+                <button
+                  onClick={() => setShowMembers(false)}
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+              <div className="overflow-y-auto p-2">
+                {members.map((user) => (
+                  <div
+                    key={user.id}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted/50 transition-colors"
+                  >
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0">
+                      <Image
+                        src={user.photos[0]}
+                        alt={user.name}
+                        fill
+                        className="object-cover"
+                        sizes="40px"
+                        unoptimized
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium truncate">
+                        {user.name}, {user.age}
+                      </p>
+                      <p className="text-xs text-muted-foreground truncate">
+                        {user.location}
+                      </p>
+                    </div>
+                    <Button size="sm" variant="outline" className="shrink-0" asChild>
+                      <Link href={`/app/ritual/profile/${user.id}`}>View</Link>
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </RitualShell>
   );

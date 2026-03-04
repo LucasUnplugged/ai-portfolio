@@ -35,6 +35,7 @@
   --font-serif: Bricolage Grotesque, ui-sans-serif, sans-serif, system-ui;
   --font-mono: ADLaM Display, ui-serif, serif;
   --radius: 0.25rem;
+  --tracking-normal: 0em;
   --shadow-2xs: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00);
   --shadow-xs: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00);
   --shadow-sm: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00), 2px 1px 2px -1px hsl(26.6667 17.6471% 20% / 0.00);
@@ -43,7 +44,6 @@
   --shadow-lg: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00), 2px 4px 6px -1px hsl(26.6667 17.6471% 20% / 0.00);
   --shadow-xl: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00), 2px 8px 10px -1px hsl(26.6667 17.6471% 20% / 0.00);
   --shadow-2xl: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00);
-  --tracking-normal: 0em;
 }
 
 .ledger-theme.dark,
@@ -80,10 +80,6 @@
   --sidebar-accent-foreground: oklch(0.9280 0.0263 82.3839);
   --sidebar-border: oklch(0.3796 0.0246 54.5408);
   --sidebar-ring: oklch(0.7369 0.0805 66.0333);
-  --font-sans: Manrope, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: Bricolage Grotesque, ui-sans-serif, sans-serif, system-ui;
-  --font-mono: ADLaM Display, ui-serif, serif;
-  --radius: 0.25rem;
   --shadow-2xs: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00);
   --shadow-xs: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00);
   --shadow-sm: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00), 2px 1px 2px -1px hsl(26.6667 17.6471% 20% / 0.00);
@@ -92,5 +88,4 @@
   --shadow-lg: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00), 2px 4px 6px -1px hsl(26.6667 17.6471% 20% / 0.00);
   --shadow-xl: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00), 2px 8px 10px -1px hsl(26.6667 17.6471% 20% / 0.00);
   --shadow-2xl: 2px 3px 1px 0px hsl(26.6667 17.6471% 20% / 0.00);
-  --tracking-normal: 0em;
 }

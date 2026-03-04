@@ -9,6 +9,7 @@ created: 2026-03-04
 Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul Ritual into a dating-app-style social circle app, fix Ledger cursor label, overhaul Circles CRM with editable circles/labels/messaging, and add localStorage persistence to all 3 demos.
 
 ## Metadata
+- **Tracking issue:** #36
 - **Created:** 2026-03-04
 - **Auto-merge:** false
 - **Integrations:** github
@@ -18,9 +19,11 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Dependencies:** none
 **Epic slug:** demo-foundation
 **Epic branch:** epic/demo-foundation
-**Status:** pending
+**PR:** #37
+**Status:** in-progress
 
 ### Stage 1.1: Fix CSS Theme Scoping
+**Issue:** #38
 **Branch prefix:** fix
 **Acceptance criteria:**
 - [ ] Each demo's globals.css scopes variables under `.ledger-theme` / `.ritual-theme` / `.circles-theme` (and `.ledger-theme.dark` etc.) instead of `:root` / `.dark`
@@ -32,6 +35,7 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Status:** pending
 
 ### Stage 1.2: Consolidate Headers
+**Issue:** #39
 **Branch prefix:** feat
 **Acceptance criteria:**
 - [ ] Remove DemoHeader component
@@ -42,6 +46,7 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Status:** pending
 
 ### Stage 1.3: Circles Dark Mode + Ledger Cursor Fix
+**Issue:** #40
 **Branch prefix:** fix
 **Acceptance criteria:**
 - [ ] Circles demo renders in dark mode by default (add `.dark` class to its theme wrapper)

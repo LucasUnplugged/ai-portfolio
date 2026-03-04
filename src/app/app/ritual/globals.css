@@ -35,6 +35,7 @@
   --font-serif: Adamina, ui-serif, serif;
   --font-mono: Fira Code, ui-monospace, monospace;
   --radius: 0.5rem;
+  --tracking-normal: -0.025em;
   --shadow-2xs: 0 0.2rem 0.5rem 0 hsl(222.2222 47.3684% 11.1765% / 0.03);
   --shadow-xs: 0 0.2rem 0.5rem 0 hsl(222.2222 47.3684% 11.1765% / 0.03);
   --shadow-sm: 0 0.2rem 0.5rem 0 hsl(222.2222 47.3684% 11.1765% / 0.05), 0 1px 2px -1px hsl(222.2222 47.3684% 11.1765% / 0.05);
@@ -43,7 +44,6 @@
   --shadow-lg: 0 0.2rem 0.5rem 0 hsl(222.2222 47.3684% 11.1765% / 0.05), 0 4px 6px -1px hsl(222.2222 47.3684% 11.1765% / 0.05);
   --shadow-xl: 0 0.2rem 0.5rem 0 hsl(222.2222 47.3684% 11.1765% / 0.05), 0 8px 10px -1px hsl(222.2222 47.3684% 11.1765% / 0.05);
   --shadow-2xl: 0 0.2rem 0.5rem 0 hsl(222.2222 47.3684% 11.1765% / 0.13);
-  --tracking-normal: -0.025em;
 }
 
 .ritual-theme.dark,
@@ -80,10 +80,6 @@
   --sidebar-accent-foreground: oklch(0.9842 0.0034 247.8575);
   --sidebar-border: oklch(0.3717 0.0392 257.2870);
   --sidebar-ring: oklch(0.6056 0.2189 292.7172);
-  --font-sans: Afacad, ui-sans-serif, sans-serif, system-ui;
-  --font-serif: Adamina, ui-serif, serif;
-  --font-mono: Fira Code, ui-monospace, monospace;
-  --radius: 0.5rem;
   --shadow-2xs: 0 0.3rem 0.7rem 0 hsl(0 0% 0% / 0.15);
   --shadow-xs: 0 0.3rem 0.7rem 0 hsl(0 0% 0% / 0.15);
   --shadow-sm: 0 0.3rem 0.7rem 0 hsl(0 0% 0% / 0.30), 0 1px 2px -1px hsl(0 0% 0% / 0.30);
@@ -92,5 +88,4 @@
   --shadow-lg: 0 0.3rem 0.7rem 0 hsl(0 0% 0% / 0.30), 0 4px 6px -1px hsl(0 0% 0% / 0.30);
   --shadow-xl: 0 0.3rem 0.7rem 0 hsl(0 0% 0% / 0.30), 0 8px 10px -1px hsl(0 0% 0% / 0.30);
   --shadow-2xl: 0 0.3rem 0.7rem 0 hsl(0 0% 0% / 0.75);
-  --tracking-normal: -0.025em;
 }

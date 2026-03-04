@@ -5,6 +5,7 @@ export type {
   Reminder,
   Reflection,
 } from "./types";
+export { getLabelColor } from "./types";
 
 export { people, getPersonById } from "./people";
 export { circles, getCircleById } from "./circles";

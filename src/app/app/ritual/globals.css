@@ -1,0 +1,31 @@
+.ritual-theme {
+  color-scheme: dark;
+  --background: 0.18 0.04 290;
+  --foreground: 0.93 0.02 290;
+  --card: 0.22 0.04 290;
+  --card-foreground: 0.93 0.02 290;
+  --popover: 0.22 0.04 290;
+  --popover-foreground: 0.93 0.02 290;
+  --primary: 0.65 0.25 310;
+  --primary-foreground: 0.98 0.01 290;
+  --secondary: 0.28 0.05 290;
+  --secondary-foreground: 0.88 0.03 290;
+  --muted: 0.25 0.04 290;
+  --muted-foreground: 0.65 0.03 290;
+  --accent: 0.35 0.08 310;
+  --accent-foreground: 0.93 0.02 290;
+  --destructive: 0.55 0.2 25;
+  --destructive-foreground: 0.98 0.01 290;
+  --border: 0.3 0.04 290;
+  --input: 0.3 0.04 290;
+  --ring: 0.65 0.25 310;
+  --chart-1: 0.65 0.25 310;
+  --chart-2: 0.7 0.15 340;
+  --chart-3: 0.55 0.15 260;
+  --chart-4: 0.7 0.12 30;
+  --chart-5: 0.6 0.2 120;
+  --radius: 0.5rem;
+  --font-sans: var(--font-afacad);
+  --font-heading: var(--font-adamina);
+  --font-mono: var(--font-fira-code);
+}

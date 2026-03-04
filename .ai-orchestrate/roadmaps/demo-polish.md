@@ -1,6 +1,6 @@
 ---
 slug: demo-polish
-status: planning
+status: in-progress
 created: 2026-03-04
 ---
 # Demo Apps Polish & Enhancement
@@ -62,9 +62,12 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Dependencies:** Epic 1
 **Epic slug:** ritual-overhaul
 **Epic branch:** epic/ritual-overhaul
-**Status:** pending
+**Tracking issue:** #43
+**PR:** #47
+**Status:** in-progress
 
 ### Stage 2.1: Data Model & Profile Redesign
+**Issue:** #44
 **Branch prefix:** feat
 **Acceptance criteria:**
 - [ ] Update RitualUser type: add `photos: string[]` (stock photo URLs from picsum/unsplash), `datingPrompt: { question: string; answer: string }`, `occupation: string`
@@ -77,6 +80,7 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Status:** pending
 
 ### Stage 2.2: Merged Circle+Chat Page
+**Issue:** #45
 **Branch prefix:** feat
 **Acceptance criteria:**
 - [ ] Merge circle and chat pages into one page at `/app/ritual/circle`
@@ -91,6 +95,7 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Status:** pending
 
 ### Stage 2.3: Matching & DM Functionality
+**Issue:** #46
 **Branch prefix:** feat
 **Acceptance criteria:**
 - [ ] Connections page: Matches tab shows matched users, Requests tab shows incoming/outgoing requests

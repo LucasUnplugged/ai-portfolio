@@ -33,7 +33,7 @@
 **Estimated scope:** ~10 files, ~700 lines
 **GitHub Sub-Issue:** #14
 **Stage Branch:** feat/ledger-demo/dashboard-project-document
-**Stage PR:** (filled in ADVANCE)
+**Stage PR:** #18
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmngmQ
 **Acceptance criteria:**
 - [x] Dashboard with 4 stat cards, activity feed, and project cards
@@ -49,16 +49,16 @@
 **Objective:** Build the remaining 4 screens — Change Review (diff viewer), Task Board (Kanban), Conflict Resolution (three-panel merge), and Audit Log (filterable table).
 **Estimated scope:** ~12 files, ~800 lines
 **GitHub Sub-Issue:** #15
-**Stage Branch:** (filled in BREAKDOWN)
+**Stage Branch:** feat/ledger-demo/remaining-screens
 **Stage PR:** (filled in ADVANCE)
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmngmw
 **Acceptance criteria:**
-- [ ] Change Review with side-by-side diff and action buttons
-- [ ] Task Board with 4-column Kanban layout
-- [ ] Conflict Resolution with three-panel merge view
-- [ ] Audit Log with filterable/sortable table
-- [ ] All screens use Ledger amber theme consistently
-- [ ] Realistic mock data rendered throughout
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] Change Review with side-by-side diff and action buttons
+- [x] Task Board with 4-column Kanban layout
+- [x] Conflict Resolution with three-panel merge view
+- [x] Audit Log with filterable/sortable table
+- [x] All screens use Ledger amber theme consistently
+- [x] Realistic mock data rendered throughout
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0

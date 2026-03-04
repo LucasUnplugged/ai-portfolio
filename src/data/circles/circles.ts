@@ -8,6 +8,7 @@ export const circles: Circle[] = [
     description: "The people who know you best. Prioritize regular quality time.",
     memberIds: ["cp-01", "cp-02", "cp-03", "cp-04"],
     color: "text-yellow-600",
+    contactFrequencyDays: 7,
   },
   {
     id: "cc-02",
@@ -16,6 +17,7 @@ export const circles: Circle[] = [
     description: "Your family circle. Stay connected even when life gets busy.",
     memberIds: ["cp-05", "cp-06", "cp-07", "cp-08"],
     color: "text-rose-600",
+    contactFrequencyDays: 14,
   },
   {
     id: "cc-03",
@@ -24,6 +26,7 @@ export const circles: Circle[] = [
     description: "Professional relationships that matter beyond work.",
     memberIds: ["cp-09", "cp-10", "cp-11", "cp-12"],
     color: "text-blue-600",
+    contactFrequencyDays: 21,
   },
 ];
 

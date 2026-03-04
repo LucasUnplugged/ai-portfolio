@@ -48,15 +48,15 @@
 **Objective:** Build the remaining 3 screens — Member Profile (avatar, bio, interests), Matches (tabs for matches/requests), and 1:1 Chat (DM thread with input).
 **Estimated scope:** ~6 files, ~500 lines
 **GitHub Sub-Issue:** #23
-**Stage Branch:** (filled in BREAKDOWN)
+**Stage Branch:** feat/ritual-demo/profile-matches-dm
 **Stage PR:** (filled in ADVANCE)
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnxo
 **Acceptance criteria:**
-- [ ] Member Profile with avatar, bio, interests tags
-- [ ] Matches view with Matches/Requests tabs
-- [ ] 1:1 Chat with direct message thread and input
-- [ ] All screens use Ritual dark theme consistently
-- [ ] Realistic mock data rendered throughout
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] Member Profile with avatar, bio, interests tags
+- [x] Matches view with Matches/Requests tabs
+- [x] 1:1 Chat with direct message thread and input
+- [x] All screens use Ritual dark theme consistently
+- [x] Realistic mock data rendered throughout
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0

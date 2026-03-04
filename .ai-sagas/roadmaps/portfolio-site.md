@@ -21,9 +21,9 @@ created: 2026-03-03
 **Dependencies:** none
 **Estimated stages:** ~4
 **Epic slug:** foundation-landing-case-studies
-**Epic Roadmap:** .ai-epics/roadmaps/2026-03-03-foundation-landing-case-studies.md
+**Epic Roadmap:** .ai-epics/archive/2026-03-03-foundation-landing-case-studies.md
 **Tech Spec:** .ai-epics/docs/foundation-landing-case-studies/tech-spec.md
-**Status:** in-progress
+**Status:** done
 
 ## Epic 2: Ledger Demo
 **Objective:** Build all 7 Ledger demo screens (Dashboard, Project Overview, Document Editor, Change Review, Task Board, Conflict Resolution, Audit Log) with full mock data, Ledger theme, and desktop-first layout.

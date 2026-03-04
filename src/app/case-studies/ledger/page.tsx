@@ -44,10 +44,11 @@ export default function LedgerCaseStudy() {
           The Concept
         </h2>
         <p className="leading-relaxed text-foreground">
-          Think Notion meets Linear — a real-time collaborative workspace with a
-          warm, inviting aesthetic. Ledger brings together project tracking,
-          knowledge management, and team communication in a desktop-first
-          interface designed for power users who care about craft.
+          Every document, task, project, and decision gets full version
+          tracking — every change logged, every version recoverable. Ledger is
+          built for teams that need compliance-grade auditing without
+          sacrificing speed. Iterate boldly, ship fast, and never worry about
+          losing history. Nothing is lost, so nothing holds you back.
         </p>
       </section>
 
@@ -70,11 +71,12 @@ export default function LedgerCaseStudy() {
           Design Approach
         </h2>
         <p className="leading-relaxed text-foreground">
-          A warm amber palette grounds the interface in approachability while
-          maintaining professional clarity. Manrope handles UI text with friendly
-          geometry, Bricolage Grotesque brings character to headings, and ADLaM
-          Display provides distinctive display moments. The emphasis is on
-          density done right — every pixel earns its place.
+          The warm amber palette keeps a serious tool feeling approachable —
+          inviting rather than cold or sterile. Information density is
+          intentional: power users scanning audit logs and change histories
+          need everything visible at a glance. A clear visual hierarchy guides
+          attention through complex data, surfacing what matters without
+          burying context.
         </p>
       </section>
 

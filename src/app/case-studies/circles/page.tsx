@@ -44,10 +44,12 @@ export default function CirclesCaseStudy() {
           The Concept
         </h2>
         <p className="leading-relaxed text-foreground">
-          A mobile app that helps you nurture personal and professional
-          relationships with gentle reminders and organized contact management.
-          Circles takes the stress out of staying in touch by making
-          relationship care feel natural, not transactional.
+          People drift. Close friends become distant acquaintances; a casual
+          colleague becomes a confidant. Circles maps your social world as
+          concentric rings of closeness — inner circle, extended circle,
+          wider network — and lets relationships flow naturally between them.
+          Not every connection needs the same frequency of care, and that&apos;s
+          the point.
         </p>
       </section>
 
@@ -70,11 +72,12 @@ export default function CirclesCaseStudy() {
           Design Approach
         </h2>
         <p className="leading-relaxed text-foreground">
-          A fresh teal palette on a light background creates openness and
-          friendliness. Inter provides clean readability for everyday text,
-          JetBrains Mono marks data elements with clarity. Rounded shapes and
-          generous whitespace keep the interface calm — this app should feel
-          like a breath of fresh air, not another productivity tool.
+          Teal signals growth and organic connection — warm enough to feel
+          human, fresh enough to avoid the sterile look of productivity tools.
+          The minimal visual language is deliberate: the app should disappear,
+          putting faces and names at the center instead of charts and metrics.
+          Rounded shapes and generous whitespace create a calm, people-first
+          flow that feels organic rather than rigid.
         </p>
       </section>
 

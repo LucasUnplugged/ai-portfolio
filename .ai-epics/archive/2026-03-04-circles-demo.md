@@ -6,7 +6,7 @@
 - **Project Item ID:** PVTI_lAHOACW_X84BQuKNzgmntUI
 - **Epic PR:** #32
 - **Created:** 2026-03-04
-- **Status:** in-progress
+- **Status:** done
 - **Project Node ID:** PVT_kwHOACW_X84BQuKN
 - **Status Field ID:** PVTSSF_lAHOACW_X84BQuKNzg-wl-o
 - **Status Options:** Planning=488593a0, Todo=32e8980f, In Progress=08819a36, In Review=a6523f37, Done=9872853f
@@ -16,7 +16,7 @@
 **Estimated scope:** ~12 files, ~600 lines
 **GitHub Sub-Issue:** #29
 **Stage Branch:** feat/circles-demo/data-nav-components
-**Stage PR:** (filled in ADVANCE)
+**Stage PR:** #33
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmntUk
 **Acceptance criteria:**
 - [x] All mock data modules created with realistic data
@@ -32,7 +32,7 @@
 **Estimated scope:** ~6 files, ~500 lines
 **GitHub Sub-Issue:** #30
 **Stage Branch:** feat/circles-demo/onboarding-today-overview
-**Stage PR:** (filled in ADVANCE)
+**Stage PR:** #34
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmntVM
 **Acceptance criteria:**
 - [x] Onboarding screen with heading, tagline, and CTA
@@ -49,7 +49,7 @@
 **Estimated scope:** ~6 files, ~500 lines
 **GitHub Sub-Issue:** #31
 **Stage Branch:** feat/circles-demo/profile-add-reflection
-**Stage PR:** (filled in ADVANCE)
+**Stage PR:** #35
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmntVg
 **Acceptance criteria:**
 - [x] Person Profile with avatar, bio, interaction timeline

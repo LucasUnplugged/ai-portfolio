@@ -1,0 +1,15 @@
+{
+  "role": "orchestrator",
+  "pid": 24426,
+  "saga": {
+    "roadmap": ".ai-sagas/roadmaps/portfolio-site.md",
+    "currentEpic": 3,
+    "autoMerge": true
+  },
+  "epic": {
+    "roadmap": ".ai-epics/roadmaps/2026-03-03-ritual-demo.md",
+    "currentStage": 1,
+    "stageBranch": "feat/ritual-demo/data-nav-components",
+    "returnTo": "verify"
+  }
+}

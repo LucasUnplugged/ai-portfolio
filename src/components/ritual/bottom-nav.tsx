@@ -2,16 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Users, MessageCircle, Heart, User } from "lucide-react";
+import { MessageCircle, Heart, User } from "lucide-react";
 
 const navItems = [
-  { icon: Users, href: "/app/ritual/circle", id: "circle" as const },
-  { icon: MessageCircle, href: "/app/ritual/chat", id: "chat" as const },
-  { icon: Heart, href: "/app/ritual/matches", id: "matches" as const },
-  { icon: User, href: "/app/ritual/profile", id: "profile" as const },
+  { icon: MessageCircle, href: "/app/ritual/circle", id: "circle" as const, label: "Circle" },
+  { icon: Heart, href: "/app/ritual/matches", id: "matches" as const, label: "Connections" },
+  { icon: User, href: "/app/ritual/profile", id: "profile" as const, label: "Profile" },
 ] as const;
 
-type NavId = (typeof navItems)[number]["id"];
+export type NavId = (typeof navItems)[number]["id"];
 
 interface BottomNavProps {
   current?: NavId;
@@ -22,7 +21,7 @@ export function BottomNav({ current }: BottomNavProps) {
 
   return (
     <nav className="flex items-center justify-around h-14 bg-card border-t border-border shrink-0">
-      {navItems.map(({ icon: Icon, href, id }) => {
+      {navItems.map(({ icon: Icon, href, id, label }) => {
         const isActive = current === id || pathname === href;
         return (
           <Link
@@ -33,9 +32,9 @@ export function BottomNav({ current }: BottomNavProps) {
                 ? "text-primary"
                 : "text-muted-foreground hover:text-foreground"
             }`}
-            aria-label={id}
+            aria-label={label}
           >
-            <Icon className="h-5 w-5" />
+            <Icon className="h-5 w-5" fill={isActive ? "currentColor" : "none"} />
           </Link>
         );
       })}

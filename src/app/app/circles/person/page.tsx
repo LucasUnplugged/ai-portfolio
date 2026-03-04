@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLocalStorage } from "@/hooks/use-local-storage";
 import Link from "next/link";
 import { ArrowLeft, Send } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -56,7 +57,7 @@ function groupByDate(msgs: Message[]): { date: string; messages: Message[] }[] {
 let nextMsgId = 100;
 
 export default function PersonProfilePage() {
-  const [messageList, setMessageList] = useState<Message[]>(initialMessages);
+  const [messageList, setMessageList] = useLocalStorage<Message[]>(`circles-messages-${person.id}`, initialMessages);
   const [inputText, setInputText] = useState("");
 
   function sendMessage() {

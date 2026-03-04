@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useCallback } from "react";
 import { CirclesShell } from "@/components/circles/circles-shell";
 import { CircleCard } from "@/components/circles/circle-card";
 import {
@@ -8,13 +8,14 @@ import {
   people as initialPeople,
 } from "@/data/circles";
 import type { Circle, Person } from "@/data/circles";
+import { useLocalStorage } from "@/hooks/use-local-storage";
 import { Plus } from "lucide-react";
 
 let nextCircleId = 100;
 
 export default function CirclesOverviewPage() {
-  const [circlesList, setCirclesList] = useState<Circle[]>(initialCircles);
-  const [peopleList, setPeopleList] = useState<Person[]>(initialPeople);
+  const [circlesList, setCirclesList] = useLocalStorage<Circle[]>("circles-circles", initialCircles);
+  const [peopleList, setPeopleList] = useLocalStorage<Person[]>("circles-people", initialPeople);
 
   const movePerson = useCallback(
     (personId: string, targetCircleId: string) => {
@@ -24,7 +25,7 @@ export default function CirclesOverviewPage() {
         )
       );
     },
-    []
+    [setPeopleList]
   );
 
   const editCircle = useCallback(
@@ -33,7 +34,7 @@ export default function CirclesOverviewPage() {
         prev.map((c) => (c.id === circleId ? { ...c, ...updates } : c))
       );
     },
-    []
+    [setCirclesList]
   );
 
   const addCircle = useCallback(() => {
@@ -50,7 +51,7 @@ export default function CirclesOverviewPage() {
         contactFrequencyDays: 14,
       },
     ]);
-  }, []);
+  }, [setCirclesList]);
 
   return (
     <CirclesShell current="overview">

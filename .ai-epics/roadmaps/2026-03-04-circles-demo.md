@@ -15,16 +15,16 @@
 **Objective:** Create all mock data modules (people, circles, interactions, reminders, reflections), the bottom navigation bar, CirclesShell wrapper, and reusable Circles components (person-card, circle-card, reminder-card, reflection-prompt, person-form, interaction-item).
 **Estimated scope:** ~12 files, ~600 lines
 **GitHub Sub-Issue:** #29
-**Stage Branch:** (filled in BREAKDOWN)
+**Stage Branch:** feat/circles-demo/data-nav-components
 **Stage PR:** (filled in ADVANCE)
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmntUk
 **Acceptance criteria:**
-- [ ] All mock data modules created with realistic data
-- [ ] Bottom navigation with 4 icon-only links
-- [ ] CirclesShell component wrapping content + bottom nav
-- [ ] Shared Circles components built
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] All mock data modules created with realistic data
+- [x] Bottom navigation with 4 icon-only links
+- [x] CirclesShell component wrapping content + bottom nav
+- [x] Shared Circles components built
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0
 
 ## Stage 2: Onboarding, Today View & Circles Overview

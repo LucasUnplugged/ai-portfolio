@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Users, X } from "lucide-react";
@@ -9,9 +9,10 @@ import { PromptCard } from "@/components/ritual/prompt-card";
 import { ChatBubble } from "@/components/ritual/chat-bubble";
 import { ChatInput } from "@/components/ritual/chat-input";
 import { Button } from "@/components/ui/button";
+import { useLocalStorage } from "@/hooks/use-local-storage";
 import {
   activeCircle,
-  groupMessages,
+  groupMessages as initialGroupMessages,
   getUserById,
   currentUser,
 } from "@/data/ritual";
@@ -50,10 +51,7 @@ const gifMessages: ChatMessage[] = [
   },
 ];
 
-// Merge and sort all messages
-const allMessages = [...groupMessages, ...gifMessages].sort(
-  (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
-);
+// allMessages computed inside component after localStorage hydration
 
 // Static emoji reactions
 const messageReactions: Record<string, string[]> = {
@@ -75,7 +73,15 @@ const members = activeCircle.memberIds
   .filter(Boolean) as NonNullable<ReturnType<typeof getUserById>>[];
 
 export default function CirclePage() {
+  const [storedMessages] = useLocalStorage<ChatMessage[]>("ritual-group-messages", initialGroupMessages);
   const [showMembers, setShowMembers] = useState(false);
+
+  const allMessages = useMemo(
+    () => [...storedMessages, ...gifMessages].sort(
+      (a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime()
+    ),
+    [storedMessages]
+  );
 
   let lastDateLabel = "";
 

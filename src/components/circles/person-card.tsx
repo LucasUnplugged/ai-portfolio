@@ -1,4 +1,5 @@
 import type { Person, Circle } from "@/data/circles";
+import { getLabelColor } from "@/data/circles";
 import { ArrowRightLeft } from "lucide-react";
 import {
   DropdownMenu,
@@ -33,9 +34,21 @@ export function PersonCard({ person, otherCircles, onMove }: PersonCardProps) {
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-sm font-medium truncate">{person.name}</p>
-        <p className="text-xs text-muted-foreground capitalize">
-          {person.relationship}
-        </p>
+        <div className="flex flex-wrap gap-1 mt-0.5">
+          {person.labels.slice(0, 3).map((label) => (
+            <span
+              key={label}
+              className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${getLabelColor(label)}`}
+            >
+              {label}
+            </span>
+          ))}
+          {person.labels.length > 3 && (
+            <span className="text-[10px] text-muted-foreground">
+              +{person.labels.length - 3}
+            </span>
+          )}
+        </div>
       </div>
       <p className="text-xs text-muted-foreground shrink-0">
         {formatLastContact(person.lastContact)}

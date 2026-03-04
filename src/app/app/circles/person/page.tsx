@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { CirclesShell } from "@/components/circles/circles-shell";
 import { InteractionItem } from "@/components/circles/interaction-item";
-import { people, getInteractionsForPerson, getCircleById } from "@/data/circles";
+import { people, getInteractionsForPerson, getCircleById, getLabelColor } from "@/data/circles";
 
 const person = people[0]; // Maya Chen
 const personInteractions = getInteractionsForPerson(person.id);
@@ -31,10 +31,21 @@ export default function PersonProfilePage() {
           </div>
           <div>
             <h1 className="text-lg font-semibold">{person.name}</h1>
-            <p className="text-sm text-muted-foreground capitalize">
-              {person.relationship}
-              {circle && ` · ${circle.name}`}
-            </p>
+            <div className="flex flex-wrap justify-center gap-1.5 mt-1">
+              {person.labels.map((label) => (
+                <span
+                  key={label}
+                  className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${getLabelColor(label)}`}
+                >
+                  {label}
+                </span>
+              ))}
+              {circle && (
+                <span className="text-xs text-muted-foreground">
+                  · {circle.name}
+                </span>
+              )}
+            </div>
           </div>
         </div>
 

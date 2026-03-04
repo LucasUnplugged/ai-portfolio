@@ -13,8 +13,18 @@ export default function RitualOnboarding() {
       {/* Content */}
       <div className="relative z-10 flex w-full max-w-xs flex-col items-center text-center">
         {/* Decorative ring */}
-        <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-primary/30 bg-primary/10">
-          <div className="h-10 w-10 rounded-full border-2 border-primary/60" />
+        <div className="mb-8 flex h-20 w-20 items-center justify-center">
+          <svg viewBox="0 0 80 80" className="h-20 w-20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {Array.from({ length: 8 }).map((_, i) => {
+              const angle = (i * 360) / 8;
+              const rad = (angle * Math.PI) / 180;
+              const cx = 40 + 28 * Math.cos(rad);
+              const cy = 40 + 28 * Math.sin(rad);
+              return <circle key={i} cx={cx} cy={cy} r={5} className="stroke-primary/60" strokeWidth={1.2} />;
+            })}
+            <circle cx={40} cy={40} r={10} className="stroke-primary/60" strokeWidth={1.2} />
+            <circle cx={40} cy={40} r={28} className="stroke-primary/20" strokeWidth={0.8} />
+          </svg>
         </div>
 
         {/* Title */}

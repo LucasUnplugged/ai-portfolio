@@ -1,0 +1,62 @@
+# Epic: Ritual Demo
+
+- **Branch:** epic/ritual-demo
+- **Feature flag:** ritual_demo
+- **GitHub Issue:** #20
+- **Project Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnv0
+- **Epic PR:** #24
+- **Created:** 2026-03-03
+- **Status:** in-progress
+- **Project Node ID:** PVT_kwHOACW_X84BQuKN
+- **Status Field ID:** PVTSSF_lAHOACW_X84BQuKNzg-wl-o
+- **Status Options:** Planning=488593a0, Todo=32e8980f, In Progress=08819a36, In Review=a6523f37, Done=9872853f
+
+## Stage 1: Mock Data, Bottom Nav & Shared Components
+**Objective:** Create all mock data modules (users, circles, messages, matches), the bottom navigation bar, RitualShell wrapper, and reusable Ritual components (chat-bubble, chat-input, prompt-card, match-card, circle-member, profile-header).
+**Estimated scope:** ~12 files, ~600 lines
+**GitHub Sub-Issue:** #21
+**Stage Branch:** feat/ritual-demo/data-nav-components
+**Stage PR:** (filled in ADVANCE)
+**Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnwk
+**Acceptance criteria:**
+- [x] All mock data modules created with realistic data
+- [x] Bottom navigation with 4 icon-only links
+- [x] RitualShell component wrapping content + bottom nav
+- [x] Shared Ritual components built
+- [x] npm run build succeeds
+**Status:** complete
+**Iterations:** 0
+
+## Stage 2: Onboarding, Current Circle & Group Chat
+**Objective:** Build the first 3 screens — Onboarding (welcome + CTA), Current Circle (members grid, daily prompt, time indicator), and Group Chat (message list, chat input).
+**Estimated scope:** ~6 files, ~500 lines
+**GitHub Sub-Issue:** #22
+**Stage Branch:** feat/ritual-demo/onboarding-circle-chat
+**Stage PR:** (filled in ADVANCE)
+**Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnxM
+**Acceptance criteria:**
+- [x] Onboarding screen with serif heading, tagline, and CTA
+- [x] Current Circle with member grid, daily prompt, and time indicator
+- [x] Group Chat with message list, prompt responses, and input bar
+- [x] All screens use Ritual dark theme consistently
+- [x] Realistic mock data rendered throughout
+- [x] npm run build succeeds
+**Status:** complete
+**Iterations:** 0
+
+## Stage 3: Member Profile, Matches & 1:1 Chat
+**Objective:** Build the remaining 3 screens — Member Profile (avatar, bio, interests), Matches (tabs for matches/requests), and 1:1 Chat (DM thread with input).
+**Estimated scope:** ~6 files, ~500 lines
+**GitHub Sub-Issue:** #23
+**Stage Branch:** feat/ritual-demo/profile-matches-dm
+**Stage PR:** (filled in ADVANCE)
+**Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnxo
+**Acceptance criteria:**
+- [x] Member Profile with avatar, bio, interests tags
+- [x] Matches view with Matches/Requests tabs
+- [x] 1:1 Chat with direct message thread and input
+- [x] All screens use Ritual dark theme consistently
+- [x] Realistic mock data rendered throughout
+- [x] npm run build succeeds
+**Status:** complete
+**Iterations:** 0

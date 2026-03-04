@@ -1,6 +1,6 @@
 ---
 saga: portfolio-site
-status: in-progress
+status: done
 created: 2026-03-03
 ---
 
@@ -10,7 +10,7 @@ created: 2026-03-03
 - **GitHub Issue:** #1
 - **Project Item ID:** PVTI_lAHOACW_X84BQuKNzgmnWN8
 - **Created:** 2026-03-03
-- **Status:** in-progress
+- **Status:** done
 - **Auto-merge:** true
 - **Notification channel:** ntfy
 - **Notification topic:** lucas-ai-portfolio-dev

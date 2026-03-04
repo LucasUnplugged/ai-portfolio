@@ -1,6 +1,6 @@
 ---
 saga: portfolio-site
-status: active
+status: shipped
 created: 2026-03-03
 author: Lucas Castro + Claude
 ---

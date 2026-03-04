@@ -15,16 +15,16 @@
 **Objective:** Create all mock data modules (users, circles, messages, matches), the bottom navigation bar, RitualShell wrapper, and reusable Ritual components (chat-bubble, chat-input, prompt-card, match-card, circle-member, profile-header).
 **Estimated scope:** ~12 files, ~600 lines
 **GitHub Sub-Issue:** #21
-**Stage Branch:** (filled in BREAKDOWN)
+**Stage Branch:** feat/ritual-demo/data-nav-components
 **Stage PR:** (filled in ADVANCE)
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnwk
 **Acceptance criteria:**
-- [ ] All mock data modules created with realistic data
-- [ ] Bottom navigation with 4 icon-only links
-- [ ] RitualShell component wrapping content + bottom nav
-- [ ] Shared Ritual components built
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] All mock data modules created with realistic data
+- [x] Bottom navigation with 4 icon-only links
+- [x] RitualShell component wrapping content + bottom nav
+- [x] Shared Ritual components built
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0
 
 ## Stage 2: Onboarding, Current Circle & Group Chat

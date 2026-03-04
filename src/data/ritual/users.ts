@@ -1,0 +1,98 @@
+import type { RitualUser } from "./types";
+
+export const users: RitualUser[] = [
+  {
+    id: "ru-01",
+    name: "Alex Mendoza",
+    age: 28,
+    avatarInitials: "AM",
+    bio: "Architect by day, trail runner by weekend. Looking for someone who appreciates both blueprints and sunsets.",
+    interests: ["trail running", "architecture", "cooking", "vinyl records"],
+    location: "Portland, OR",
+    joinedAt: "2026-02-20T10:00:00Z",
+    status: "online",
+  },
+  {
+    id: "ru-02",
+    name: "Noa Kim",
+    age: 26,
+    avatarInitials: "NK",
+    bio: "Plant parent to 47 succulents. If you can keep a conversation alive as well as I keep plants alive, we'll get along.",
+    interests: ["gardening", "ceramics", "yoga", "science fiction"],
+    location: "Seattle, WA",
+    joinedAt: "2026-02-21T14:30:00Z",
+    status: "online",
+  },
+  {
+    id: "ru-03",
+    name: "Jordan Ellis",
+    age: 31,
+    avatarInitials: "JE",
+    bio: "Documentary filmmaker chasing stories worth telling. Always down for a deep conversation over cheap wine.",
+    interests: ["filmmaking", "photography", "hiking", "board games", "wine"],
+    location: "Austin, TX",
+    joinedAt: "2026-02-20T18:00:00Z",
+    status: "away",
+  },
+  {
+    id: "ru-04",
+    name: "Mira Osei",
+    age: 25,
+    avatarInitials: "MO",
+    bio: "Music teacher who plays five instruments badly and one really well. Guess which one.",
+    interests: ["music", "baking", "rock climbing", "thrift shopping"],
+    location: "Denver, CO",
+    joinedAt: "2026-02-22T09:15:00Z",
+    status: "online",
+  },
+  {
+    id: "ru-05",
+    name: "Sam Nakamura",
+    age: 29,
+    avatarInitials: "SN",
+    bio: "Software engineer trying to touch grass more often. Will trade coding tips for hiking recommendations.",
+    interests: ["coding", "hiking", "coffee", "sci-fi novels"],
+    location: "San Francisco, CA",
+    joinedAt: "2026-02-21T11:00:00Z",
+    status: "offline",
+  },
+  {
+    id: "ru-06",
+    name: "Priya Anand",
+    age: 27,
+    avatarInitials: "PA",
+    bio: "Veterinarian with a weakness for bad puns and good chai. My cat has veto power on all matches.",
+    interests: ["animals", "reading", "travel", "stand-up comedy"],
+    location: "Chicago, IL",
+    joinedAt: "2026-02-20T16:45:00Z",
+    status: "online",
+  },
+  {
+    id: "ru-07",
+    name: "Leo Vargas",
+    age: 33,
+    avatarInitials: "LV",
+    bio: "Chef who believes the best dates start in a kitchen. Will cook for you on the second date if the first one goes well.",
+    interests: ["cooking", "salsa dancing", "surfing", "podcasts"],
+    location: "Los Angeles, CA",
+    joinedAt: "2026-02-22T13:00:00Z",
+    status: "away",
+  },
+  {
+    id: "ru-08",
+    name: "Kai Bennett",
+    age: 30,
+    avatarInitials: "KB",
+    bio: "Bookstore owner who judges people by their favorite chapter, not their cover. Currently reading three books at once.",
+    interests: ["reading", "writing", "cycling", "live music", "trivia"],
+    location: "Portland, OR",
+    joinedAt: "2026-02-21T08:30:00Z",
+    status: "offline",
+  },
+];
+
+export const currentUser = users[0];
+
+export function getUserById(id: string): RitualUser | undefined {
+  return users.find((u) => u.id === id);
+}

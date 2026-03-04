@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { useLocalStorage } from "@/hooks/use-local-storage";
 import { auditLog, users, getUserById } from "@/data/ledger";
 import type { AuditAction } from "@/data/ledger/types";
 import { Badge } from "@/components/ui/badge";
@@ -56,8 +57,8 @@ const allActions: AuditAction[] = [
 ];
 
 export default function AuditLogPage() {
-  const [userFilter, setUserFilter] = useState("all");
-  const [actionFilter, setActionFilter] = useState("all");
+  const [userFilter, setUserFilter] = useLocalStorage<string>("ledger-audit-user-filter", "all");
+  const [actionFilter, setActionFilter] = useLocalStorage<string>("ledger-audit-action-filter", "all");
 
   const filtered = useMemo(() => {
     return auditLog.filter((entry) => {

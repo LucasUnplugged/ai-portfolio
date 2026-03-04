@@ -8,8 +8,8 @@
   },
   "epic": {
     "roadmap": ".ai-epics/roadmaps/2026-03-03-ritual-demo.md",
-    "currentStage": 2,
-    "stageBranch": "feat/ritual-demo/onboarding-circle-chat",
+    "currentStage": 3,
+    "stageBranch": "feat/ritual-demo/profile-matches-dm",
     "returnTo": "verify"
   }
 }

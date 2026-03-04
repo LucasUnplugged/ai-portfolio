@@ -7,7 +7,7 @@ export default function AddPersonPage() {
   return (
     <CirclesShell current="add">
       <div className="p-4 space-y-4">
-        <h1 className="text-xl font-semibold">Add Person</h1>
+        <h1 className="text-xl font-semibold">Add Contact</h1>
         <PersonForm />
       </div>
     </CirclesShell>

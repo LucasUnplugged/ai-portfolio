@@ -6,7 +6,7 @@ created: 2026-03-04
 # Demo Apps Polish & Enhancement
 
 ## Overview
-Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul Ritual into a dating-app-style social circle app, fix Ledger cursor label, overhaul Circles CRM with editable circles/labels/messaging, and add localStorage persistence to all 3 demos.
+Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul Ritual into a dating-app-style social circle app, fix Ledger cursor label, overhaul Circles CRM with editable circles/labels/messaging, add localStorage persistence to all 3 demos, and polish the site layout (home page, navigation, footer).
 
 ## Metadata
 - **Tracking issue:** #36
@@ -156,5 +156,31 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 - [ ] Ritual: persist circle messages, match states, DM threads, profile edits
 - [ ] Circles: persist people, circles, interactions, labels, messages
 - [ ] Data initializes from static mock data on first load, persists changes thereafter
+- [ ] Build passes
+**Status:** pending
+
+## Epic 5: Site Polish
+**Objective:** Polish home page layout, navigation styling, and footer across the site
+**Dependencies:** Epic 1
+**Epic slug:** site-polish
+**Epic branch:** epic/site-polish
+**Tracking issue:** #48
+**Status:** pending
+
+### Stage 5.1: Home Page & Navigation Polish
+**Branch prefix:** feat
+**Acceptance criteria:**
+- [ ] Home page: case studies section displays to the right of main blurb on larger screens (no scroll required)
+- [ ] Demo pages: top-right nav becomes a toggle group with "Demos" label to the left
+- [ ] Main nav: "Case Studies:" label (lighter font) to the left of case study links
+- [ ] Main nav: non-selected case studies slightly darker text; selected has light background with site button border-radius
+- [ ] Build passes
+**Status:** pending
+
+### Stage 5.2: Sticky Footer
+**Branch prefix:** feat
+**Acceptance criteria:**
+- [ ] Site footer is shorter and sticky (fixed to bottom)
+- [ ] All pages have sufficient bottom padding/margin so content isn't hidden by sticky footer
 - [ ] Build passes
 **Status:** pending

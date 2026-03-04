@@ -8,18 +8,29 @@ export interface RitualUser {
   location: string;
   joinedAt: string;
   status: "online" | "offline" | "away";
+  photos: string[];
+  occupation: string;
+  datingPrompts: { question: string; answer: string }[];
+}
+
+export interface PromptOption {
+  id: string;
+  emoji: string;
+  text: string;
 }
 
 export interface DailyPrompt {
   id: string;
   text: string;
   date: string;
+  options?: PromptOption[];
   responses: PromptResponse[];
 }
 
 export interface PromptResponse {
   userId: string;
   text: string;
+  optionId?: string;
 }
 
 export interface Circle {
@@ -40,6 +51,7 @@ export interface ChatMessage {
   timestamp: string;
   type: "text" | "prompt-response";
   promptId?: string;
+  gifUrl?: string;
 }
 
 export interface DMThread {

@@ -1,6 +1,6 @@
 ---
 slug: demo-polish
-status: planning
+status: in-progress
 created: 2026-03-04
 ---
 # Demo Apps Polish & Enhancement
@@ -62,45 +62,24 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Dependencies:** Epic 1
 **Epic slug:** ritual-overhaul
 **Epic branch:** epic/ritual-overhaul
-**Status:** pending
+**Tracking issue:** #43
+**PR:** #47
+**Status:** complete
 
 ### Stage 2.1: Data Model & Profile Redesign
+**Issue:** #44
 **Branch prefix:** feat
-**Acceptance criteria:**
-- [ ] Update RitualUser type: add `photos: string[]` (stock photo URLs from picsum/unsplash), `datingPrompt: { question: string; answer: string }`, `occupation: string`
-- [ ] Circle type: rename `endDate` logic to reflect 1-week cycle, rename "Fireside Circle" → "Circle" everywhere
-- [ ] Update mock data: each user gets 2-3 stock photos, unique dating prompt+answer, occupation, location
-- [ ] Profile page shows the current user's own profile (not another person's) with: large hero photo, name/age/location/occupation, dating prompt card, Edit Profile + Photos tabs
-- [ ] Other users' profiles: viewed via "View" button — show hero photo, name/age/location, dating prompt, "Request Match" button
-- [ ] Photos management UI on own profile (grid of photos with add/remove affordances)
-- [ ] Build passes
-**Status:** pending
+**Status:** done
 
 ### Stage 2.2: Merged Circle+Chat Page
+**Issue:** #45
 **Branch prefix:** feat
-**Acceptance criteria:**
-- [ ] Merge circle and chat pages into one page at `/app/ritual/circle`
-- [ ] Top section: weekly prompt card with answer options (like design ref images)
-- [ ] Below prompt: conversation feed with messages from circle members
-- [ ] Day dividers between messages from different days (visual line breaks with date)
-- [ ] Some messages include GIF images (cat GIFs, Schitt's Creek memes — use real GIF URLs from giphy/tenor)
-- [ ] Message input at bottom with send functionality (adds to local state)
-- [ ] Remove separate `/app/ritual/chat` route
-- [ ] Bottom nav: Circle (chat icon), Matches (heart), Profile (user)
-- [ ] Build passes
-**Status:** pending
+**Status:** done
 
 ### Stage 2.3: Matching & DM Functionality
+**Issue:** #46
 **Branch prefix:** feat
-**Acceptance criteria:**
-- [ ] Connections page: Matches tab shows matched users, Requests tab shows incoming/outgoing requests
-- [ ] "Request Match" on profile triggers a pending request
-- [ ] Accept/decline incoming requests
-- [ ] Matched users can be tapped to open DM thread
-- [ ] DM page: message input, send messages, timestamps
-- [ ] Typography cleanup: consistent heading sizes across all pages
-- [ ] Build passes
-**Status:** pending
+**Status:** done
 
 ## Epic 3: Circles CRM Overhaul
 **Objective:** Add editable circles, contact frequency per circle, visual people in circles, labels system, messaging

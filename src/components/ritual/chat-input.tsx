@@ -1,11 +1,11 @@
-import { Send } from "lucide-react";
+import { Send, Smile } from "lucide-react";
 
 interface ChatInputProps {
   placeholder?: string;
 }
 
 export function ChatInput({
-  placeholder = "Type a message...",
+  placeholder = "Share your thoughts...",
 }: ChatInputProps) {
   return (
     <div className="flex items-center gap-2 p-3 bg-card border-t border-border shrink-0">
@@ -17,7 +17,14 @@ export function ChatInput({
       />
       <button
         type="button"
-        className="flex items-center justify-center h-9 w-9 rounded-full text-primary hover:bg-secondary transition-colors"
+        className="flex items-center justify-center h-9 w-9 text-muted-foreground hover:text-foreground transition-colors"
+        aria-label="Emoji"
+      >
+        <Smile className="h-5 w-5" />
+      </button>
+      <button
+        type="button"
+        className="flex items-center justify-center h-9 w-9 rounded-full bg-primary text-primary-foreground"
         aria-label="Send message"
       >
         <Send className="h-4 w-4" />

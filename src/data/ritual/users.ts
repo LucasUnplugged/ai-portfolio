@@ -11,6 +11,16 @@ export const users: RitualUser[] = [
     location: "Portland, OR",
     joinedAt: "2026-02-20T10:00:00Z",
     status: "online",
+    occupation: "Architect",
+    photos: [
+      "https://picsum.photos/seed/alex-1/400/500",
+      "https://picsum.photos/seed/alex-2/400/500",
+      "https://picsum.photos/seed/alex-3/400/500",
+    ],
+    datingPrompts: [
+      { question: "A NON-NEGOTIABLE", answer: "Someone who can sit in comfortable silence. Not every moment needs to be filled with words." },
+      { question: "MY SIMPLE PLEASURE", answer: "Sketching buildings at golden hour with a thermos of black coffee." },
+    ],
   },
   {
     id: "ru-02",
@@ -22,6 +32,16 @@ export const users: RitualUser[] = [
     location: "Seattle, WA",
     joinedAt: "2026-02-21T14:30:00Z",
     status: "online",
+    occupation: "Ceramic Artist",
+    photos: [
+      "https://picsum.photos/seed/noa-1/400/500",
+      "https://picsum.photos/seed/noa-2/400/500",
+      "https://picsum.photos/seed/noa-3/400/500",
+    ],
+    datingPrompts: [
+      { question: "A GREEN FLAG", answer: "You name your plants. Bonus points if you talk to them." },
+      { question: "AFTER-WORK RITUAL", answer: "Repotting something that doesn't need repotting while listening to lo-fi beats." },
+    ],
   },
   {
     id: "ru-03",
@@ -33,6 +53,16 @@ export const users: RitualUser[] = [
     location: "Austin, TX",
     joinedAt: "2026-02-20T18:00:00Z",
     status: "away",
+    occupation: "Documentary Filmmaker",
+    photos: [
+      "https://picsum.photos/seed/jordan-1/400/500",
+      "https://picsum.photos/seed/jordan-2/400/500",
+      "https://picsum.photos/seed/jordan-3/400/500",
+    ],
+    datingPrompts: [
+      { question: "UNPOPULAR OPINION", answer: "The best conversations happen after midnight with people you just met." },
+      { question: "UNUSUAL SKILL", answer: "I can edit a full documentary on a 12-hour flight and still have time for two movies." },
+    ],
   },
   {
     id: "ru-04",
@@ -44,6 +74,16 @@ export const users: RitualUser[] = [
     location: "Denver, CO",
     joinedAt: "2026-02-22T09:15:00Z",
     status: "online",
+    occupation: "Music Teacher",
+    photos: [
+      "https://picsum.photos/seed/mira-1/400/500",
+      "https://picsum.photos/seed/mira-2/400/500",
+      "https://picsum.photos/seed/mira-3/400/500",
+    ],
+    datingPrompts: [
+      { question: "MY SIMPLE PLEASURE", answer: "Playing piano with the windows open on a rainy afternoon. The acoustics hit different." },
+      { question: "A NON-NEGOTIABLE", answer: "You have to be okay with spontaneous kitchen dance sessions. They're mandatory." },
+    ],
   },
   {
     id: "ru-05",
@@ -55,6 +95,16 @@ export const users: RitualUser[] = [
     location: "San Francisco, CA",
     joinedAt: "2026-02-21T11:00:00Z",
     status: "offline",
+    occupation: "Software Engineer",
+    photos: [
+      "https://picsum.photos/seed/sam-1/400/500",
+      "https://picsum.photos/seed/sam-2/400/500",
+      "https://picsum.photos/seed/sam-3/400/500",
+    ],
+    datingPrompts: [
+      { question: "A GREEN FLAG", answer: "You have strong opinions about coffee brewing methods. Pour-over people, I see you." },
+      { question: "UNPOPULAR OPINION", answer: "Tabs over spaces. I will not elaborate." },
+    ],
   },
   {
     id: "ru-06",
@@ -66,6 +116,16 @@ export const users: RitualUser[] = [
     location: "Chicago, IL",
     joinedAt: "2026-02-20T16:45:00Z",
     status: "online",
+    occupation: "Veterinarian",
+    photos: [
+      "https://picsum.photos/seed/priya-1/400/500",
+      "https://picsum.photos/seed/priya-2/400/500",
+      "https://picsum.photos/seed/priya-3/400/500",
+    ],
+    datingPrompts: [
+      { question: "UNUSUAL SKILL", answer: "I can tell what's wrong with your pet by the way they walk through the door. Party trick or professional talent? Both." },
+      { question: "AFTER-WORK RITUAL", answer: "Chai, couch, cat on lap, and whatever comedy special just dropped." },
+    ],
   },
   {
     id: "ru-07",
@@ -77,6 +137,16 @@ export const users: RitualUser[] = [
     location: "Los Angeles, CA",
     joinedAt: "2026-02-22T13:00:00Z",
     status: "away",
+    occupation: "Executive Chef",
+    photos: [
+      "https://picsum.photos/seed/leo-1/400/500",
+      "https://picsum.photos/seed/leo-2/400/500",
+      "https://picsum.photos/seed/leo-3/400/500",
+    ],
+    datingPrompts: [
+      { question: "A NON-NEGOTIABLE", answer: "You have to enjoy food. Not just eating — tasting, exploring, debating whether cilantro is divine or soap." },
+      { question: "MY SIMPLE PLEASURE", answer: "Early morning at the fish market before the city wakes up. Best ingredients, zero crowds." },
+    ],
   },
   {
     id: "ru-08",
@@ -88,6 +158,16 @@ export const users: RitualUser[] = [
     location: "Portland, OR",
     joinedAt: "2026-02-21T08:30:00Z",
     status: "offline",
+    occupation: "Bookstore Owner",
+    photos: [
+      "https://picsum.photos/seed/kai-1/400/500",
+      "https://picsum.photos/seed/kai-2/400/500",
+      "https://picsum.photos/seed/kai-3/400/500",
+    ],
+    datingPrompts: [
+      { question: "A GREEN FLAG", answer: "You have a 'currently reading' stack that's taller than your nightstand. Chaotic reader energy is welcome here." },
+      { question: "UNUSUAL SKILL", answer: "I can recommend a book based on your mood, your lunch order, or the last movie you cried at." },
+    ],
   },
 ];
 

@@ -33,19 +33,19 @@
 **Estimated scope:** ~12 files, ~600 lines
 **GitHub Sub-Issue:** #4
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnXfE
-**Stage Branch:** (pending)
+**Stage Branch:** feat/foundation-landing-case-studies/shared-components-demo-layouts
 **Stage PR:** (pending)
 **Acceptance criteria:**
-- [ ] SiteHeader with nav links to case studies
-- [ ] SiteFooter with minimal content
-- [ ] DemoHeader with back-to-portfolio link and cross-demo navigation
-- [ ] PhoneSimulator component (375x812 frame, centered, scrollable content)
-- [ ] Ledger demo layout applies Ledger theme (light)
-- [ ] Ritual demo layout applies Ritual theme (dark) inside phone simulator
-- [ ] Circles demo layout applies Circles theme (light) inside phone simulator
-- [ ] All demo placeholder pages render with correct themes
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] SiteHeader with nav links to case studies
+- [x] SiteFooter with minimal content
+- [x] DemoHeader with back-to-portfolio link and cross-demo navigation
+- [x] PhoneSimulator component (375x812 frame, centered, scrollable content)
+- [x] Ledger demo layout applies Ledger theme (light)
+- [x] Ritual demo layout applies Ritual theme (dark) inside phone simulator
+- [x] Circles demo layout applies Circles theme (light) inside phone simulator
+- [x] All demo placeholder pages render with correct themes
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0
 
 ## Stage 3: Landing Page

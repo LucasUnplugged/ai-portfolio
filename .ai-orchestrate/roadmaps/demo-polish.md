@@ -131,18 +131,21 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Dependencies:** Epic 2, Epic 3
 **Epic slug:** demo-localstorage
 **Epic branch:** epic/demo-localstorage
-**Status:** pending
+**Tracking issue:** #55
+**PR:** #57
+**Status:** complete
 
 ### Stage 4.1: Storage Hook & All Demos
 **Branch prefix:** feat
 **Acceptance criteria:**
-- [ ] Create a `useLocalStorage<T>` hook that syncs React state to localStorage
-- [ ] Ledger: persist any interactive state (audit filters, tab selections)
-- [ ] Ritual: persist circle messages, match states, DM threads, profile edits
-- [ ] Circles: persist people, circles, interactions, labels, messages
-- [ ] Data initializes from static mock data on first load, persists changes thereafter
-- [ ] Build passes
-**Status:** pending
+- [x] Create a `useLocalStorage<T>` hook that syncs React state to localStorage
+- [x] Ledger: persist any interactive state (audit filters, tab selections)
+- [x] Ritual: persist circle messages, match states, DM threads, profile edits
+- [x] Circles: persist people, circles, interactions, labels, messages
+- [x] Data initializes from static mock data on first load, persists changes thereafter
+- [x] Build passes
+**Stage PR:** #56
+**Status:** done
 
 ## Epic 5: Site Polish
 **Objective:** Polish home page layout, navigation styling, and footer across the site

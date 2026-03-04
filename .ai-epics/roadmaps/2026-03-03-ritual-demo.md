@@ -31,17 +31,17 @@
 **Objective:** Build the first 3 screens — Onboarding (welcome + CTA), Current Circle (members grid, daily prompt, time indicator), and Group Chat (message list, chat input).
 **Estimated scope:** ~6 files, ~500 lines
 **GitHub Sub-Issue:** #22
-**Stage Branch:** (filled in BREAKDOWN)
+**Stage Branch:** feat/ritual-demo/onboarding-circle-chat
 **Stage PR:** (filled in ADVANCE)
 **Board Item ID:** PVTI_lAHOACW_X84BQuKNzgmnnxM
 **Acceptance criteria:**
-- [ ] Onboarding screen with serif heading, tagline, and CTA
-- [ ] Current Circle with member grid, daily prompt, and time indicator
-- [ ] Group Chat with message list, prompt responses, and input bar
-- [ ] All screens use Ritual dark theme consistently
-- [ ] Realistic mock data rendered throughout
-- [ ] npm run build succeeds
-**Status:** pending
+- [x] Onboarding screen with serif heading, tagline, and CTA
+- [x] Current Circle with member grid, daily prompt, and time indicator
+- [x] Group Chat with message list, prompt responses, and input bar
+- [x] All screens use Ritual dark theme consistently
+- [x] Realistic mock data rendered throughout
+- [x] npm run build succeeds
+**Status:** complete
 **Iterations:** 0
 
 ## Stage 3: Member Profile, Matches & 1:1 Chat

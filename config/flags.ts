@@ -32,7 +32,7 @@ const ENV: Environment =
 
 export function getFlag(name: FlagName, env: Environment = ENV): boolean {
   const flag = flagRegistry[name];
-  return flag.overrides?.[env] ?? flag.default;
+  return (flag.overrides as Partial<Record<Environment, boolean>> | undefined)?.[env] ?? flag.default;
 }
 
 // -- Full registry export (for tooling / status commands) --------------------

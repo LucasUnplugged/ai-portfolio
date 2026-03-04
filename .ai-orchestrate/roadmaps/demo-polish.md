@@ -86,9 +86,12 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Dependencies:** Epic 1
 **Epic slug:** circles-overhaul
 **Epic branch:** epic/circles-overhaul
-**Status:** pending
+**Tracking issue:** #49
+**PR:** #53
+**Status:** in-progress
 
 ### Stage 3.1: Circle Editing & Frequency Model
+**Issue:** #50
 **Branch prefix:** feat
 **Acceptance criteria:**
 - [ ] Remove `contactFrequencyDays` from Person type
@@ -101,6 +104,7 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Status:** pending
 
 ### Stage 3.2: Labels System
+**Issue:** #51
 **Branch prefix:** feat
 **Acceptance criteria:**
 - [ ] Remove `relationship` field from Person type
@@ -112,6 +116,7 @@ Fix CSS theme scoping, consolidate headers, add dark mode for Circles, overhaul 
 **Status:** pending
 
 ### Stage 3.3: Messaging
+**Issue:** #52
 **Branch prefix:** feat
 **Acceptance criteria:**
 - [ ] Add messaging UI to person detail page

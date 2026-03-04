@@ -5,7 +5,6 @@ export interface Person {
   relationship: string;
   circleId: string;
   lastContact: string;
-  contactFrequencyDays: number;
   bio: string;
   interests: string[];
   birthday?: string;
@@ -19,6 +18,7 @@ export interface Circle {
   description: string;
   memberIds: string[];
   color: string;
+  contactFrequencyDays: number;
 }
 
 export interface Interaction {

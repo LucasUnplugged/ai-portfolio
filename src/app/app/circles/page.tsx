@@ -1,19 +1,23 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export default function CirclesDemo() {
   return (
-    <div className="flex items-center justify-center min-h-screen p-8">
-      <Card className="w-full max-w-md">
+    <div className="flex flex-col items-center justify-center min-h-full p-6">
+      <Card className="w-full max-w-sm">
         <CardHeader>
-          <CardTitle className="text-2xl">Circles</CardTitle>
+          <div className="flex items-center gap-2">
+            <CardTitle className="text-xl">Circles</CardTitle>
+            <Badge variant="secondary">Mobile</Badge>
+          </div>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-muted-foreground">
+        <CardContent className="space-y-3">
+          <p className="text-sm text-muted-foreground">
             Relationship maintenance &amp; personal CRM. Clean teal theme with
-            minimal design.
+            rounded elements.
           </p>
-          <Button>Launch Demo</Button>
+          <Button className="w-full">View Circles</Button>
         </CardContent>
       </Card>
     </div>

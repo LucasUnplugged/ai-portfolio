@@ -14,11 +14,10 @@ export default function CirclesOnboarding() {
 
       <h1 className="text-3xl font-bold tracking-tight">Circles</h1>
       <p className="mt-2 text-base text-primary/80 font-medium">
-        Nurture the relationships that matter most.
+        Relationship management made easy
       </p>
       <p className="mt-4 text-sm text-muted-foreground max-w-[260px] leading-relaxed">
-        A personal relationship manager that helps you stay close to your
-        people. Set reminders, log interactions, and reflect on the connections
+        Automatic reminders by group. Automatic suggestion by interest. Reflect on the connections
         that shape your life.
       </p>
 

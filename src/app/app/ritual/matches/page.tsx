@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { RitualShell } from "@/components/ritual/ritual-shell";
 import { MatchCard } from "@/components/ritual/match-card";
-import { matches, getUserById } from "@/data/ritual";
+import { matches as initialMatches, getUserById } from "@/data/ritual";
+import type { Match } from "@/data/ritual/types";
 import {
   Tabs,
   TabsContent,
@@ -10,16 +12,36 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs";
 
-const matchedConnections = matches.filter((m) => m.status === "matched");
-const requests = matches.filter(
-  (m) => m.status === "pending-received" || m.status === "pending-sent"
-);
-
 export default function MatchesPage() {
+  const [matchList, setMatchList] = useState<Match[]>(initialMatches);
+
+  const matchedConnections = matchList.filter((m) => m.status === "matched");
+  const requests = matchList.filter(
+    (m) => m.status === "pending-received" || m.status === "pending-sent"
+  );
+
+  function acceptRequest(matchId: string) {
+    setMatchList((prev) =>
+      prev.map((m) =>
+        m.id === matchId
+          ? { ...m, status: "matched" as const, matchedAt: new Date().toISOString() }
+          : m
+      )
+    );
+  }
+
+  function rejectRequest(matchId: string) {
+    setMatchList((prev) => prev.filter((m) => m.id !== matchId));
+  }
+
   return (
     <RitualShell current="matches">
-      <div className="p-4 space-y-4">
-        <h1 className="font-heading text-2xl font-bold">Connections</h1>
+      <div className="flex flex-col h-full">
+        <div className="flex items-center px-4 h-14 border-b border-border shrink-0">
+          <h1 className="font-heading text-xl">Connections</h1>
+        </div>
+
+        <div className="p-4 space-y-4">
 
         <Tabs defaultValue="matches">
           <TabsList className="w-full">
@@ -66,7 +88,13 @@ export default function MatchesPage() {
                   const user = getUserById(match.userId);
                   if (!user) return null;
                   return (
-                    <MatchCard key={match.id} match={match} user={user} />
+                    <MatchCard
+                      key={match.id}
+                      match={match}
+                      user={user}
+                      onAccept={() => acceptRequest(match.id)}
+                      onReject={() => rejectRequest(match.id)}
+                    />
                   );
                 })}
               </div>
@@ -77,6 +105,7 @@ export default function MatchesPage() {
             )}
           </TabsContent>
         </Tabs>
+        </div>
       </div>
     </RitualShell>
   );

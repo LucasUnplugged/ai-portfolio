@@ -1,16 +1,11 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { notFound } from "next/navigation";
 import { DocumentToolbar } from "@/components/ledger/document-toolbar";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { documents, getUserById } from "@/data/ledger";
-
-// Pick the document with the most content blocks
-const doc = documents.reduce((a, b) =>
-  a.contentBlocks.length >= b.contentBlocks.length ? a : b
-);
-const editor = getUserById(doc.lastEditedBy);
+import { getDocumentById, getUserById } from "@/data/ledger";
 
 // Mock collaborators
 const collaborators = [
@@ -43,8 +38,8 @@ function ContentBlock({ block }: { block: { type: string; content: string } }) {
     case "list":
       return (
         <ul className="list-disc list-inside space-y-1 mb-4 text-sm text-foreground/90">
-          {block.content.split("\n").map((item, i) => (
-            <li key={i}>{item}</li>
+          {block.content.split("\n").map((item) => (
+            <li key={item}>{item}</li>
           ))}
         </ul>
       );
@@ -61,17 +56,27 @@ function ContentBlock({ block }: { block: { type: string; content: string } }) {
   }
 }
 
-export default function DocumentEditorPage() {
+export default async function DocumentEditorPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const doc = getDocumentById(id);
+  if (!doc) return notFound();
+
+  const editor = getUserById(doc.lastEditedBy);
+
   return (
     <div className="flex h-[calc(100vh-3.5rem)] flex-col">
       {/* Header */}
       <div className="flex items-center gap-3 border-b border-border px-6 py-3">
         <Link
-          href="/app/ledger/project"
+          href="/app/ledger/documents"
           className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
-          Project
+          Documents
         </Link>
         <Separator orientation="vertical" className="h-4" />
         <span className="text-sm text-muted-foreground">
@@ -106,7 +111,7 @@ export default function DocumentEditorPage() {
 
             {/* Content blocks */}
             {doc.contentBlocks.slice(1).map((block, i) => (
-              <div key={i} className="relative">
+              <div key={`${block.type}-${i}`} className="relative">
                 <ContentBlock block={block} />
                 {/* Mock cursor between blocks 2 and 3 */}
                 {i === 2 && (

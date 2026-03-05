@@ -43,3 +43,7 @@ next-env.d.ts
 # ai orchestration runtime
 .ai-queue/
 .ai-relay/
+
+# large binary assets in orchestration docs
+.ai-orchestrate/docs/**/*.png
+.ai-orchestrate/docs/**/*.pdf

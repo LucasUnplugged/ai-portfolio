@@ -19,7 +19,7 @@ export default function ViewProfilePage({
 
   return (
     <RitualShell current="profile">
-      <ProfileHero user={user} match={match} />
+      <ProfileHero user={user} match={match} onBack="/app/ritual/matches" />
     </RitualShell>
   );
 }

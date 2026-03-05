@@ -89,20 +89,20 @@ export default function CirclePage() {
     <RitualShell current="circle">
       <div className="flex flex-col h-full">
         {/* Header */}
-        <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-card shrink-0">
+        <div className="flex items-center justify-between px-4 h-14 border-b border-border shrink-0">
+          <h1 className="font-heading text-xl">Circle</h1>
           <div className="flex items-center gap-2">
-            <h1 className="font-heading font-bold text-base">Circle</h1>
-            <span className="text-[11px] text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+            <span className="text-[11px] font-medium text-muted-foreground bg-muted px-2.5 py-1 rounded-full">
               {daysRemaining} day{daysRemaining !== 1 ? "s" : ""} left
             </span>
+            <button
+              onClick={() => setShowMembers(true)}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="View members"
+            >
+              <Users className="h-5 w-5" />
+            </button>
           </div>
-          <button
-            onClick={() => setShowMembers(true)}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-            aria-label="View members"
-          >
-            <Users className="h-5 w-5" />
-          </button>
         </div>
 
         {/* Scrollable content */}
@@ -152,54 +152,64 @@ export default function CirclePage() {
         {/* Chat input */}
         <ChatInput />
 
-        {/* Members modal */}
-        {showMembers && (
-          <div className="absolute inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-end">
-            <div className="w-full bg-card border-t border-border rounded-t-2xl max-h-[70%] flex flex-col">
-              <div className="flex items-center justify-between px-4 py-3 border-b border-border shrink-0">
-                <h2 className="font-heading font-semibold text-sm">
-                  Circle Members ({members.length})
-                </h2>
-                <button
-                  onClick={() => setShowMembers(false)}
-                  className="text-muted-foreground hover:text-foreground"
+        {/* Members panel (animated) */}
+        <div
+          className={`absolute inset-0 z-50 flex items-end transition-opacity duration-300 ${
+            showMembers
+              ? "bg-background/80 backdrop-blur-sm opacity-100"
+              : "opacity-0 pointer-events-none"
+          }`}
+          onClick={() => setShowMembers(false)}
+        >
+          <div
+            className={`w-full bg-card border-t border-border rounded-t-2xl max-h-[70%] flex flex-col transition-transform duration-300 ease-out ${
+              showMembers ? "translate-y-0" : "translate-y-full"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-4 h-14 border-b border-border shrink-0">
+              <h2 className="font-heading font-semibold text-sm">
+                Circle Members ({members.length})
+              </h2>
+              <button
+                onClick={() => setShowMembers(false)}
+                className="text-muted-foreground hover:text-foreground"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="overflow-y-auto p-2">
+              {members.map((user) => (
+                <div
+                  key={user.id}
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted/50 transition-colors"
                 >
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-              <div className="overflow-y-auto p-2">
-                {members.map((user) => (
-                  <div
-                    key={user.id}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-muted/50 transition-colors"
-                  >
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0">
-                      <Image
-                        src={user.photos[0]}
-                        alt={user.name}
-                        fill
-                        className="object-cover"
-                        sizes="40px"
-                        unoptimized
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium truncate">
-                        {user.name}, {user.age}
-                      </p>
-                      <p className="text-xs text-muted-foreground truncate">
-                        {user.location}
-                      </p>
-                    </div>
-                    <Button size="sm" variant="outline" className="shrink-0" asChild>
-                      <Link href={`/app/ritual/profile/${user.id}`}>View</Link>
-                    </Button>
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0">
+                    <Image
+                      src={user.photos[0]}
+                      alt={user.name}
+                      fill
+                      className="object-cover"
+                      sizes="40px"
+                      unoptimized
+                    />
                   </div>
-                ))}
-              </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium truncate">
+                      {user.name}, {user.age}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {user.location}
+                    </p>
+                  </div>
+                  <Button size="sm" variant="outline" className="shrink-0" asChild>
+                    <Link href={`/app/ritual/profile/${user.id}`}>View</Link>
+                  </Button>
+                </div>
+              ))}
             </div>
           </div>
-        )}
+        </div>
       </div>
     </RitualShell>
   );

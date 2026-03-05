@@ -27,9 +27,12 @@ const settingsItems = [
 export default function ProfilePage() {
   return (
     <RitualShell current="profile">
-      <div className="p-4 space-y-5">
-        {/* Heading */}
-        <h1 className="font-heading text-xl">Profile</h1>
+      <div className="flex flex-col h-full">
+        <div className="flex items-center px-4 h-14 border-b border-border shrink-0">
+          <h1 className="font-heading text-xl">Profile</h1>
+        </div>
+
+        <div className="p-4 space-y-5">
 
         {/* Profile card */}
         <OwnProfileCard user={currentUser} />
@@ -47,7 +50,7 @@ export default function ProfilePage() {
         </div>
 
         {/* Upgrade card */}
-        <div className="rounded-xl bg-gradient-to-br from-pink-600 to-amber-500 p-5 text-white space-y-2">
+        <div className="rounded-xl bg-gradient-to-br from-fuchsia-500 to-primary p-5 text-white space-y-2">
           <span className="inline-block text-[10px] font-bold uppercase tracking-widest bg-white/20 px-2 py-0.5 rounded-full">
             Ritual Member
           </span>
@@ -56,7 +59,7 @@ export default function ProfilePage() {
             See who&apos;s interested in you, get unlimited matches, and unlock
             all photos on Day 1.
           </p>
-          <Button size="sm" className="bg-white text-pink-600 hover:bg-white/90 mt-1">
+          <Button size="sm" className="bg-white text-fuchsia-600 hover:bg-white/90 mt-1">
             Upgrade Now
           </Button>
         </div>
@@ -92,6 +95,7 @@ export default function ProfilePage() {
             <Trash2 className="h-4 w-4" />
             Delete Account
           </Button>
+        </div>
         </div>
       </div>
     </RitualShell>

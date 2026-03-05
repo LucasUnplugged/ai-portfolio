@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import { ChangeDiff } from "@/components/ledger/change-diff";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -19,21 +17,12 @@ const statusStyles: Record<string, string> = {
 
 export default function ChangesPage() {
   return (
-    <div className="flex-1 space-y-6 p-6">
-      {/* Back link */}
-      <Link
-        href="/app/ledger"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Back to Dashboard
-      </Link>
-
+    <div className="p-6 lg:p-8 space-y-6">
       {/* Change header */}
       <div className="flex items-start justify-between">
         <div className="space-y-1">
           <div className="flex items-center gap-3">
-            <h1 className="text-xl font-semibold tracking-tight">
+            <h1 className="text-xl font-heading font-semibold tracking-tight">
               {change.title}
             </h1>
             <Badge className={statusStyles[change.status]}>

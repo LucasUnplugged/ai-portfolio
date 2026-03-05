@@ -34,13 +34,21 @@ export function ReflectionPrompt({ reflection }: ReflectionPromptProps) {
           </ul>
         </div>
       )}
-      <button
-        type="button"
-        className="flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 transition-colors"
-      >
-        <Plus className="h-3.5 w-3.5" />
-        Add gratitude
-      </button>
+      <div className="flex items-center justify-between">
+        <button
+          type="button"
+          className="flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 transition-colors"
+        >
+          <Plus className="h-3.5 w-3.5" />
+          Add gratitude
+        </button>
+        <button
+          type="button"
+          className="rounded-lg bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          Save
+        </button>
+      </div>
     </div>
   );
 }

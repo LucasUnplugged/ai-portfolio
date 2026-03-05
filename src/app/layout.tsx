@@ -87,10 +87,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${bricolageGrotesque.variable} ${adlamDisplay.variable} ${afacad.variable} ${adamina.variable} ${firaCode.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <div className="flex min-h-screen flex-col">
+        <div className="flex max-w-screen flex-col">
           <SiteHeader />
-          <main className="flex-1 pb-16">{children}</main>
-          <SiteFooter />
+          <main className="flex-1 flex items-center justify-center">{children}</main>
         </div>
       </body>
     </html>

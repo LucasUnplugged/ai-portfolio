@@ -7,6 +7,8 @@ interface MatchCardProps {
   match: Match;
   user: RitualUser;
   className?: string;
+  onAccept?: () => void;
+  onReject?: () => void;
 }
 
 function timeAgo(dateStr: string): string {
@@ -43,7 +45,7 @@ function UserAvatar({ user, size = 48 }: { user: RitualUser; size?: number }) {
   );
 }
 
-export function MatchCard({ match, user, className = "" }: MatchCardProps) {
+export function MatchCard({ match, user, className = "", onAccept, onReject }: MatchCardProps) {
   const card = (
     <div
       className={`flex items-center gap-3 p-3 rounded-lg hover:bg-secondary/50 transition-colors ${className}`}
@@ -75,10 +77,16 @@ export function MatchCard({ match, user, className = "" }: MatchCardProps) {
       )}
       {match.status === "pending-received" && (
         <div className="flex gap-2 shrink-0">
-          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground">
+          <button
+            onClick={() => onAccept?.()}
+            className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground"
+          >
             <Check className="h-4 w-4" />
           </button>
-          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-muted text-muted-foreground">
+          <button
+            onClick={() => onReject?.()}
+            className="flex items-center justify-center w-8 h-8 rounded-full bg-muted text-muted-foreground"
+          >
             <X className="h-4 w-4" />
           </button>
         </div>

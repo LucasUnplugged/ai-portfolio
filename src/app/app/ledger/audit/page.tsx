@@ -1,8 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import { auditLog, users, getUserById } from "@/data/ledger";
 import type { AuditAction } from "@/data/ledger/types";
@@ -69,17 +67,10 @@ export default function AuditLogPage() {
   }, [userFilter, actionFilter]);
 
   return (
-    <div className="p-6 lg:p-8 max-w-6xl">
+    <div className="p-6 lg:p-8 space-y-6 max-w-6xl">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <Link
-          href="/app/ledger"
-          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Dashboard
-        </Link>
-        <h1 className="text-lg font-heading font-semibold">Audit Log</h1>
+      <div>
+        <h1 className="text-xl font-heading font-semibold tracking-tight">Audit Log</h1>
       </div>
 
       {/* Filters */}

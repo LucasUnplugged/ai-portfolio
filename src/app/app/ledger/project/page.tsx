@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, FileText, CheckSquare } from "lucide-react";
+import { FileText, CheckSquare } from "lucide-react";
 import {
   getProjectById,
   getUserById,
@@ -79,20 +79,11 @@ function timeAgo(dateStr: string): string {
 
 export default function ProjectOverviewPage() {
   return (
-    <div className="p-6 lg:p-8 max-w-5xl">
-      {/* Back link */}
-      <Link
-        href="/app/ledger"
-        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
-      >
-        <ArrowLeft className="h-4 w-4" />
-        Dashboard
-      </Link>
-
+    <div className="p-6 lg:p-8 space-y-6 max-w-5xl">
       {/* Project header */}
-      <div className="mb-8">
-        <div className="flex items-start justify-between gap-4 mb-2">
-          <h1 className="text-2xl font-heading font-bold tracking-tight">
+      <div>
+        <div className="flex items-center gap-3 mb-2">
+          <h1 className="text-xl font-heading font-semibold tracking-tight">
             {project.name}
           </h1>
           <Badge variant={project.status === "active" ? "default" : "secondary"}>
@@ -139,7 +130,7 @@ export default function ProjectOverviewPage() {
               return (
                 <Link
                   key={doc.id}
-                  href="/app/ledger/document"
+                  href={`/app/ledger/documents/${doc.id}`}
                   className="flex items-center justify-between gap-4 rounded-lg px-4 py-3 hover:bg-muted/50 transition-colors group"
                 >
                   <div className="flex items-center gap-3 min-w-0">

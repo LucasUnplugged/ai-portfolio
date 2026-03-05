@@ -9,10 +9,10 @@ export default function LedgerDashboard() {
   const currentUser = users[0]; // Sarah Chen
 
   return (
-    <div className="p-6 space-y-8">
+    <div className="p-6 lg:p-8 space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-semibold font-heading tracking-tight">
+        <h1 className="text-xl font-heading font-semibold tracking-tight">
           Dashboard
         </h1>
         <p className="text-sm text-muted-foreground mt-1">

@@ -2,19 +2,11 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function RitualCaseStudy() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 md:px-6 md:py-20">
-      <Link
-        href="/"
-        className="mb-8 inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <ArrowLeft className="h-3.5 w-3.5" />
-        Back to Portfolio
-      </Link>
-
+    <div className="mx-auto max-w-4xl px-12 py-10 md:px-16 md:py-12">
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">

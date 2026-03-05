@@ -15,6 +15,7 @@ export default function RitualOnboarding() {
         {/* Decorative ring */}
         <div className="mb-8 flex h-20 w-20 items-center justify-center">
           <svg viewBox="0 0 80 80" className="h-20 w-20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <title>Ritual icon (8 circles in a larger circle)</title>
             {Array.from({ length: 8 }).map((_, i) => {
               const angle = (i * 360) / 8;
               const rad = (angle * Math.PI) / 180;
@@ -32,14 +33,14 @@ export default function RitualOnboarding() {
 
         {/* Tagline */}
         <p className="mt-3 text-sm text-muted-foreground">
-          Meaningful connections, one circle at a time
+          Meaningful connections, one week at a time
         </p>
 
         {/* Description */}
         <p className="mt-6 text-sm leading-relaxed text-muted-foreground/80">
-          Join a circle of 6&ndash;8 people for two weeks of daily prompts,
+          Join a circle of 12&ndash;16 people for a week of daily prompts,
           group conversations, and real connections. No swiping, no algorithms
-          &mdash; just people being people.
+          &mdash; just people being social.
         </p>
 
         {/* CTA */}

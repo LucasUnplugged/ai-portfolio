@@ -1,32 +1,59 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { dmThreads, getUserById, currentUser, matches } from "@/data/ritual";
+import { dmThreads, getDMThread, getUserById, currentUser, matches } from "@/data/ritual";
+import type { ChatMessage } from "@/data/ritual/types";
+import { useLocalStorage } from "@/hooks/use-local-storage";
 import { RitualShell } from "@/components/ritual/ritual-shell";
 import { ChatBubble } from "@/components/ritual/chat-bubble";
 import { ChatInput } from "@/components/ritual/chat-input";
 import { Button } from "@/components/ui/button";
 
-const thread = dmThreads[0];
-const otherUserId = thread.participantIds.find((id) => id !== currentUser.id)!;
-const otherUser = getUserById(otherUserId)!;
-const match = matches.find((m) => m.userId === otherUserId);
+let nextMsgId = 200;
 
-const matchedDate = match
-  ? new Date(match.matchedAt).toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-    })
-  : "";
+function DMContent() {
+  const searchParams = useSearchParams();
+  const threadId = searchParams.get("thread");
+  const thread = threadId ? getDMThread(threadId) ?? dmThreads[0] : dmThreads[0];
 
-export default function DMPage() {
+  const otherUserId = thread.participantIds.find((id) => id !== currentUser.id)!;
+  const otherUser = getUserById(otherUserId)!;
+  const match = matches.find((m) => m.userId === otherUserId);
+
+  const matchedDate = match
+    ? new Date(match.matchedAt).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+      })
+    : "";
+
+  const [messages, setMessages] = useLocalStorage<ChatMessage[]>(
+    `ritual-dm-${thread.id}`,
+    thread.messages
+  );
+
+  function handleSend(text: string) {
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: `dm-local-${nextMsgId++}`,
+        senderId: currentUser.id,
+        text,
+        timestamp: new Date().toISOString(),
+        type: "text",
+      },
+    ]);
+  }
+
   return (
     <RitualShell current="matches">
       <div className="flex flex-col h-full">
         {/* Header */}
-        <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-card shrink-0">
+        <div className="flex items-center gap-3 px-4 h-14 border-b border-border bg-card shrink-0">
           <Link
             href="/app/ritual/matches"
             className="text-muted-foreground hover:text-foreground transition-colors"
@@ -61,15 +88,17 @@ export default function DMPage() {
         {/* Messages */}
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
           {/* Matched divider */}
-          <div className="flex items-center gap-3 py-2">
-            <div className="flex-1 h-px bg-border" />
-            <span className="text-[10px] text-muted-foreground uppercase tracking-wider">
-              Matched on {matchedDate}
-            </span>
-            <div className="flex-1 h-px bg-border" />
-          </div>
+          {matchedDate && (
+            <div className="flex items-center gap-3 py-2">
+              <div className="flex-1 h-px bg-border" />
+              <span className="text-[10px] text-muted-foreground uppercase tracking-wider">
+                Matched on {matchedDate}
+              </span>
+              <div className="flex-1 h-px bg-border" />
+            </div>
+          )}
 
-          {thread.messages.map((msg) => {
+          {messages.map((msg) => {
             const sender = getUserById(msg.senderId)!;
             return (
               <ChatBubble
@@ -86,8 +115,17 @@ export default function DMPage() {
         {/* Input */}
         <ChatInput
           placeholder={`Message ${otherUser.name.split(" ")[0]}...`}
+          onSend={handleSend}
         />
       </div>
     </RitualShell>
+  );
+}
+
+export default function DMPage() {
+  return (
+    <Suspense>
+      <DMContent />
+    </Suspense>
   );
 }

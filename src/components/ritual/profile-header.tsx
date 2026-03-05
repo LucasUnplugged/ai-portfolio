@@ -23,7 +23,7 @@ export function ProfileHero({ user, match, onBack = "/app/ritual/circle" }: Prof
 
   const actionHref =
     match?.status === "matched" && match.dmThreadId
-      ? "/app/ritual/dm"
+      ? `/app/ritual/dm?thread=${match.dmThreadId}`
       : undefined;
 
   const isDisabled = match?.status === "pending-sent";

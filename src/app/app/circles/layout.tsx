@@ -4,7 +4,7 @@ import "./globals.css";
 
 export default function CirclesLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="circles-theme dark min-h-screen bg-background text-foreground">
+    <div className="circles-theme flex-1 max-w-screen bg-gray-100 text-foreground">
       <PhoneSimulator>{children}</PhoneSimulator>
     </div>
   );

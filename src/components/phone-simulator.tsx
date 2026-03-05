@@ -6,7 +6,7 @@ interface PhoneSimulatorProps {
 
 export function PhoneSimulator({ children }: PhoneSimulatorProps) {
   return (
-    <div className="flex min-h-[calc(100vh-3rem)] items-center justify-center p-8">
+    <div className="flex min-h-[calc(100vh-3.5rem)] items-center justify-center p-8">
       <div className="relative h-[812px] w-[375px] overflow-hidden rounded-[3rem] border-[8px] border-foreground/10 bg-background shadow-2xl">
         {/* Status bar notch — decorative */}
         <div

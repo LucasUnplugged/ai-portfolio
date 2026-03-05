@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { CirclesShell } from "@/components/circles/circles-shell";
 import { CircleCard } from "@/components/circles/circle-card";
 import {
@@ -37,6 +37,15 @@ export default function CirclesOverviewPage() {
     [setCirclesList]
   );
 
+  const deleteCircle = useCallback(
+    (circleId: string) => {
+      setCirclesList((prev) => prev.filter((c) => c.id !== circleId));
+    },
+    [setCirclesList]
+  );
+
+  const [newCircleId, setNewCircleId] = useState<string | null>(null);
+
   const addCircle = useCallback(() => {
     const id = `cc-new-${nextCircleId++}`;
     setCirclesList((prev) => [
@@ -51,7 +60,17 @@ export default function CirclesOverviewPage() {
         contactFrequencyDays: 14,
       },
     ]);
+    setNewCircleId(id);
   }, [setCirclesList]);
+
+  useEffect(() => {
+    if (!newCircleId) return;
+    const el = document.getElementById(`circle-${newCircleId}`);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      setNewCircleId(null);
+    }
+  }, [newCircleId]);
 
   return (
     <CirclesShell current="overview">
@@ -86,6 +105,8 @@ export default function CirclesOverviewPage() {
                 allCircles={circlesList}
                 onMovePerson={movePerson}
                 onEditCircle={editCircle}
+                onDeleteCircle={deleteCircle}
+                autoEditName={circle.id === newCircleId}
               />
             );
           })}

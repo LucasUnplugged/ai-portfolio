@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import { tasks, getUserById } from "@/data/ledger";
 import type { TaskStatus } from "@/data/ledger/types";
 import { TaskCard } from "@/components/ledger/task-card";
@@ -41,17 +39,10 @@ const tasksByStatus = columns.reduce(
 
 export default function TaskBoardPage() {
   return (
-    <div className="p-6 lg:p-8">
+    <div className="p-6 lg:p-8 space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <Link
-          href="/app/ledger"
-          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Dashboard
-        </Link>
-        <h1 className="text-lg font-heading font-semibold">Task Board</h1>
+      <div>
+        <h1 className="text-xl font-heading font-semibold tracking-tight">Task Board</h1>
       </div>
 
       {/* Kanban board */}

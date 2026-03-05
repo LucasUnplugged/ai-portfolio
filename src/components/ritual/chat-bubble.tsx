@@ -72,7 +72,7 @@ export function ChatBubble({
           <div
             className={`px-3 py-2 ${
               message.type === "prompt-response"
-                ? "bg-card border border-border rounded-xl"
+                ? "bg-card border border-primary/40 rounded-xl"
                 : isCurrentUser
                   ? "bg-primary text-primary-foreground rounded-2xl rounded-br-md"
                   : "bg-secondary text-secondary-foreground rounded-2xl rounded-bl-md"

@@ -48,7 +48,7 @@
 
 .ritual-theme.dark,
 .ritual-theme .dark {
-  --background: oklch(0.2077 0.0398 265.7549);
+  --background: oklch(0.28 0.035 265.75);
   --foreground: oklch(0.9842 0.0034 247.8575);
   --card: oklch(0.2728 0.0383 262.7437);
   --card-foreground: oklch(0.9842 0.0034 247.8575);

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Circle, Person } from "@/data/circles";
-import { Pencil, ArrowRightLeft, Plus, Check } from "lucide-react";
+import { Pencil, ArrowRightLeft, Plus, Check, Trash2 } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,6 +16,8 @@ interface CircleCardProps {
   allCircles: Circle[];
   onMovePerson?: (personId: string, targetCircleId: string) => void;
   onEditCircle?: (circleId: string, updates: Partial<Circle>) => void;
+  onDeleteCircle?: (circleId: string) => void;
+  autoEditName?: boolean;
 }
 
 function frequencyLabel(days: number): string {
@@ -31,8 +33,10 @@ export function CircleCard({
   allCircles,
   onMovePerson,
   onEditCircle,
+  onDeleteCircle,
+  autoEditName,
 }: CircleCardProps) {
-  const [editingName, setEditingName] = useState(false);
+  const [editingName, setEditingName] = useState(autoEditName ?? false);
   const [editingDesc, setEditingDesc] = useState(false);
   const [nameValue, setNameValue] = useState(circle.name);
   const [descValue, setDescValue] = useState(circle.description);
@@ -58,7 +62,7 @@ export function CircleCard({
   }
 
   return (
-    <div className="rounded-xl border border-border bg-card p-4 space-y-3">
+    <div id={`circle-${circle.id}`} className="rounded-xl border border-border bg-card p-4 space-y-3">
       {/* Header */}
       <div className="flex items-center gap-2">
         <span className="text-lg" role="img" aria-label={circle.name}>
@@ -72,6 +76,7 @@ export function CircleCard({
               onChange={(e) => setNameValue(e.target.value)}
               onBlur={commitName}
               onKeyDown={(e) => e.key === "Enter" && commitName()}
+              onFocus={(e) => e.target.select()}
               className="font-medium text-sm bg-transparent border-b border-primary outline-none flex-1"
             />
             <button
@@ -81,23 +86,37 @@ export function CircleCard({
             >
               <Check className="h-3.5 w-3.5" />
             </button>
+            <button
+              type="button"
+              onMouseDown={(e) => {
+                e.preventDefault();
+                onDeleteCircle?.(circle.id);
+              }}
+              className="text-muted-foreground hover:text-destructive transition-colors"
+            >
+              <Trash2 className="h-3.5 w-3.5" />
+            </button>
           </div>
         ) : (
           <h3 className="font-medium text-sm">{circle.name}</h3>
         )}
-        <span className="text-[10px] text-muted-foreground bg-secondary px-1.5 py-0.5 rounded-full">
-          {frequencyLabel(circle.contactFrequencyDays)}
-        </span>
-        <span className="text-xs text-muted-foreground ml-auto">
-          {members.length} people
-        </span>
-        <button
-          type="button"
-          onClick={() => setEditingName(true)}
-          className="p-1 rounded-md hover:bg-accent text-muted-foreground"
-        >
-          <Pencil className="h-3.5 w-3.5" />
-        </button>
+        {!editingName && (
+          <>
+            <span className="text-[10px] text-muted-foreground bg-secondary px-1.5 py-0.5 rounded-full">
+              {frequencyLabel(circle.contactFrequencyDays)}
+            </span>
+            <span className="text-xs text-muted-foreground ml-auto">
+              {members.length} people
+            </span>
+            <button
+              type="button"
+              onClick={() => setEditingName(true)}
+              className="p-1 rounded-md hover:bg-accent text-muted-foreground"
+            >
+              <Pencil className="h-3.5 w-3.5" />
+            </button>
+          </>
+        )}
       </div>
 
       {/* Description */}

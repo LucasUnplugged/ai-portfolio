@@ -10,6 +10,7 @@ import {
 import type { Circle, Person } from "@/data/circles";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import { Plus } from "lucide-react";
+import { CirclesPortfolioMenu } from "@/components/circles/portfolio-menu";
 
 let nextCircleId = 100;
 
@@ -82,14 +83,17 @@ export default function CirclesOverviewPage() {
               {peopleList.length} people across {circlesList.length} circles
             </p>
           </div>
-          <button
-            type="button"
-            onClick={addCircle}
-            className="flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-          >
-            <Plus className="h-3.5 w-3.5" />
-            New Circle
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={addCircle}
+              className="flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              <Plus className="h-3.5 w-3.5" />
+              New Circle
+            </button>
+            <CirclesPortfolioMenu />
+          </div>
         </div>
 
         <div className="space-y-4">

@@ -142,7 +142,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
 
 export function LedgerSidebar() {
   return (
-    <aside className="hidden md:block w-60 shrink-0 border-r border-border bg-sidebar-background text-sidebar-foreground">
+    <aside className="hidden md:block w-60 shrink-0 border-r border-border bg-sidebar text-sidebar-foreground">
       <ScrollArea className="h-[calc(100vh-3.5rem)]">
         <SidebarContent />
       </ScrollArea>
@@ -168,7 +168,7 @@ export function LedgerMobileNav() {
         </SheetTrigger>
         <SheetContent
           side="left"
-          className="w-60 bg-sidebar-background text-sidebar-foreground p-0"
+          className="ledger-theme w-60 bg-sidebar text-sidebar-foreground p-0"
         >
           <SheetTitle className="sr-only">Ledger Navigation</SheetTitle>
           <ScrollArea className="h-full">

@@ -106,11 +106,13 @@ export function SiteHeader() {
             <button
               type="button"
               className={`ml-auto flex min-h-10 min-w-10 items-center justify-center rounded-md transition-colors pointer-events-auto md:hidden ${
-                isPhoneDemo
-                  ? isRitual
-                    ? "text-white bg-white/10 backdrop-blur-sm hover:bg-white/20"
-                    : "text-gray-900 bg-black/5 backdrop-blur-sm hover:bg-black/10"
-                  : "hover:bg-muted"
+                isDemo && !isPhoneDemo
+                  ? "hidden"
+                  : isPhoneDemo
+                    ? isRitual
+                      ? "text-white bg-white/10 backdrop-blur-sm hover:bg-white/20"
+                      : "text-gray-900 bg-black/5 backdrop-blur-sm hover:bg-black/10"
+                    : "hover:bg-muted"
               }`}
               aria-label="Open menu"
             >

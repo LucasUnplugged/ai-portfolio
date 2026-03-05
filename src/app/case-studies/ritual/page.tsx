@@ -20,6 +20,9 @@ export default function RitualCaseStudy() {
             Mobile
           </Badge>
           <Badge variant="outline" className="border-0 bg-purple-500/10 font-normal text-purple-700 dark:text-purple-400">
+            Dating
+          </Badge>
+          <Badge variant="outline" className="border-0 bg-purple-500/10 font-normal text-purple-700 dark:text-purple-400">
             Dark Mode
           </Badge>
           <Badge variant="outline" className="border-0 bg-purple-500/10 font-normal text-purple-700 dark:text-purple-400">

@@ -30,7 +30,7 @@ const caseStudies = [
 		name: "Ledger",
 		slug: "ledger",
 		description: "Auditable project management & knowledge base",
-		tags: ["Desktop", "Collaborative", "Real-time"],
+		tags: ["Desktop", "Mobile", "Collab", "Auditing"],
 		accent: "bg-amber-500/10 text-amber-700 dark:text-amber-400",
 		accentBorder: "border-amber-500/20",
 		accentDot: "bg-amber-500",
@@ -40,7 +40,7 @@ const caseStudies = [
 		name: "Ritual",
 		slug: "ritual",
 		description: "Structured, time-bound social connections",
-		tags: ["Mobile", "Dark Mode", "Social"],
+		tags: ["Mobile", "Dating", "Dark Mode", "Social"],
 		accent: "bg-purple-500/10 text-purple-700 dark:text-purple-400",
 		accentBorder: "border-purple-500/20",
 		accentDot: "bg-purple-500",
@@ -50,7 +50,7 @@ const caseStudies = [
 		name: "Circles",
 		slug: "circles",
 		description: "Relationship maintenance & personal CRM",
-		tags: ["Mobile", "Minimal", "Personal"],
+		tags: ["Mobile", "Productivity", "Minimal", "Personal"],
 		accent: "bg-teal-500/10 text-teal-700 dark:text-teal-400",
 		accentBorder: "border-teal-500/20",
 		accentDot: "bg-teal-500",
@@ -99,7 +99,7 @@ export default function Home() {
 				{/* Right column: Case Studies */}
 				<div className="flex">
 					<section className="flex flex-col flex-1">
-						<h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-muted-foreground">
+						<h2 className="mb-4 text-sm font-medium uppercase tracking-widest text-muted-foreground">
 							Case Studies
 						</h2>
 						<div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 sm:gap-6">
@@ -119,7 +119,7 @@ export default function Home() {
 												{study.description}
 											</CardDescription>
 										</CardHeader>
-										<CardContent className="flex items-center justify-between">
+										<CardContent className="flex items-center justify-between gap-6">
 											<div className="flex flex-wrap gap-1.5">
 												{study.tags.map((tag) => (
 													<Badge

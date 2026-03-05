@@ -32,13 +32,13 @@ export default function LedgerCaseStudy() {
 						variant="outline"
 						className="border-0 bg-amber-500/10 font-normal text-amber-700 dark:text-amber-400"
 					>
-						Collaborative
+						Collab
 					</Badge>
 					<Badge
 						variant="outline"
 						className="border-0 bg-amber-500/10 font-normal text-amber-700 dark:text-amber-400"
 					>
-						Real-time
+						Auditing
 					</Badge>
 				</div>
 			</div>

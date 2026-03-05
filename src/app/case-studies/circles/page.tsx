@@ -20,6 +20,9 @@ export default function CirclesCaseStudy() {
             Mobile
           </Badge>
           <Badge variant="outline" className="border-0 bg-teal-500/10 font-normal text-teal-700 dark:text-teal-400">
+            Productivity
+          </Badge>
+          <Badge variant="outline" className="border-0 bg-teal-500/10 font-normal text-teal-700 dark:text-teal-400">
             Minimal
           </Badge>
           <Badge variant="outline" className="border-0 bg-teal-500/10 font-normal text-teal-700 dark:text-teal-400">

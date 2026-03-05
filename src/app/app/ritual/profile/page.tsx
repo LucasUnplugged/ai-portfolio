@@ -16,6 +16,7 @@ import { OwnProfileCard } from "@/components/ritual/profile-header";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { currentUser } from "@/data/ritual";
+import { RitualPortfolioMenu } from "@/components/ritual/portfolio-menu";
 
 const settingsItems = [
   { icon: Settings, label: "App Settings" },
@@ -28,8 +29,9 @@ export default function ProfilePage() {
   return (
     <RitualShell current="profile">
       <div className="flex flex-col h-full">
-        <div className="flex items-center px-4 h-14 border-b border-border shrink-0">
+        <div className="flex items-center justify-between px-4 h-14 border-b border-border shrink-0">
           <h1 className="font-heading text-xl">Profile</h1>
+          <RitualPortfolioMenu />
         </div>
 
         <div className="p-4 space-y-5">

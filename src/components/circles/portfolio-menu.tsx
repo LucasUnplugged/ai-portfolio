@@ -26,7 +26,7 @@ export function CirclesPortfolioMenu() {
       <SheetTrigger asChild>
         <button
           type="button"
-          className="min-h-7 flex items-center text-muted-foreground hover:text-foreground transition-colors"
+          className="min-h-7 flex md:hidden items-center text-muted-foreground hover:text-foreground transition-colors"
           aria-label="Portfolio menu"
         >
           <Menu className="h-5 w-5" />

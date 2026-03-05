@@ -107,8 +107,8 @@ export function SiteHeader() {
               className={`ml-auto flex min-h-10 min-w-10 items-center justify-center rounded-md transition-colors pointer-events-auto md:hidden ${
                 isPhoneDemo
                   ? isRitual
-                    ? "text-white hover:bg-white/10"
-                    : "text-gray-900 hover:bg-gray-900/10"
+                    ? "text-white bg-white/10 backdrop-blur-sm hover:bg-white/20"
+                    : "text-gray-900 bg-black/5 backdrop-blur-sm hover:bg-black/10"
                   : "hover:bg-muted"
               }`}
               aria-label="Open menu"
@@ -118,7 +118,7 @@ export function SiteHeader() {
           </SheetTrigger>
           <SheetContent side="right" className="w-64">
             <SheetTitle className="sr-only">Navigation</SheetTitle>
-            <nav className="flex flex-col gap-1 pt-2">
+            <nav className="flex flex-col gap-1 pt-8">
               <Link
                 href="/"
                 onClick={() => setOpen(false)}

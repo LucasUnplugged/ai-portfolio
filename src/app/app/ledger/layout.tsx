@@ -5,9 +5,9 @@ import "./globals.css";
 export default function LedgerLayout({ children }: { children: ReactNode }) {
   return (
     <div className="ledger-theme flex-1 max-w-screen bg-background text-foreground">
-      <div className="flex">
+      <div className="flex min-h-[calc(100vh-3.5rem)]">
         <LedgerSidebar />
-        <main className="flex-1 overflow-auto">
+        <main className="flex-1 overflow-auto bg-background">
           <LedgerMobileNav />
           {children}
         </main>

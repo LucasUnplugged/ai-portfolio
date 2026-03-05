@@ -154,15 +154,16 @@ export function LedgerMobileNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden border-b border-border">
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <button
             type="button"
-            className="fixed top-[4.25rem] left-4 z-40 flex min-h-10 min-w-10 items-center justify-center rounded-md bg-background/80 backdrop-blur-sm border border-border shadow-sm transition-colors hover:bg-muted"
+            className="flex h-10 items-center gap-2 px-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
             aria-label="Open navigation"
           >
-            <Menu className="size-5" />
+            <Menu className="size-4" />
+            <span>Menu</span>
           </button>
         </SheetTrigger>
         <SheetContent

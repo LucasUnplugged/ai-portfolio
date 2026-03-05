@@ -49,7 +49,7 @@ export function SiteHeader() {
           : "border-b border-border bg-background"
       }`}
     >
-      <div className="flex h-14 items-center px-6 md:px-8 gap-16">
+      <div className={`flex h-14 items-center gap-16 ${isPhoneDemo ? "px-3 md:px-8" : "px-6 md:px-8"}`}>
         <Link
           href="/"
           className={`font-semibold tracking-tight ${isDemo ? "max-md:hidden" : ""}`}

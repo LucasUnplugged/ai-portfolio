@@ -12,6 +12,7 @@ import {
   AlertTriangle,
   ScrollText,
   Menu,
+  Globe,
 } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -154,7 +155,7 @@ export function LedgerMobileNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden border-b border-border">
+    <div className="md:hidden border-b border-border flex items-center">
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <button
@@ -176,6 +177,13 @@ export function LedgerMobileNav() {
           </ScrollArea>
         </SheetContent>
       </Sheet>
+      <Link
+        href="/"
+        className="ml-auto flex h-10 items-center gap-1.5 px-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <Globe className="size-3.5" />
+        <span>Portfolio</span>
+      </Link>
     </div>
   );
 }

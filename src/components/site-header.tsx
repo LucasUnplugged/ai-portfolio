@@ -36,6 +36,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  const isDemo = pathname.startsWith("/app/");
   const isPhoneDemo =
     pathname.startsWith("/app/ritual") || pathname.startsWith("/app/circles");
   const isRitual = pathname.startsWith("/app/ritual");
@@ -43,7 +44,7 @@ export function SiteHeader() {
   return (
     <header
       className={`sticky top-0 z-50 w-full ${
-        isPhoneDemo
+        isDemo
           ? "md:border-b md:border-border md:bg-background border-transparent bg-transparent max-md:absolute max-md:pointer-events-none"
           : "border-b border-border bg-background"
       }`}
@@ -51,7 +52,7 @@ export function SiteHeader() {
       <div className="flex h-14 items-center px-6 md:px-8 gap-16">
         <Link
           href="/"
-          className={`font-semibold tracking-tight ${isPhoneDemo ? "max-md:hidden" : ""}`}
+          className={`font-semibold tracking-tight ${isDemo ? "max-md:hidden" : ""}`}
         >
           Lucas Castro
         </Link>

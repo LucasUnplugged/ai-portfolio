@@ -14,6 +14,7 @@ import {
   Menu,
   Monitor,
   Smartphone,
+  ChevronRight,
 } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -193,11 +194,11 @@ export function LedgerMobileNav() {
         <SheetTrigger asChild>
           <button
             type="button"
-            className="ml-auto flex h-10 items-center gap-2 px-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="ml-auto flex h-10 items-center gap-1.5 px-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
             aria-label="Open portfolio navigation"
           >
-            <Menu className="size-4" />
             <span>Portfolio</span>
+            <ChevronRight className="size-3.5" />
           </button>
         </SheetTrigger>
         <SheetContent side="right" className="w-64">

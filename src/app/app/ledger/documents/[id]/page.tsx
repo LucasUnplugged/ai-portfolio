@@ -2,7 +2,7 @@
 
 import { use, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Info } from "lucide-react";
+import { ArrowLeft, ChevronRight } from "lucide-react";
 import { DocumentToolbar } from "@/components/ledger/document-toolbar";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -160,10 +160,10 @@ export default function DocumentEditorPage({
           <SheetTrigger asChild>
             <button
               type="button"
-              className="ml-auto flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors md:hidden"
+              className="ml-auto flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors md:hidden"
             >
-              <Info className="h-4 w-4" />
               <span>Details</span>
+              <ChevronRight className="h-3.5 w-3.5" />
             </button>
           </SheetTrigger>
           <SheetContent side="right" className="ledger-theme w-72 p-0">

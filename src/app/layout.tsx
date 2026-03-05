@@ -90,7 +90,7 @@ export default function RootLayout({
         <Analytics/>
         <div className="flex min-h-screen max-w-screen flex-col">
           <SiteHeader />
-          <main className="flex-1 flex items-center justify-center">{children}</main>
+          <main className="flex-1 flex justify-center">{children}</main>
         </div>
       </body>
     </html>

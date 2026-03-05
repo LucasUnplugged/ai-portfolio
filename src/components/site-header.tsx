@@ -1,8 +1,15 @@
 "use client";
 
-import { Monitor, Smartphone } from "lucide-react";
+import { useState } from "react";
+import { Menu, Monitor, Smartphone } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const items = [
   {
@@ -27,6 +34,7 @@ const items = [
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
@@ -35,7 +43,8 @@ export function SiteHeader() {
           Lucas Castro
         </Link>
 
-        <nav className="flex items-center gap-6">
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-6">
           <Link
             href="/"
             className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
@@ -77,13 +86,78 @@ export function SiteHeader() {
           })}
         </nav>
 
+        {/* Mobile burger menu */}
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <button
+              type="button"
+              className="ml-auto flex min-h-10 min-w-10 items-center justify-center rounded-md transition-colors hover:bg-muted md:hidden"
+              aria-label="Open menu"
+            >
+              <Menu className="size-5" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-64">
+            <SheetTitle className="sr-only">Navigation</SheetTitle>
+            <nav className="flex flex-col gap-1 pt-2">
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className={`rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
+                  pathname === "/"
+                    ? "bg-muted text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Home
+              </Link>
+              {items.map((item) => {
+                const isActive =
+                  pathname.startsWith(item.caseStudy) ||
+                  pathname.startsWith(item.demo);
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.name}
+                    className="flex items-center justify-between"
+                  >
+                    <Link
+                      href={item.caseStudy}
+                      onClick={() => setOpen(false)}
+                      className={`flex-1 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
+                        isActive
+                          ? "bg-muted text-foreground"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                    <Link
+                      href={item.demo}
+                      onClick={() => setOpen(false)}
+                      className={`flex min-h-10 min-w-10 items-center justify-center rounded-md transition-colors ${
+                        pathname.startsWith(item.demo)
+                          ? "text-foreground"
+                          : "text-muted-foreground/60 hover:text-foreground"
+                      }`}
+                      title={`${item.name} demo`}
+                    >
+                      <Icon className="size-4" />
+                    </Link>
+                  </div>
+                );
+              })}
+            </nav>
+          </SheetContent>
+        </Sheet>
+
         <button
           type="button"
           onClick={() => {
             localStorage.clear();
             window.location.reload();
           }}
-          className="ml-auto size-6 cursor-default rounded text-background hover:text-background"
+          className="ml-auto hidden size-6 cursor-default rounded text-background hover:text-background md:block"
           aria-hidden
           tabIndex={-1}
         />

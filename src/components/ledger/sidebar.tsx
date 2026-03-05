@@ -12,7 +12,8 @@ import {
   AlertTriangle,
   ScrollText,
   Menu,
-  Globe,
+  Monitor,
+  Smartphone,
 } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -151,12 +152,21 @@ export function LedgerSidebar() {
   );
 }
 
+const siteNavItems = [
+  { name: "Ledger", caseStudy: "/case-studies/ledger", demo: "/app/ledger", icon: Monitor },
+  { name: "Ritual", caseStudy: "/case-studies/ritual", demo: "/app/ritual", icon: Smartphone },
+  { name: "Circles", caseStudy: "/case-studies/circles", demo: "/app/circles", icon: Smartphone },
+];
+
 export function LedgerMobileNav() {
-  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const [ledgerOpen, setLedgerOpen] = useState(false);
+  const [siteOpen, setSiteOpen] = useState(false);
 
   return (
     <div className="md:hidden border-b border-border flex items-center">
-      <Sheet open={open} onOpenChange={setOpen}>
+      {/* Left: Ledger nav */}
+      <Sheet open={ledgerOpen} onOpenChange={setLedgerOpen}>
         <SheetTrigger asChild>
           <button
             type="button"
@@ -173,17 +183,73 @@ export function LedgerMobileNav() {
         >
           <SheetTitle className="sr-only">Ledger Navigation</SheetTitle>
           <ScrollArea className="h-full">
-            <SidebarContent onNavigate={() => setOpen(false)} />
+            <SidebarContent onNavigate={() => setLedgerOpen(false)} />
           </ScrollArea>
         </SheetContent>
       </Sheet>
-      <Link
-        href="/"
-        className="ml-auto flex h-10 items-center gap-1.5 px-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <Globe className="size-3.5" />
-        <span>Portfolio</span>
-      </Link>
+
+      {/* Right: Portfolio / site nav */}
+      <Sheet open={siteOpen} onOpenChange={setSiteOpen}>
+        <SheetTrigger asChild>
+          <button
+            type="button"
+            className="ml-auto flex h-10 items-center gap-2 px-4 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="Open portfolio navigation"
+          >
+            <Menu className="size-4" />
+            <span>Portfolio</span>
+          </button>
+        </SheetTrigger>
+        <SheetContent side="right" className="w-64">
+          <SheetTitle className="sr-only">Portfolio Navigation</SheetTitle>
+          <nav className="flex flex-col gap-1 pt-8">
+            <Link
+              href="/"
+              onClick={() => setSiteOpen(false)}
+              className={`rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
+                pathname === "/"
+                  ? "bg-muted text-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Home
+            </Link>
+            {siteNavItems.map((item) => {
+              const isActive =
+                pathname.startsWith(item.caseStudy) ||
+                pathname.startsWith(item.demo);
+              const Icon = item.icon;
+              return (
+                <div key={item.name} className="flex items-center justify-between">
+                  <Link
+                    href={item.caseStudy}
+                    onClick={() => setSiteOpen(false)}
+                    className={`flex-1 rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
+                      isActive
+                        ? "bg-muted text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                  <Link
+                    href={item.demo}
+                    onClick={() => setSiteOpen(false)}
+                    className={`flex min-h-10 min-w-10 items-center justify-center rounded-md transition-colors ${
+                      pathname.startsWith(item.demo)
+                        ? "text-foreground"
+                        : "text-muted-foreground/60 hover:text-foreground"
+                    }`}
+                    title={`${item.name} demo`}
+                  >
+                    <Icon className="size-4" />
+                  </Link>
+                </div>
+              );
+            })}
+          </nav>
+        </SheetContent>
+      </Sheet>
     </div>
   );
 }

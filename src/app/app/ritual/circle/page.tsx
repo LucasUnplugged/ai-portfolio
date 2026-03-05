@@ -141,7 +141,7 @@ export default function CirclePage() {
         {/* Header */}
         <div className="flex items-center justify-between px-4 h-14 border-b border-border shrink-0">
           <h1 className="font-heading text-xl">Circle</h1>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <span className="text-[11px] font-medium text-muted-foreground bg-muted px-2.5 py-1 rounded-full">
               {daysRemaining} day{daysRemaining !== 1 ? "s" : ""} left
             </span>

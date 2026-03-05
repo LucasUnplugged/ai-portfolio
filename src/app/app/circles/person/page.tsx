@@ -84,7 +84,7 @@ export default function PersonProfilePage() {
       <div className="flex flex-col h-full">
         <div className="p-4 space-y-4 border-b border-border">
           {/* Back link + menu */}
-          <div className="flex items-center justify-between">
+          <div className="flex items-start justify-between">
             <Link
               href="/app/circles/overview"
               className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"

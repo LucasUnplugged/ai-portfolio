@@ -26,13 +26,13 @@ export function RitualPortfolioMenu() {
       <SheetTrigger asChild>
         <button
           type="button"
-          className="text-muted-foreground hover:text-foreground transition-colors"
+          className="self-start mt-4 text-muted-foreground hover:text-foreground transition-colors"
           aria-label="Portfolio menu"
         >
           <Menu className="h-5 w-5" />
         </button>
       </SheetTrigger>
-      <SheetContent side="right" className="ritual-theme dark w-64">
+      <SheetContent side="right" className="ritual-theme dark w-64 text-foreground">
         <SheetTitle className="sr-only">Navigation</SheetTitle>
         <nav className="flex flex-col gap-1 pt-8">
           <Link

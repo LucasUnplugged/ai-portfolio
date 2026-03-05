@@ -76,7 +76,7 @@ export default function CirclesOverviewPage() {
   return (
     <CirclesShell current="overview">
       <div className="p-4 space-y-5">
-        <div className="flex items-center justify-between">
+        <div className="flex items-start justify-between">
           <div>
             <h1 className="text-xl font-semibold">Your Circles</h1>
             <p className="text-sm text-muted-foreground">

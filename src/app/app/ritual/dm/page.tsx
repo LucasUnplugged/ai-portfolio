@@ -12,6 +12,7 @@ import { RitualShell } from "@/components/ritual/ritual-shell";
 import { ChatBubble } from "@/components/ritual/chat-bubble";
 import { ChatInput } from "@/components/ritual/chat-input";
 import { Button } from "@/components/ui/button";
+import { RitualPortfolioMenu } from "@/components/ritual/portfolio-menu";
 
 let nextMsgId = 200;
 
@@ -114,6 +115,7 @@ function DMContent() {
               View Profile
             </Link>
           </Button>
+          <RitualPortfolioMenu />
         </div>
 
         {/* Messages */}

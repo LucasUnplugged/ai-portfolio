@@ -4,6 +4,7 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Users, X } from "lucide-react";
+import { RitualPortfolioMenu } from "@/components/ritual/portfolio-menu";
 import { RitualShell } from "@/components/ritual/ritual-shell";
 import { PromptCard } from "@/components/ritual/prompt-card";
 import { ChatBubble } from "@/components/ritual/chat-bubble";
@@ -151,6 +152,7 @@ export default function CirclePage() {
             >
               <Users className="h-5 w-5" />
             </button>
+            <RitualPortfolioMenu />
           </div>
         </div>
 

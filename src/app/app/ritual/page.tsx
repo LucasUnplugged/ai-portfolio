@@ -21,10 +21,10 @@ export default function RitualOnboarding() {
               const rad = (angle * Math.PI) / 180;
               const cx = 40 + 28 * Math.cos(rad);
               const cy = 40 + 28 * Math.sin(rad);
-              return <circle key={i} cx={cx} cy={cy} r={5} className="stroke-primary/60" strokeWidth={1.2} />;
+              return <circle key={i} cx={cx} cy={cy} r={5} className="stroke-primary/80" strokeWidth={1.2} />;
             })}
-            <circle cx={40} cy={40} r={10} className="stroke-primary/60" strokeWidth={1.2} />
-            <circle cx={40} cy={40} r={28} className="stroke-primary/20" strokeWidth={0.8} />
+            <circle cx={40} cy={40} r={10} className="stroke-primary/80" strokeWidth={1.2} />
+            <circle cx={40} cy={40} r={28} className="stroke-primary/30" strokeWidth={0.8} />
           </svg>
         </div>
 
@@ -32,7 +32,7 @@ export default function RitualOnboarding() {
         <h1 className="font-heading text-5xl tracking-tight">Ritual</h1>
 
         {/* Tagline */}
-        <p className="mt-3 text-sm font-medium text-muted-foreground">
+        <p className="mt-3 text-sm font-medium text-purple-400">
           Meaningful connections, one week at a time
         </p>
 
@@ -45,13 +45,8 @@ export default function RitualOnboarding() {
 
         {/* CTA */}
         <Button asChild className="mt-10 w-full" size="lg">
-          <Link href="/app/ritual/circle">Join a Circle</Link>
+          <Link href="/app/ritual/circle">Join Circle</Link>
         </Button>
-
-        {/* Footer hint */}
-        <p className="mt-4 text-xs text-muted-foreground/75">
-          Your circle is waiting
-        </p>
       </div>
     </div>
   );

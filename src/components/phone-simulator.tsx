@@ -8,7 +8,7 @@ export function PhoneSimulator({ children }: PhoneSimulatorProps) {
   return (
     <>
       {/* Mobile: fullscreen, no phone frame */}
-      <div className="md:hidden h-[calc(100vh-3.5rem)] w-full overflow-y-auto">
+      <div className="md:hidden h-screen w-full overflow-y-auto">
         {children}
       </div>
 

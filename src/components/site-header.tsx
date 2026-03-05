@@ -36,10 +36,23 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  const isPhoneDemo =
+    pathname.startsWith("/app/ritual") || pathname.startsWith("/app/circles");
+  const isRitual = pathname.startsWith("/app/ritual");
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
+    <header
+      className={`sticky top-0 z-50 w-full ${
+        isPhoneDemo
+          ? "md:border-b md:border-border md:bg-background border-transparent bg-transparent max-md:absolute max-md:pointer-events-none"
+          : "border-b border-border bg-background"
+      }`}
+    >
       <div className="flex h-14 items-center px-6 md:px-8 gap-16">
-        <Link href="/" className="font-semibold tracking-tight">
+        <Link
+          href="/"
+          className={`font-semibold tracking-tight ${isPhoneDemo ? "max-md:hidden" : ""}`}
+        >
           Lucas Castro
         </Link>
 
@@ -91,7 +104,13 @@ export function SiteHeader() {
           <SheetTrigger asChild>
             <button
               type="button"
-              className="ml-auto flex min-h-10 min-w-10 items-center justify-center rounded-md transition-colors hover:bg-muted md:hidden"
+              className={`ml-auto flex min-h-10 min-w-10 items-center justify-center rounded-md transition-colors pointer-events-auto md:hidden ${
+                isPhoneDemo
+                  ? isRitual
+                    ? "text-white hover:bg-white/10"
+                    : "text-gray-900 hover:bg-gray-900/10"
+                  : "hover:bg-muted"
+              }`}
               aria-label="Open menu"
             >
               <Menu className="size-5" />

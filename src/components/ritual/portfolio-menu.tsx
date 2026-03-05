@@ -26,7 +26,7 @@ export function RitualPortfolioMenu() {
       <SheetTrigger asChild>
         <button
           type="button"
-          className="ml-1 text-muted-foreground hover:text-foreground transition-colors"
+          className="ml-1 md:hidden text-muted-foreground hover:text-foreground transition-colors"
           aria-label="Portfolio menu"
         >
           <Menu className="h-5 w-5" />

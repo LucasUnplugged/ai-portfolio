@@ -145,8 +145,8 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
 
 export function LedgerSidebar() {
   return (
-    <aside className="hidden md:block w-60 shrink-0 border-r border-border bg-sidebar text-sidebar-foreground">
-      <ScrollArea className="h-[calc(100vh-3.5rem)]">
+    <aside className="hidden md:block w-60 shrink-0 border-r border-border bg-sidebar text-sidebar-foreground sticky top-14 h-[calc(100vh-3.5rem)]">
+      <ScrollArea className="h-full">
         <SidebarContent />
       </ScrollArea>
     </aside>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import type { ChatMessage, RitualUser } from "@/data/ritual/types";
 
@@ -32,7 +33,10 @@ export function ChatBubble({
       className={`flex gap-2 ${isCurrentUser ? "flex-row-reverse" : "flex-row"}`}
     >
       {isGroupChat && !isCurrentUser && (
-        <div className="relative w-7 h-7 rounded-full overflow-hidden shrink-0 mt-1">
+        <Link
+          href={`/app/ritual/profile/${sender.id}`}
+          className="relative w-7 h-7 rounded-full overflow-hidden shrink-0 mt-1 block"
+        >
           {hasPhoto ? (
             <Image
               src={sender.photos[0]}
@@ -47,7 +51,7 @@ export function ChatBubble({
               {sender.avatarInitials}
             </div>
           )}
-        </div>
+        </Link>
       )}
 
       <div

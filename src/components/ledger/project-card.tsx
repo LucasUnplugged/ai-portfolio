@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Project, User } from "@/data/ledger/types";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -28,7 +29,8 @@ export function ProjectCard({ project, members, className }: ProjectCardProps) {
   const extraCount = members.length - visibleMembers.length;
 
   return (
-    <Card className={cn("overflow-hidden", className)}>
+    <Link href={`/app/ledger/projects/${project.slug}`} className="group">
+    <Card className={cn("overflow-hidden pb-6 transition-colors group-hover:border-primary/30", className)}>
       <div className="h-1" style={{ backgroundColor: project.color }} />
       <CardHeader className="pb-2">
         <div className="flex items-start justify-between">
@@ -75,5 +77,6 @@ export function ProjectCard({ project, members, className }: ProjectCardProps) {
         </div>
       </CardContent>
     </Card>
+    </Link>
   );
 }

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { RitualShell } from "@/components/ritual/ritual-shell";
 import { MatchCard } from "@/components/ritual/match-card";
 import { matches as initialMatches, getUserById } from "@/data/ritual";
+import { useLocalStorage } from "@/hooks/use-local-storage";
 import type { Match } from "@/data/ritual/types";
 import {
   Tabs,
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/tabs";
 
 export default function MatchesPage() {
-  const [matchList, setMatchList] = useState<Match[]>(initialMatches);
+  const [matchList, setMatchList] = useLocalStorage<Match[]>("ritual-matches", initialMatches);
 
   const matchedConnections = matchList.filter((m) => m.status === "matched");
   const requests = matchList.filter(
@@ -24,7 +24,12 @@ export default function MatchesPage() {
     setMatchList((prev) =>
       prev.map((m) =>
         m.id === matchId
-          ? { ...m, status: "matched" as const, matchedAt: new Date().toISOString() }
+          ? {
+              ...m,
+              status: "matched" as const,
+              matchedAt: new Date().toISOString(),
+              dmThreadId: `dm-${matchId}`,
+            }
           : m
       )
     );

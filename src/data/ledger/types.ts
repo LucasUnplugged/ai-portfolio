@@ -9,6 +9,7 @@ export interface User {
 
 export interface Project {
   id: string;
+  slug: string;
   name: string;
   description: string;
   status: "active" | "archived";

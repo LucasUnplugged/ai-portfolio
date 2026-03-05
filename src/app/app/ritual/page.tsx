@@ -32,12 +32,12 @@ export default function RitualOnboarding() {
         <h1 className="font-heading text-5xl tracking-tight">Ritual</h1>
 
         {/* Tagline */}
-        <p className="mt-3 text-sm text-muted-foreground">
+        <p className="mt-3 text-sm font-medium text-muted-foreground">
           Meaningful connections, one week at a time
         </p>
 
         {/* Description */}
-        <p className="mt-6 text-sm leading-relaxed text-muted-foreground/80">
+        <p className="mt-12 text-sm leading-relaxed text-muted-foreground/80">
           Join a circle of 12&ndash;16 people for a week of daily prompts,
           group conversations, and real connections. No swiping, no algorithms
           &mdash; just people being social.
@@ -49,7 +49,7 @@ export default function RitualOnboarding() {
         </Button>
 
         {/* Footer hint */}
-        <p className="mt-6 text-xs text-muted-foreground/50">
+        <p className="mt-4 text-xs text-muted-foreground/75">
           Your circle is waiting
         </p>
       </div>

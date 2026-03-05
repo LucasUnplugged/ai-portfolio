@@ -9,21 +9,20 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 
-const skillCategories = [
-	{
-		title: "Frontend",
-		skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS"],
-	},
-	{
-		title: "Design",
-		skills: ["Figma", "UI/UX", "Design Systems", "Prototyping", "Motion"],
-	},
-	{
-		title: "Tools",
-		skills: ["Git", "CI/CD", "Testing", "Performance", "Accessibility"],
-	},
+const skills = [
+	"Technical Leadership",
+	"System Architecture",
+	"AI Integration",
+	"React / TypeScript",
+	"Full-Stack Engineering",
+	"Design Systems",
+	"Product Ownership",
+	"Activation & Growth",
+	"Node.js / GraphQL",
+	"Observability",
+	"Testing / CI/CD",
+	"Accessibility",
 ];
 
 const caseStudies = [
@@ -35,6 +34,7 @@ const caseStudies = [
 		accent: "bg-amber-500/10 text-amber-700 dark:text-amber-400",
 		accentBorder: "border-amber-500/20",
 		accentDot: "bg-amber-500",
+		hoverBg: "hover:bg-amber-500/10 focus-within:bg-amber-500/10 hover:border-amber-500/10 focus-within:border-amber-500/10",
 	},
 	{
 		name: "Ritual",
@@ -44,6 +44,7 @@ const caseStudies = [
 		accent: "bg-purple-500/10 text-purple-700 dark:text-purple-400",
 		accentBorder: "border-purple-500/20",
 		accentDot: "bg-purple-500",
+		hoverBg: "hover:bg-purple-500/10 focus-within:bg-purple-500/10 hover:border-purple-500/10 focus-within:border-purple-500/10",
 	},
 	{
 		name: "Circles",
@@ -53,6 +54,7 @@ const caseStudies = [
 		accent: "bg-teal-500/10 text-teal-700 dark:text-teal-400",
 		accentBorder: "border-teal-500/20",
 		accentDot: "bg-teal-500",
+		hoverBg: "hover:bg-teal-500/10 focus-within:bg-teal-500/10 hover:border-teal-500/10 focus-within:border-teal-500/10",
 	},
 ];
 
@@ -68,13 +70,10 @@ export default function Home() {
 							Lucas Castro
 						</h1>
 						<p className="mt-2 text-xl text-muted-foreground sm:text-2xl">
-							Product Engineer
+							Product Engineer • AI Wrangler
 						</p>
 						<p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-							I design and build interfaces that feel considered. Focused on
-							frontend craft, interaction design, and the details that make
-							software feel alive. Currently exploring the space between design
-							tools and production code.
+							Former designer — current UX-centric software engineer. I build scalable systems and lead cross-functional teams. Now architecting AI-native products, integrating RAG and multi-modal LLM flows, and focusing on the intersection of AI-based productivity and creativity.
 						</p>
 					</section>
 
@@ -83,27 +82,15 @@ export default function Home() {
 						<h2 className="mb-4 text-sm font-medium uppercase tracking-widest text-muted-foreground">
 							Expertise
 						</h2>
-						<div className="space-y-4">
-							{skillCategories.map((category) => (
-								<div
-									key={category.title}
-									className="flex flex-col items-baseline gap-2"
+						<div className="flex flex-wrap gap-1.5">
+							{skills.map((skill) => (
+								<Badge
+									key={skill}
+									variant="secondary"
+									className="font-normal"
 								>
-									<span className="w-20 shrink-0 text-sm font-medium text-foreground">
-										{category.title}
-									</span>
-									<div className="flex flex-wrap gap-1.5">
-										{category.skills.map((skill) => (
-											<Badge
-												key={skill}
-												variant="secondary"
-												className="font-normal"
-											>
-												{skill}
-											</Badge>
-										))}
-									</div>
-								</div>
+									{skill}
+								</Badge>
 							))}
 						</div>
 					</section>
@@ -119,16 +106,16 @@ export default function Home() {
 							{caseStudies.map((study) => (
 								<Link key={study.slug} href={`/case-studies/${study.slug}`}>
 									<Card
-										className={`group border ${study.accentBorder} h-full transition-shadow hover:shadow-md`}
+										className={`group border py-6 ${study.accentBorder} ${study.hoverBg} h-full transition-all duration-200 hover:shadow-md`}
 									>
 										<CardHeader className="pb-3">
 											<div className="flex items-center gap-3">
 												<div
-													className={`h-2.5 w-2.5 rounded-full ${study.accentDot}`}
+													className={`h-2.5 w-2.5 rounded-full ${study.accentDot} group-hover:bg-black`}
 												/>
-												<CardTitle className="text-lg">{study.name}</CardTitle>
+												<CardTitle className="text-lg group-hover:text-black">{study.name}</CardTitle>
 											</div>
-											<CardDescription className="mt-1 pl-[22px]">
+											<CardDescription className="mt-1 pl-[22px] group-hover:text-black/70">
 												{study.description}
 											</CardDescription>
 										</CardHeader>
@@ -147,7 +134,7 @@ export default function Home() {
 											<Button
 												variant="ghost"
 												size="sm"
-												className="text-muted-foreground group-hover:text-foreground"
+												className="text-muted-foreground group-hover:text-black"
 												tabIndex={-1}
 											>
 												View

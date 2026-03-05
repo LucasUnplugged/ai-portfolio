@@ -16,7 +16,7 @@ import { users, projects } from "@/data/ledger";
 
 const navItems = [
   { label: "Dashboard", href: "/app/ledger", icon: LayoutDashboard },
-  { label: "Projects", href: "/app/ledger/project", icon: FolderOpen },
+  { label: "Projects", href: "/app/ledger/projects", icon: FolderOpen },
   { label: "Documents", href: "/app/ledger/documents", icon: FileText },
   { label: "Changes", href: "/app/ledger/changes", icon: GitCompare },
   { label: "Tasks", href: "/app/ledger/tasks", icon: CheckSquare },

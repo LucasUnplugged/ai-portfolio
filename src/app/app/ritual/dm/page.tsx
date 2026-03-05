@@ -1,12 +1,12 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { dmThreads, getDMThread, getUserById, currentUser, matches } from "@/data/ritual";
-import type { ChatMessage } from "@/data/ritual/types";
+import { getDMThread, getUserById, currentUser, matches as initialMatches } from "@/data/ritual";
+import type { ChatMessage, Match } from "@/data/ritual/types";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import { RitualShell } from "@/components/ritual/ritual-shell";
 import { ChatBubble } from "@/components/ritual/chat-bubble";
@@ -17,24 +17,41 @@ let nextMsgId = 200;
 
 function DMContent() {
   const searchParams = useSearchParams();
-  const threadId = searchParams.get("thread");
-  const thread = threadId ? getDMThread(threadId) ?? dmThreads[0] : dmThreads[0];
+  const threadId = searchParams.get("thread") ?? "";
+  const staticThread = getDMThread(threadId);
 
-  const otherUserId = thread.participantIds.find((id) => id !== currentUser.id)!;
-  const otherUser = getUserById(otherUserId)!;
-  const match = matches.find((m) => m.userId === otherUserId);
+  // Read persisted matches to resolve newly-accepted ones
+  const [matchList] = useLocalStorage<Match[]>("ritual-matches", initialMatches);
 
-  const matchedDate = match
-    ? new Date(match.matchedAt).toLocaleDateString("en-US", {
+  // Find the other user — either from a static thread or from the match that owns this threadId
+  const matchForThread = matchList.find((m) => m.dmThreadId === threadId);
+  const otherUserId = staticThread
+    ? staticThread.participantIds.find((id) => id !== currentUser.id)!
+    : matchForThread?.userId ?? "";
+  const otherUser = getUserById(otherUserId);
+
+  const matchedDate = matchForThread
+    ? new Date(matchForThread.matchedAt).toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",
       })
     : "";
 
   const [messages, setMessages] = useLocalStorage<ChatMessage[]>(
-    `ritual-dm-${thread.id}`,
-    thread.messages
+    `ritual-dm-${threadId}`,
+    staticThread?.messages ?? []
   );
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Small delay to ensure localStorage-hydrated content is rendered
+    const timeout = setTimeout(() => {
+      const el = scrollRef.current;
+      if (el) el.scrollTop = el.scrollHeight;
+    }, 50);
+    return () => clearTimeout(timeout);
+  }, []);
 
   function handleSend(text: string) {
     setMessages((prev) => [
@@ -47,6 +64,20 @@ function DMContent() {
         type: "text",
       },
     ]);
+    requestAnimationFrame(() => {
+      const el = scrollRef.current;
+      if (el) el.scrollTop = el.scrollHeight;
+    });
+  }
+
+  if (!otherUser) {
+    return (
+      <RitualShell current="matches">
+        <div className="flex items-center justify-center h-full text-sm text-muted-foreground">
+          Conversation not found.
+        </div>
+      </RitualShell>
+    );
   }
 
   return (
@@ -86,7 +117,7 @@ function DMContent() {
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-3">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-3">
           {/* Matched divider */}
           {matchedDate && (
             <div className="flex items-center gap-3 py-2">

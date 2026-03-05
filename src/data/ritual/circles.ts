@@ -27,7 +27,6 @@ export const circles: Circle[] = [
         { id: "opt-2", emoji: "🏔️", text: "A Cozy Cabin" },
       ],
       responses: [
-        { userId: "ru-01", text: "I picked the tropical island! Who's with me? 🏝️", optionId: "opt-1" },
         { userId: "ru-02", text: "Definitely the cabin for me. I need some peace and quiet. 🏕️", optionId: "opt-2" },
         { userId: "ru-07", text: "City life all the way! 🏙️" },
       ],

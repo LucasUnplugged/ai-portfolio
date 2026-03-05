@@ -47,7 +47,7 @@ export default function TaskBoardPage() {
 
       {/* Kanban board */}
       <div className="overflow-x-auto -mx-6 px-6 lg:-mx-8 lg:px-8">
-        <div className="grid grid-cols-4 gap-4 min-w-[1120px]">
+        <div className="grid grid-cols-4 gap-6 min-w-[1120px]">
           {columns.map((col) => {
             const colTasks = tasksByStatus[col.status];
             return (

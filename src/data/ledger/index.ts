@@ -1,6 +1,6 @@
 export * from "./types";
 export { users, getUserById } from "./users";
-export { projects, getProjectById } from "./projects";
+export { projects, getProjectById, getProjectBySlug } from "./projects";
 export {
   documents,
   getDocumentById,

@@ -1,9 +1,11 @@
 "use client";
 
+import { use } from "react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { FileText, CheckSquare } from "lucide-react";
 import {
-  getProjectById,
+  getProjectBySlug,
   getUserById,
   getDocumentsByProject,
   getTasksByProject,
@@ -28,32 +30,6 @@ import { TaskCard } from "@/components/ledger/task-card";
 import { ActivityFeed } from "@/components/ledger/activity-feed";
 import { StatCard } from "@/components/ledger/stat-card";
 
-const PROJECT_ID = "proj-01";
-
-const project = getProjectById(PROJECT_ID)!;
-const members = project.memberIds
-  .map((id) => getUserById(id))
-  .filter(Boolean) as NonNullable<ReturnType<typeof getUserById>>[];
-const projectDocuments = getDocumentsByProject(PROJECT_ID);
-const projectTasks = getTasksByProject(PROJECT_ID);
-
-const documentIds = new Set(projectDocuments.map((d) => d.id));
-const taskIds = new Set(projectTasks.map((t) => t.id));
-const projectActivity = auditLog.filter(
-  (entry) =>
-    (entry.targetType === "document" && documentIds.has(entry.targetId)) ||
-    (entry.targetType === "task" && taskIds.has(entry.targetId)) ||
-    (entry.targetType === "project" && entry.targetId === PROJECT_ID)
-);
-
-const taskCountByStatus = projectTasks.reduce(
-  (acc, task) => {
-    acc[task.status] = (acc[task.status] || 0) + 1;
-    return acc;
-  },
-  {} as Record<Task["status"], number>
-);
-
 const statusLabels: Record<Task["status"], string> = {
   backlog: "Backlog",
   "in-progress": "In Progress",
@@ -77,7 +53,39 @@ function timeAgo(dateStr: string): string {
   return `${days}d ago`;
 }
 
-export default function ProjectOverviewPage() {
+export default function ProjectDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = use(params);
+  const project = getProjectBySlug(slug);
+
+  if (!project) notFound();
+
+  const members = project.memberIds
+    .map((id) => getUserById(id))
+    .filter(Boolean) as NonNullable<ReturnType<typeof getUserById>>[];
+  const projectDocuments = getDocumentsByProject(project.id);
+  const projectTasks = getTasksByProject(project.id);
+
+  const documentIds = new Set(projectDocuments.map((d) => d.id));
+  const taskIds = new Set(projectTasks.map((t) => t.id));
+  const projectActivity = auditLog.filter(
+    (entry) =>
+      (entry.targetType === "document" && documentIds.has(entry.targetId)) ||
+      (entry.targetType === "task" && taskIds.has(entry.targetId)) ||
+      (entry.targetType === "project" && entry.targetId === project.id)
+  );
+
+  const taskCountByStatus = projectTasks.reduce(
+    (acc, task) => {
+      acc[task.status] = (acc[task.status] || 0) + 1;
+      return acc;
+    },
+    {} as Record<Task["status"], number>
+  );
+
   return (
     <div className="p-6 lg:p-8 space-y-6 max-w-5xl">
       {/* Project header */}

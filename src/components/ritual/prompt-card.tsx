@@ -8,10 +8,13 @@ import { getUserById } from "@/data/ritual";
 interface PromptCardProps {
   prompt: DailyPrompt;
   dayNumber: number;
+  hasResponded?: boolean;
+  onRespond?: (text: string) => void;
 }
 
-export function PromptCard({ prompt, dayNumber }: PromptCardProps) {
+export function PromptCard({ prompt, dayNumber, hasResponded, onRespond }: PromptCardProps) {
   const [activeOption, setActiveOption] = useState<string | null>(null);
+  const [responseText, setResponseText] = useState("");
 
   return (
     <div className="rounded-xl border border-border bg-card p-4 space-y-3">
@@ -24,7 +27,7 @@ export function PromptCard({ prompt, dayNumber }: PromptCardProps) {
 
       <p className="font-heading text-lg leading-snug">{prompt.text}</p>
 
-      {prompt.options && (
+      {prompt.options && !hasResponded && (
         <div className="space-y-2">
           {prompt.options.map((option) => {
             const pickedBy = prompt.responses.filter(
@@ -43,6 +46,8 @@ export function PromptCard({ prompt, dayNumber }: PromptCardProps) {
                   </div>
                   <textarea
                     rows={2}
+                    value={responseText}
+                    onChange={(e) => setResponseText(e.target.value)}
                     placeholder="Share your response..."
                     className="w-full bg-background border border-border rounded-lg p-2 text-sm resize-none outline-none focus:ring-1 focus:ring-primary"
                     autoFocus
@@ -50,15 +55,20 @@ export function PromptCard({ prompt, dayNumber }: PromptCardProps) {
                   <div className="flex justify-end gap-2">
                     <button
                       type="button"
-                      onClick={() => setActiveOption(null)}
+                      onClick={() => { setActiveOption(null); setResponseText(""); }}
                       className="text-xs text-muted-foreground hover:text-foreground px-3 py-1 transition-colors"
                     >
                       Cancel
                     </button>
                     <button
                       type="button"
-                      onClick={() => setActiveOption(null)}
-                      className="text-xs bg-primary text-primary-foreground rounded-md px-3 py-1 hover:bg-primary/90 transition-colors"
+                      disabled={!responseText.trim()}
+                      onClick={() => {
+                        onRespond?.(responseText.trim());
+                        setActiveOption(null);
+                        setResponseText("");
+                      }}
+                      className="text-xs bg-primary text-primary-foreground rounded-md px-3 py-1 hover:bg-primary/90 transition-colors disabled:opacity-40"
                     >
                       Save
                     </button>
@@ -105,6 +115,10 @@ export function PromptCard({ prompt, dayNumber }: PromptCardProps) {
             Skip for now
           </p>
         </div>
+      )}
+
+      {hasResponded && (
+        <p className="text-xs text-muted-foreground italic">You responded to this prompt</p>
       )}
     </div>
   );

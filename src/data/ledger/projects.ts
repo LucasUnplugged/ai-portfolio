@@ -3,6 +3,7 @@ import type { Project } from "./types";
 export const projects: Project[] = [
   {
     id: "proj-01",
+    slug: "brand-redesign",
     name: "Brand Redesign",
     description:
       "Complete visual identity overhaul including logo, color palette, typography system, and component library refresh.",
@@ -15,6 +16,7 @@ export const projects: Project[] = [
   },
   {
     id: "proj-02",
+    slug: "api-v3-migration",
     name: "API v3 Migration",
     description:
       "Migrate all REST endpoints to v3 with OpenAPI spec, improved auth flow, rate limiting, and backwards-compatible deprecation strategy.",
@@ -27,6 +29,7 @@ export const projects: Project[] = [
   },
   {
     id: "proj-03",
+    slug: "mobile-app-launch",
     name: "Mobile App Launch",
     description:
       "iOS and Android app for core Ledger features — document viewing, task management, and push notifications.",
@@ -39,6 +42,7 @@ export const projects: Project[] = [
   },
   {
     id: "proj-04",
+    slug: "security-audit",
     name: "Security Audit",
     description:
       "Quarterly security review covering authentication flows, data encryption, dependency vulnerabilities, and compliance checks.",
@@ -53,4 +57,8 @@ export const projects: Project[] = [
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
+}
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return projects.find((p) => p.slug === slug);
 }

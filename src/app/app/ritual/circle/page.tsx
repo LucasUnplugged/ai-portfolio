@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Users, X } from "lucide-react";
@@ -73,8 +73,26 @@ const members = activeCircle.memberIds
   .filter(Boolean) as NonNullable<ReturnType<typeof getUserById>>[];
 
 export default function CirclePage() {
-  const [storedMessages] = useLocalStorage<ChatMessage[]>("ritual-group-messages", initialGroupMessages);
+  const [storedMessages, setStoredMessages] = useLocalStorage<ChatMessage[]>("ritual-group-messages", initialGroupMessages);
   const [showMembers, setShowMembers] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  function handleSend(text: string) {
+    setStoredMessages((prev) => [
+      ...prev,
+      {
+        id: `gm-local-${Date.now()}`,
+        senderId: currentUser.id,
+        text,
+        timestamp: new Date().toISOString(),
+        type: "text",
+      },
+    ]);
+    requestAnimationFrame(() => {
+      const el = scrollRef.current;
+      if (el) el.scrollTop = el.scrollHeight;
+    });
+  }
 
   const allMessages = useMemo(
     () => [...storedMessages, ...gifMessages].sort(
@@ -82,6 +100,37 @@ export default function CirclePage() {
     ),
     [storedMessages]
   );
+
+  const hasRespondedToPrompt = allMessages.some(
+    (m) => m.senderId === currentUser.id && m.type === "prompt-response" && m.promptId === activeCircle.currentPrompt.id
+  );
+
+  useEffect(() => {
+    if (!hasRespondedToPrompt) return;
+    const timeout = setTimeout(() => {
+      const el = scrollRef.current;
+      if (el) el.scrollTop = el.scrollHeight;
+    }, 50);
+    return () => clearTimeout(timeout);
+  }, [hasRespondedToPrompt]);
+
+  function handlePromptRespond(text: string) {
+    setStoredMessages((prev) => [
+      ...prev,
+      {
+        id: `gm-local-${Date.now()}`,
+        senderId: currentUser.id,
+        text,
+        timestamp: new Date().toISOString(),
+        type: "prompt-response",
+        promptId: activeCircle.currentPrompt.id,
+      },
+    ]);
+    requestAnimationFrame(() => {
+      const el = scrollRef.current;
+      if (el) el.scrollTop = el.scrollHeight;
+    });
+  }
 
   let lastDateLabel = "";
 
@@ -106,12 +155,14 @@ export default function CirclePage() {
         </div>
 
         {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto">
           {/* Prompt card */}
           <div className="p-4 pb-2">
             <PromptCard
               prompt={activeCircle.currentPrompt}
               dayNumber={dayNumber}
+              hasResponded={hasRespondedToPrompt}
+              onRespond={handlePromptRespond}
             />
           </div>
 
@@ -150,7 +201,7 @@ export default function CirclePage() {
         </div>
 
         {/* Chat input */}
-        <ChatInput />
+        <ChatInput onSend={handleSend} />
 
         {/* Members panel (animated) */}
         <div

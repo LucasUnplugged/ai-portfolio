@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLocalStorage } from "@/hooks/use-local-storage";
 import Link from "next/link";
 import { ArrowLeft, Send } from "lucide-react";
+import { CirclesPortfolioMenu } from "@/components/circles/portfolio-menu";
 import { Badge } from "@/components/ui/badge";
 import { CirclesShell } from "@/components/circles/circles-shell";
 import { InteractionItem } from "@/components/circles/interaction-item";
@@ -82,14 +83,17 @@ export default function PersonProfilePage() {
     <CirclesShell current="overview">
       <div className="flex flex-col h-full">
         <div className="p-4 space-y-4 border-b border-border">
-          {/* Back link */}
-          <Link
-            href="/app/circles/overview"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            Back
-          </Link>
+          {/* Back link + menu */}
+          <div className="flex items-start justify-between">
+            <Link
+              href="/app/circles/overview"
+              className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              Back
+            </Link>
+            <CirclesPortfolioMenu />
+          </div>
 
           {/* Compact profile header */}
           <div className="flex items-center gap-3">

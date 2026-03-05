@@ -3,6 +3,7 @@
 import { CirclesShell } from "@/components/circles/circles-shell";
 import { ReflectionPrompt } from "@/components/circles/reflection-prompt";
 import { reflections, currentReflection } from "@/data/circles";
+import { CirclesPortfolioMenu } from "@/components/circles/portfolio-menu";
 
 const pastReflections = reflections.slice(0, -1).reverse();
 
@@ -10,11 +11,14 @@ export default function ReflectionPage() {
   return (
     <CirclesShell current="reflection">
       <div className="p-4 space-y-5">
-        <div>
-          <h1 className="text-xl font-semibold">Reflect</h1>
-          <p className="text-sm text-muted-foreground">
-            Week of March 4, 2026
-          </p>
+        <div className="flex items-start justify-between">
+          <div>
+            <h1 className="text-xl font-semibold">Reflect</h1>
+            <p className="text-sm text-muted-foreground">
+              Week of March 4, 2026
+            </p>
+          </div>
+          <CirclesPortfolioMenu />
         </div>
 
         {/* Current week's reflection */}

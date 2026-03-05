@@ -1,6 +1,7 @@
 "use client";
 
 import { CirclesShell } from "@/components/circles/circles-shell";
+import { CirclesPortfolioMenu } from "@/components/circles/portfolio-menu";
 import { ReminderCard } from "@/components/circles/reminder-card";
 import { getRemindersForToday, getPersonById } from "@/data/circles";
 
@@ -18,9 +19,12 @@ export default function TodayPage() {
   return (
     <CirclesShell current="today">
       <div className="p-4 space-y-5">
-        <div>
-          <h1 className="text-xl font-semibold">Good morning</h1>
-          <p className="text-sm text-muted-foreground">{formatDate()}</p>
+        <div className="flex items-start justify-between">
+          <div>
+            <h1 className="text-xl font-semibold">Good morning</h1>
+            <p className="text-sm text-muted-foreground">{formatDate()}</p>
+          </div>
+          <CirclesPortfolioMenu />
         </div>
 
         <div className="space-y-3">

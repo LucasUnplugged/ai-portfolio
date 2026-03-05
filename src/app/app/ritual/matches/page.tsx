@@ -11,6 +11,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs";
+import { RitualPortfolioMenu } from "@/components/ritual/portfolio-menu";
 
 export default function MatchesPage() {
   const [matchList, setMatchList] = useLocalStorage<Match[]>("ritual-matches", initialMatches);
@@ -42,8 +43,9 @@ export default function MatchesPage() {
   return (
     <RitualShell current="matches">
       <div className="flex flex-col h-full">
-        <div className="flex items-center px-4 h-14 border-b border-border shrink-0">
+        <div className="flex items-center justify-between px-4 h-14 border-b border-border shrink-0">
           <h1 className="font-heading text-xl">Connections</h1>
+          <RitualPortfolioMenu />
         </div>
 
         <div className="p-4 space-y-4">

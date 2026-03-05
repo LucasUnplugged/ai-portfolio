@@ -26,7 +26,7 @@ export function ConflictPanel({
       </div>
 
       {/* Three-panel layout */}
-      <div className="grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-border bg-border">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-px overflow-hidden rounded-lg border border-border bg-border">
         {/* Mine (User A) */}
         <div className="bg-background">
           <div className="border-b border-border bg-blue-50/50 px-3 py-2 text-xs font-medium">

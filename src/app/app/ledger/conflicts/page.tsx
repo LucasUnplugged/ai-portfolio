@@ -34,12 +34,12 @@ export default function ConflictResolutionPage() {
           </Badge>
         </div>
 
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
           <span>Section: {conflict.sectionTitle}</span>
-          <span>&middot;</span>
-          <div className="flex items-center gap-2">
+          <span className="hidden md:inline">&middot;</span>
+          <div className="flex flex-wrap items-center gap-1.5">
             <span>Between</span>
-            <div className="flex items-center gap-1">
+            <span className="inline-flex items-center gap-1">
               <Avatar className="h-5 w-5">
                 <AvatarFallback className="text-[8px]">
                   {userA?.avatarInitials}
@@ -48,9 +48,9 @@ export default function ConflictResolutionPage() {
               <span className="font-medium text-foreground">
                 {userA?.name}
               </span>
-            </div>
+            </span>
             <span>and</span>
-            <div className="flex items-center gap-1">
+            <span className="inline-flex items-center gap-1">
               <Avatar className="h-5 w-5">
                 <AvatarFallback className="text-[8px]">
                   {userB?.avatarInitials}
@@ -59,7 +59,7 @@ export default function ConflictResolutionPage() {
               <span className="font-medium text-foreground">
                 {userB?.name}
               </span>
-            </div>
+            </span>
           </div>
         </div>
       </div>
@@ -68,10 +68,10 @@ export default function ConflictResolutionPage() {
       <ConflictPanel conflict={conflict} userA={userA} userB={userB} />
 
       {/* Action buttons */}
-      <div className="flex items-center justify-center gap-3">
-        <Button variant="outline">Keep {userA?.name?.split(" ")[0]}&apos;s Version</Button>
-        <Button>Manual Merge</Button>
-        <Button variant="outline">Keep {userB?.name?.split(" ")[0]}&apos;s Version</Button>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3">
+        <Button variant="outline" className="w-full md:w-auto">Keep {userA?.name?.split(" ")[0]}&apos;s Version</Button>
+        <Button className="w-full md:w-auto">Manual Merge</Button>
+        <Button variant="outline" className="w-full md:w-auto">Keep {userB?.name?.split(" ")[0]}&apos;s Version</Button>
       </div>
 
       <Separator />
